@@ -2410,7 +2410,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="70" green="19" red="19" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="CLIENTES"/>
+                        <Property name="text" type="java.lang.String" value="GARANTIAS"/>
                       </Properties>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel5">
@@ -2826,7 +2826,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="70" green="19" red="19" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="CLIENTES"/>
+                        <Property name="text" type="java.lang.String" value="GARANTIAS"/>
                       </Properties>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel29">
@@ -4158,7 +4158,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="70" green="19" red="19" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="CLIENTES"/>
+                        <Property name="text" type="java.lang.String" value="CATEGORIA"/>
                       </Properties>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel7">
@@ -4468,7 +4468,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="70" green="19" red="19" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="CLIENTES"/>
+                        <Property name="text" type="java.lang.String" value="CATEGORIA"/>
                       </Properties>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel31">
@@ -4611,9 +4611,9 @@
                               <Component id="jScrollPane7" alignment="0" max="32767" attributes="0"/>
                               <Component id="DadosAlteraServicos" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="68" max="32767" attributes="0"/>
+                          <EmptySpace pref="114" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jPanel32" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jPanel32" alignment="0" pref="1190" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -5040,7 +5040,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="70" green="19" red="19" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="CLIENTES"/>
+                        <Property name="text" type="java.lang.String" value="CATEGORIA"/>
                       </Properties>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel33">

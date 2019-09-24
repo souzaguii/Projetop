@@ -2658,7 +2658,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 60)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(25, 25, 112));
-        jLabel2.setText("CLIENTES");
+        jLabel2.setText("GARANTIAS");
 
         jPanel5.setBackground(new java.awt.Color(230, 230, 230));
 
@@ -2907,7 +2907,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Century Gothic", 1, 60)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(25, 25, 112));
-        jLabel16.setText("CLIENTES");
+        jLabel16.setText("GARANTIAS");
 
         jPanel29.setBackground(new java.awt.Color(230, 230, 230));
 
@@ -3742,7 +3742,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 60)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(25, 25, 112));
-        jLabel3.setText("CLIENTES");
+        jLabel3.setText("CATEGORIA");
 
         jPanel7.setBackground(new java.awt.Color(230, 230, 230));
 
@@ -3955,7 +3955,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel17.setFont(new java.awt.Font("Century Gothic", 1, 60)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(25, 25, 112));
-        jLabel17.setText("CLIENTES");
+        jLabel17.setText("CATEGORIA");
 
         jPanel31.setBackground(new java.awt.Color(230, 230, 230));
 
@@ -4335,7 +4335,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel18.setFont(new java.awt.Font("Century Gothic", 1, 60)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(25, 25, 112));
-        jLabel18.setText("CLIENTES");
+        jLabel18.setText("CATEGORIA");
 
         jPanel33.setBackground(new java.awt.Color(230, 230, 230));
 
@@ -4452,8 +4452,8 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(BotaoBuscarGerenciarServicos, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane7)
                     .addComponent(DadosAlteraServicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(68, Short.MAX_VALUE))
-            .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(114, Short.MAX_VALUE))
+            .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE)
         );
         GerenciarServicosLayout.setVerticalGroup(
             GerenciarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
