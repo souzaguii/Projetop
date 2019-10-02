@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package controller;
-
-import view.Principal;
+import view.TelaLogin;
 import java.sql.SQLException;
 /**
  *
@@ -13,8 +12,8 @@ import java.sql.SQLException;
  */
 public class main {
         public static void main(String[] args) throws SQLException {
-        Principal helpp = new Principal();
-        helpp.setVisible(true);
+        TelaLogin login = new TelaLogin();
+        login.setVisible(true);
 
         }
 }

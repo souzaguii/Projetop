@@ -1019,8 +1019,7 @@ public class Principal extends javax.swing.JFrame {
         BotaoClientes = new javax.swing.JLabel();
         BotaoRelatorios = new javax.swing.JLabel();
         BotaoConsertos = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        BotaoCadastros = new javax.swing.JLabel();
         PaneMae = new javax.swing.JPanel();
         PaneClientes = new javax.swing.JPanel();
         CadastrarClientes = new javax.swing.JPanel();
@@ -1260,11 +1259,45 @@ public class Principal extends javax.swing.JFrame {
         BotaoGerenciarCliConsul7 = new javax.swing.JLabel();
         BotaoConsultarCliConsul7 = new javax.swing.JLabel();
         BotaoCadastrarCliConsul7 = new javax.swing.JLabel();
+        PaneCadastros = new javax.swing.JPanel();
+        AdicionarCadastros = new javax.swing.JPanel();
+        jPanel42 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel43 = new javax.swing.JPanel();
+        BotaoConsultarCliConsul8 = new javax.swing.JLabel();
+        BotaoCadastrarCliConsul8 = new javax.swing.JLabel();
+        lblNome27 = new javax.swing.JLabel();
+        FieldNomeCadastrarConsertos5 = new javax.swing.JTextField();
+        jSeparator36 = new javax.swing.JSeparator();
+        BotaoNovoCadastroCliente5 = new javax.swing.JLabel();
+        FieldNomeCadastrarConsertos6 = new javax.swing.JTextField();
+        jSeparator37 = new javax.swing.JSeparator();
+        lblNome28 = new javax.swing.JLabel();
+        lblNome29 = new javax.swing.JLabel();
+        ComboEscolhaConserto1 = new javax.swing.JComboBox<>();
+        GerenciarCadastros = new javax.swing.JPanel();
+        jPanel36 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jPanel37 = new javax.swing.JPanel();
+        BotaoConsultarCliConsul5 = new javax.swing.JLabel();
+        BotaoCadastrarCliConsul5 = new javax.swing.JLabel();
+        lblNome26 = new javax.swing.JLabel();
+        FieldNomeCadastrarConsertos4 = new javax.swing.JTextField();
+        jSeparator35 = new javax.swing.JSeparator();
+        BotaoNovoCadastroCliente4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        BotaoNovoCadastroCliente3 = new javax.swing.JLabel();
+        FieldNomeCadastrarConsertos2 = new javax.swing.JTextField();
+        FieldNomeCadastrarConsertos3 = new javax.swing.JTextField();
+        jSeparator33 = new javax.swing.JSeparator();
+        lblNome20 = new javax.swing.JLabel();
+        jSeparator34 = new javax.swing.JSeparator();
+        lblNome21 = new javax.swing.JLabel();
+        BotaoNovoCadastroCliente2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gerenciamento de Garantias");
         setIconImages(null);
-        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1364, 750));
 
         SideBoard.setBackground(new java.awt.Color(230, 230, 230));
@@ -1358,43 +1391,42 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 30)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(25, 25, 112));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("GARANTIAS");
-
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 30)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(25, 25, 112));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("PROTECH");
+        BotaoCadastros.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoCadastros.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoCadastros.setForeground(new java.awt.Color(23, 23, 112));
+        BotaoCadastros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoCadastros.setText("Cadastros");
+        BotaoCadastros.setMaximumSize(new java.awt.Dimension(139, 25));
+        BotaoCadastros.setMinimumSize(new java.awt.Dimension(139, 25));
+        BotaoCadastros.setOpaque(true);
+        BotaoCadastros.setPreferredSize(new java.awt.Dimension(139, 75));
+        BotaoCadastros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoCadastrosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoCadastrosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoCadastrosMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout SideBoardLayout = new javax.swing.GroupLayout(SideBoard);
         SideBoard.setLayout(SideBoardLayout);
         SideBoardLayout.setHorizontalGroup(
             SideBoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(BotaoClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BotaoGarantias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BotaoGarantias, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
             .addComponent(BotaoConsertos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(SideBoardLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(SideBoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
-            .addGroup(SideBoardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator1)
-                .addContainerGap())
             .addComponent(BotaoRelatorios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jSeparator1)
+            .addComponent(BotaoCadastros, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         SideBoardLayout.setVerticalGroup(
             SideBoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SideBoardLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
+                .addGap(203, 203, 203)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(BotaoClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1404,7 +1436,9 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(BotaoConsertos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(BotaoRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(BotaoCadastros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         PaneMae.setPreferredSize(new java.awt.Dimension(1144, 750));
@@ -1810,7 +1844,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(CadastrarClientesLayout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(BotaoNovoCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(57, 57, 57))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         PaneClientes.add(CadastrarClientes, "card3");
@@ -4938,6 +4972,523 @@ public class Principal extends javax.swing.JFrame {
 
         PaneMae.add(PaneRelatorios, "card5");
 
+        PaneCadastros.setPreferredSize(new java.awt.Dimension(1144, 429));
+        PaneCadastros.setLayout(new java.awt.CardLayout());
+
+        jPanel42.setMaximumSize(new java.awt.Dimension(32767, 327));
+        jPanel42.setPreferredSize(new java.awt.Dimension(1144, 254));
+
+        jLabel23.setFont(new java.awt.Font("Century Gothic", 1, 60)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(25, 25, 112));
+        jLabel23.setText("CADASTROS");
+
+        jPanel43.setBackground(new java.awt.Color(230, 230, 230));
+
+        BotaoConsultarCliConsul8.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoConsultarCliConsul8.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoConsultarCliConsul8.setForeground(new java.awt.Color(25, 25, 112));
+        BotaoConsultarCliConsul8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoConsultarCliConsul8.setText("Gerenciar");
+        BotaoConsultarCliConsul8.setOpaque(true);
+        BotaoConsultarCliConsul8.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoConsultarCliConsul8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoConsultarCliConsul8MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoConsultarCliConsul8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoConsultarCliConsul8MouseExited(evt);
+            }
+        });
+
+        BotaoCadastrarCliConsul8.setBackground(new java.awt.Color(220, 220, 220));
+        BotaoCadastrarCliConsul8.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoCadastrarCliConsul8.setForeground(new java.awt.Color(25, 25, 112));
+        BotaoCadastrarCliConsul8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoCadastrarCliConsul8.setText("Adicionar");
+        BotaoCadastrarCliConsul8.setOpaque(true);
+        BotaoCadastrarCliConsul8.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoCadastrarCliConsul8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoCadastrarCliConsul8MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoCadastrarCliConsul8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoCadastrarCliConsul8MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
+        jPanel43.setLayout(jPanel43Layout);
+        jPanel43Layout.setHorizontalGroup(
+            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel43Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(BotaoCadastrarCliConsul8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(BotaoConsultarCliConsul8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel43Layout.setVerticalGroup(
+            jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(BotaoConsultarCliConsul8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoCadastrarCliConsul8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
+        jPanel42.setLayout(jPanel42Layout);
+        jPanel42Layout.setHorizontalGroup(
+            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel42Layout.createSequentialGroup()
+                .addContainerGap(397, Short.MAX_VALUE)
+                .addComponent(jLabel23)
+                .addGap(398, 398, 398))
+            .addComponent(jPanel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel42Layout.setVerticalGroup(
+            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel42Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addComponent(jPanel43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
+        );
+
+        lblNome27.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome27.setText("Usuário");
+
+        FieldNomeCadastrarConsertos5.setBackground(new java.awt.Color(240, 240, 240));
+        FieldNomeCadastrarConsertos5.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        FieldNomeCadastrarConsertos5.setBorder(null);
+        FieldNomeCadastrarConsertos5.setMaximumSize(new java.awt.Dimension(25, 25));
+        FieldNomeCadastrarConsertos5.setMinimumSize(new java.awt.Dimension(25, 25));
+        FieldNomeCadastrarConsertos5.setOpaque(false);
+        FieldNomeCadastrarConsertos.setDocument(new JTextFieldLimit(255, true));
+        FieldNomeCadastrarConsertos5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FieldNomeCadastrarConsertos5MouseClicked(evt);
+            }
+        });
+        FieldNomeCadastrarConsertos5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FieldNomeCadastrarConsertos5KeyPressed(evt);
+            }
+        });
+
+        jSeparator36.setBackground(new java.awt.Color(240, 240, 240));
+        jSeparator36.setForeground(new java.awt.Color(0, 0, 0));
+
+        BotaoNovoCadastroCliente5.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoNovoCadastroCliente5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        BotaoNovoCadastroCliente5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoNovoCadastroCliente5.setText("Cadastrar");
+        BotaoNovoCadastroCliente5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 210, 210)));
+        BotaoNovoCadastroCliente5.setOpaque(true);
+        BotaoNovoCadastroCliente5.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoNovoCadastroCliente5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoNovoCadastroCliente5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoNovoCadastroCliente5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoNovoCadastroCliente5MouseExited(evt);
+            }
+        });
+
+        FieldNomeCadastrarConsertos6.setBackground(new java.awt.Color(240, 240, 240));
+        FieldNomeCadastrarConsertos6.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        FieldNomeCadastrarConsertos6.setBorder(null);
+        FieldNomeCadastrarConsertos6.setMaximumSize(new java.awt.Dimension(25, 25));
+        FieldNomeCadastrarConsertos6.setMinimumSize(new java.awt.Dimension(25, 25));
+        FieldNomeCadastrarConsertos6.setOpaque(false);
+        FieldNomeCadastrarConsertos.setDocument(new JTextFieldLimit(255, true));
+        FieldNomeCadastrarConsertos6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FieldNomeCadastrarConsertos6MouseClicked(evt);
+            }
+        });
+        FieldNomeCadastrarConsertos6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FieldNomeCadastrarConsertos6KeyPressed(evt);
+            }
+        });
+
+        jSeparator37.setBackground(new java.awt.Color(240, 240, 240));
+        jSeparator37.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblNome28.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome28.setText("Senha");
+
+        lblNome29.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome29.setText("Tipo de conta");
+
+        ComboEscolhaConserto1.setBackground(new java.awt.Color(240, 240, 240));
+        ComboEscolhaConserto1.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        ComboEscolhaConserto1.setBorder(null);
+
+        javax.swing.GroupLayout AdicionarCadastrosLayout = new javax.swing.GroupLayout(AdicionarCadastros);
+        AdicionarCadastros.setLayout(AdicionarCadastrosLayout);
+        AdicionarCadastrosLayout.setHorizontalGroup(
+            AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(AdicionarCadastrosLayout.createSequentialGroup()
+                .addGap(109, 109, 109)
+                .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AdicionarCadastrosLayout.createSequentialGroup()
+                        .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jSeparator36)
+                                .addComponent(FieldNomeCadastrarConsertos5, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblNome28)
+                            .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jSeparator37)
+                                .addComponent(FieldNomeCadastrarConsertos6, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblNome27))
+                        .addContainerGap(697, Short.MAX_VALUE))
+                    .addGroup(AdicionarCadastrosLayout.createSequentialGroup()
+                        .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ComboEscolhaConserto1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNome29))
+                        .addGap(141, 141, 141)
+                        .addComponent(BotaoNovoCadastroCliente5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        AdicionarCadastrosLayout.setVerticalGroup(
+            AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdicionarCadastrosLayout.createSequentialGroup()
+                .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87)
+                .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(AdicionarCadastrosLayout.createSequentialGroup()
+                        .addComponent(lblNome27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(FieldNomeCadastrarConsertos5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(jSeparator36, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addComponent(lblNome28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(FieldNomeCadastrarConsertos6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(jSeparator37, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addComponent(lblNome29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ComboEscolhaConserto1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotaoNovoCadastroCliente5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 93, Short.MAX_VALUE))
+        );
+
+        PaneCadastros.add(AdicionarCadastros, "card3");
+
+        GerenciarCadastros.setPreferredSize(new java.awt.Dimension(1144, 737));
+
+        jPanel36.setMaximumSize(new java.awt.Dimension(32767, 327));
+        jPanel36.setPreferredSize(new java.awt.Dimension(1144, 254));
+
+        jLabel20.setFont(new java.awt.Font("Century Gothic", 1, 60)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(25, 25, 112));
+        jLabel20.setText("CADASTROS");
+
+        jPanel37.setBackground(new java.awt.Color(230, 230, 230));
+
+        BotaoConsultarCliConsul5.setBackground(new java.awt.Color(220, 220, 220));
+        BotaoConsultarCliConsul5.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoConsultarCliConsul5.setForeground(new java.awt.Color(25, 25, 112));
+        BotaoConsultarCliConsul5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoConsultarCliConsul5.setText("Gerenciar");
+        BotaoConsultarCliConsul5.setOpaque(true);
+        BotaoConsultarCliConsul5.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoConsultarCliConsul5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoConsultarCliConsul5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoConsultarCliConsul5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoConsultarCliConsul5MouseExited(evt);
+            }
+        });
+
+        BotaoCadastrarCliConsul5.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoCadastrarCliConsul5.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoCadastrarCliConsul5.setForeground(new java.awt.Color(25, 25, 112));
+        BotaoCadastrarCliConsul5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoCadastrarCliConsul5.setText("Adicionar");
+        BotaoCadastrarCliConsul5.setOpaque(true);
+        BotaoCadastrarCliConsul5.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoCadastrarCliConsul5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoCadastrarCliConsul5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoCadastrarCliConsul5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoCadastrarCliConsul5MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
+        jPanel37.setLayout(jPanel37Layout);
+        jPanel37Layout.setHorizontalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel37Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(BotaoCadastrarCliConsul5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(BotaoConsultarCliConsul5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel37Layout.setVerticalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(BotaoConsultarCliConsul5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoCadastrarCliConsul5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
+        jPanel36.setLayout(jPanel36Layout);
+        jPanel36Layout.setHorizontalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel36Layout.createSequentialGroup()
+                .addContainerGap(397, Short.MAX_VALUE)
+                .addComponent(jLabel20)
+                .addGap(398, 398, 398))
+            .addComponent(jPanel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel36Layout.setVerticalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel36Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addComponent(jPanel37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
+        );
+
+        lblNome26.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome26.setText("Usuário");
+
+        FieldNomeCadastrarConsertos4.setBackground(new java.awt.Color(240, 240, 240));
+        FieldNomeCadastrarConsertos4.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        FieldNomeCadastrarConsertos4.setBorder(null);
+        FieldNomeCadastrarConsertos4.setMaximumSize(new java.awt.Dimension(25, 25));
+        FieldNomeCadastrarConsertos4.setMinimumSize(new java.awt.Dimension(25, 25));
+        FieldNomeCadastrarConsertos4.setOpaque(false);
+        FieldNomeCadastrarConsertos.setDocument(new JTextFieldLimit(255, true));
+        FieldNomeCadastrarConsertos4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FieldNomeCadastrarConsertos4MouseClicked(evt);
+            }
+        });
+        FieldNomeCadastrarConsertos4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FieldNomeCadastrarConsertos4KeyPressed(evt);
+            }
+        });
+
+        jSeparator35.setBackground(new java.awt.Color(240, 240, 240));
+        jSeparator35.setForeground(new java.awt.Color(0, 0, 0));
+
+        BotaoNovoCadastroCliente4.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoNovoCadastroCliente4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        BotaoNovoCadastroCliente4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoNovoCadastroCliente4.setText("Buscar");
+        BotaoNovoCadastroCliente4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 210, 210)));
+        BotaoNovoCadastroCliente4.setOpaque(true);
+        BotaoNovoCadastroCliente4.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoNovoCadastroCliente4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoNovoCadastroCliente4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoNovoCadastroCliente4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoNovoCadastroCliente4MouseExited(evt);
+            }
+        });
+
+        BotaoNovoCadastroCliente3.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoNovoCadastroCliente3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        BotaoNovoCadastroCliente3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoNovoCadastroCliente3.setText("Excluir");
+        BotaoNovoCadastroCliente3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 210, 210)));
+        BotaoNovoCadastroCliente3.setOpaque(true);
+        BotaoNovoCadastroCliente3.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoNovoCadastroCliente3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoNovoCadastroCliente3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoNovoCadastroCliente3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoNovoCadastroCliente3MouseExited(evt);
+            }
+        });
+
+        FieldNomeCadastrarConsertos2.setBackground(new java.awt.Color(240, 240, 240));
+        FieldNomeCadastrarConsertos2.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        FieldNomeCadastrarConsertos2.setBorder(null);
+        FieldNomeCadastrarConsertos2.setMaximumSize(new java.awt.Dimension(25, 25));
+        FieldNomeCadastrarConsertos2.setMinimumSize(new java.awt.Dimension(25, 25));
+        FieldNomeCadastrarConsertos2.setOpaque(false);
+        FieldNomeCadastrarConsertos.setDocument(new JTextFieldLimit(255, true));
+        FieldNomeCadastrarConsertos2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FieldNomeCadastrarConsertos2MouseClicked(evt);
+            }
+        });
+        FieldNomeCadastrarConsertos2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FieldNomeCadastrarConsertos2KeyPressed(evt);
+            }
+        });
+
+        FieldNomeCadastrarConsertos3.setBackground(new java.awt.Color(240, 240, 240));
+        FieldNomeCadastrarConsertos3.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        FieldNomeCadastrarConsertos3.setBorder(null);
+        FieldNomeCadastrarConsertos3.setMaximumSize(new java.awt.Dimension(25, 25));
+        FieldNomeCadastrarConsertos3.setMinimumSize(new java.awt.Dimension(25, 25));
+        FieldNomeCadastrarConsertos3.setOpaque(false);
+        FieldNomeCadastrarConsertos.setDocument(new JTextFieldLimit(255, true));
+        FieldNomeCadastrarConsertos3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FieldNomeCadastrarConsertos3MouseClicked(evt);
+            }
+        });
+        FieldNomeCadastrarConsertos3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FieldNomeCadastrarConsertos3KeyPressed(evt);
+            }
+        });
+
+        jSeparator33.setBackground(new java.awt.Color(240, 240, 240));
+        jSeparator33.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblNome20.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome20.setText("Usuário");
+
+        jSeparator34.setBackground(new java.awt.Color(240, 240, 240));
+        jSeparator34.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblNome21.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome21.setText("Senha");
+
+        BotaoNovoCadastroCliente2.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoNovoCadastroCliente2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        BotaoNovoCadastroCliente2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoNovoCadastroCliente2.setText("Alterar");
+        BotaoNovoCadastroCliente2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 210, 210)));
+        BotaoNovoCadastroCliente2.setOpaque(true);
+        BotaoNovoCadastroCliente2.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoNovoCadastroCliente2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoNovoCadastroCliente2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoNovoCadastroCliente2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoNovoCadastroCliente2MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNome20)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jSeparator33)
+                                .addComponent(FieldNomeCadastrarConsertos2, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblNome21))
+                        .addComponent(FieldNomeCadastrarConsertos3, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator34, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotaoNovoCadastroCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoNovoCadastroCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblNome20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FieldNomeCadastrarConsertos2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BotaoNovoCadastroCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1)
+                        .addComponent(jSeparator33, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(lblNome21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FieldNomeCadastrarConsertos3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotaoNovoCadastroCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addComponent(jSeparator34, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout GerenciarCadastrosLayout = new javax.swing.GroupLayout(GerenciarCadastros);
+        GerenciarCadastros.setLayout(GerenciarCadastrosLayout);
+        GerenciarCadastrosLayout.setHorizontalGroup(
+            GerenciarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(GerenciarCadastrosLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addGroup(GerenciarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(GerenciarCadastrosLayout.createSequentialGroup()
+                        .addGroup(GerenciarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNome26)
+                            .addGroup(GerenciarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jSeparator35)
+                                .addComponent(FieldNomeCadastrarConsertos4, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotaoNovoCadastroCliente4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        GerenciarCadastrosLayout.setVerticalGroup(
+            GerenciarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GerenciarCadastrosLayout.createSequentialGroup()
+                .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82)
+                .addGroup(GerenciarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(GerenciarCadastrosLayout.createSequentialGroup()
+                        .addComponent(lblNome26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FieldNomeCadastrarConsertos4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotaoNovoCadastroCliente4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addComponent(jSeparator35, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        PaneCadastros.add(GerenciarCadastros, "card2");
+
+        PaneMae.add(PaneCadastros, "card6");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -6213,6 +6764,7 @@ public class Principal extends javax.swing.JFrame {
         ResetColor(BotaoGarantias);
         ResetColor(BotaoConsertos);
         ResetColor(BotaoClientes);
+        ResetColor(BotaoCadastros);
     }//GEN-LAST:event_BotaoRelatoriosMouseClicked
 
     private void BotaoGerenciarCliConsul4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCliConsul4MouseClicked
@@ -6385,6 +6937,163 @@ public class Principal extends javax.swing.JFrame {
              }
     }//GEN-LAST:event_BotaoNovoCadastroConserto1ActionPerformed
 
+    private void BotaoCadastrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrosMouseClicked
+        PaneClientes.setVisible(false);
+        PaneGarantias.setVisible(false);
+        PaneServicos.setVisible(false);
+        PaneRelatorios.setVisible(false);
+        PaneCadastros.setVisible(true);
+        setLblColor(BotaoCadastros);
+        ResetColor(BotaoGarantias);
+        ResetColor(BotaoConsertos);
+        ResetColor(BotaoClientes);
+        ResetColor(BotaoRelatorios);
+    }//GEN-LAST:event_BotaoCadastrosMouseClicked
+
+    private void BotaoCadastrosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrosMouseEntered
+        setLblColor(BotaoCadastros);
+    }//GEN-LAST:event_BotaoCadastrosMouseEntered
+
+    private void BotaoCadastrosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrosMouseExited
+        ResetColor(BotaoCadastros);
+    }//GEN-LAST:event_BotaoCadastrosMouseExited
+
+    private void BotaoConsultarCliConsul5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliConsul5MouseClicked
+
+    private void BotaoConsultarCliConsul5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliConsul5MouseEntered
+
+    private void BotaoConsultarCliConsul5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliConsul5MouseExited
+
+    private void BotaoCadastrarCliConsul5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliConsul5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoCadastrarCliConsul5MouseClicked
+
+    private void BotaoCadastrarCliConsul5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliConsul5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoCadastrarCliConsul5MouseEntered
+
+    private void BotaoCadastrarCliConsul5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliConsul5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoCadastrarCliConsul5MouseExited
+
+    private void BotaoNovoCadastroCliente2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroCliente2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoNovoCadastroCliente2MouseClicked
+
+    private void BotaoNovoCadastroCliente2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroCliente2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoNovoCadastroCliente2MouseEntered
+
+    private void BotaoNovoCadastroCliente2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroCliente2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoNovoCadastroCliente2MouseExited
+
+    private void BotaoNovoCadastroCliente3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroCliente3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoNovoCadastroCliente3MouseClicked
+
+    private void BotaoNovoCadastroCliente3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroCliente3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoNovoCadastroCliente3MouseEntered
+
+    private void BotaoNovoCadastroCliente3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroCliente3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoNovoCadastroCliente3MouseExited
+
+    private void FieldNomeCadastrarConsertos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldNomeCadastrarConsertos2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNomeCadastrarConsertos2MouseClicked
+
+    private void FieldNomeCadastrarConsertos2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldNomeCadastrarConsertos2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNomeCadastrarConsertos2KeyPressed
+
+    private void FieldNomeCadastrarConsertos3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldNomeCadastrarConsertos3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNomeCadastrarConsertos3MouseClicked
+
+    private void FieldNomeCadastrarConsertos3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldNomeCadastrarConsertos3KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNomeCadastrarConsertos3KeyPressed
+
+    private void FieldNomeCadastrarConsertos4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldNomeCadastrarConsertos4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNomeCadastrarConsertos4MouseClicked
+
+    private void FieldNomeCadastrarConsertos4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldNomeCadastrarConsertos4KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNomeCadastrarConsertos4KeyPressed
+
+    private void BotaoNovoCadastroCliente4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroCliente4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoNovoCadastroCliente4MouseClicked
+
+    private void BotaoNovoCadastroCliente4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroCliente4MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoNovoCadastroCliente4MouseEntered
+
+    private void BotaoNovoCadastroCliente4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroCliente4MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoNovoCadastroCliente4MouseExited
+
+    private void BotaoConsultarCliConsul8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliConsul8MouseClicked
+
+    private void BotaoConsultarCliConsul8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul8MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliConsul8MouseEntered
+
+    private void BotaoConsultarCliConsul8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul8MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliConsul8MouseExited
+
+    private void BotaoCadastrarCliConsul8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliConsul8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoCadastrarCliConsul8MouseClicked
+
+    private void BotaoCadastrarCliConsul8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliConsul8MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoCadastrarCliConsul8MouseEntered
+
+    private void BotaoCadastrarCliConsul8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliConsul8MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoCadastrarCliConsul8MouseExited
+
+    private void FieldNomeCadastrarConsertos5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldNomeCadastrarConsertos5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNomeCadastrarConsertos5MouseClicked
+
+    private void FieldNomeCadastrarConsertos5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldNomeCadastrarConsertos5KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNomeCadastrarConsertos5KeyPressed
+
+    private void BotaoNovoCadastroCliente5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroCliente5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoNovoCadastroCliente5MouseClicked
+
+    private void BotaoNovoCadastroCliente5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroCliente5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoNovoCadastroCliente5MouseEntered
+
+    private void BotaoNovoCadastroCliente5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroCliente5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoNovoCadastroCliente5MouseExited
+
+    private void FieldNomeCadastrarConsertos6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldNomeCadastrarConsertos6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNomeCadastrarConsertos6MouseClicked
+
+    private void FieldNomeCadastrarConsertos6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldNomeCadastrarConsertos6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNomeCadastrarConsertos6KeyPressed
+
     public void setLblColor(JLabel lbl) {
         lbl.setBackground(new Color(220, 220, 220));
     }
@@ -6393,6 +7102,7 @@ public class Principal extends javax.swing.JFrame {
         lbl.setBackground(new Color(230, 230, 230));
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AdicionarCadastros;
     private javax.swing.JButton BotaoAlterarGerenciarGarantia;
     private javax.swing.JButton BotaoAlterarGerenciarGarantia1;
     private javax.swing.JButton BotaoAlterarGerenciarServicos;
@@ -6410,10 +7120,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel BotaoCadastrarCliConsul2;
     private javax.swing.JLabel BotaoCadastrarCliConsul3;
     private javax.swing.JLabel BotaoCadastrarCliConsul4;
+    private javax.swing.JLabel BotaoCadastrarCliConsul5;
     private javax.swing.JLabel BotaoCadastrarCliConsul6;
     private javax.swing.JLabel BotaoCadastrarCliConsul7;
+    private javax.swing.JLabel BotaoCadastrarCliConsul8;
     private javax.swing.JLabel BotaoCadastrarCliGer;
     private javax.swing.JLabel BotaoCadastrarCliGer1;
+    private javax.swing.JLabel BotaoCadastros;
     private javax.swing.JButton BotaoCancelarCadastroCliente;
     private javax.swing.JButton BotaoCancelarCadastroConserto;
     private javax.swing.JButton BotaoCancelarGarantia;
@@ -6436,8 +7149,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel BotaoConsultarCliConsul2;
     private javax.swing.JLabel BotaoConsultarCliConsul3;
     private javax.swing.JLabel BotaoConsultarCliConsul4;
+    private javax.swing.JLabel BotaoConsultarCliConsul5;
     private javax.swing.JLabel BotaoConsultarCliConsul6;
     private javax.swing.JLabel BotaoConsultarCliConsul7;
+    private javax.swing.JLabel BotaoConsultarCliConsul8;
     private javax.swing.JLabel BotaoConsultarCliGer;
     private javax.swing.JLabel BotaoConsultarCliGer1;
     private javax.swing.JButton BotaoExcluirGerenciarGarantia;
@@ -6457,6 +7172,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel BotaoGerenciarCliGer;
     private javax.swing.JLabel BotaoGerenciarCliGer1;
     private javax.swing.JLabel BotaoNovoCadastroCliente;
+    private javax.swing.JLabel BotaoNovoCadastroCliente2;
+    private javax.swing.JLabel BotaoNovoCadastroCliente3;
+    private javax.swing.JLabel BotaoNovoCadastroCliente4;
+    private javax.swing.JLabel BotaoNovoCadastroCliente5;
     private javax.swing.JButton BotaoNovoCadastroConserto;
     private javax.swing.JButton BotaoNovoCadastroConserto1;
     private javax.swing.JButton BotaoNovoGarantia;
@@ -6471,6 +7190,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField CampoGerenciaDataFormatada;
     private javax.swing.JTextField CampoNome;
     private javax.swing.JComboBox<String> ComboEscolhaConserto;
+    private javax.swing.JComboBox<String> ComboEscolhaConserto1;
     private javax.swing.JComboBox<String> ComboGerenciaEscolhaConserto;
     private javax.swing.JComboBox<String> ComboOrdenaGarantia;
     private javax.swing.JComboBox<String> ComboOrdenaGarantia1;
@@ -6502,15 +7222,22 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField FieldIDGerenciarConsertos;
     private javax.swing.JTextField FieldIDGerenciarGarantia;
     private javax.swing.JTextField FieldNomeCadastrarConsertos;
+    private javax.swing.JTextField FieldNomeCadastrarConsertos2;
+    private javax.swing.JTextField FieldNomeCadastrarConsertos3;
+    private javax.swing.JTextField FieldNomeCadastrarConsertos4;
+    private javax.swing.JTextField FieldNomeCadastrarConsertos5;
+    private javax.swing.JTextField FieldNomeCadastrarConsertos6;
     private javax.swing.JTextField FieldNomeGerenciarClientes;
     private javax.swing.JTextField FieldNomeGerenciarConsertos;
     private javax.swing.JTextField FieldNomeGerenciarGarantia;
     private javax.swing.JTextField FieldNomeGerenciarServicos;
     private javax.swing.JTextField FieldNomeGerenciarServicos1;
     private javax.swing.JFormattedTextField FieldTelefoneGerenciarClientes;
+    private javax.swing.JPanel GerenciarCadastros;
     private javax.swing.JPanel GerenciarClientes;
     private javax.swing.JPanel GerenciarGarantias;
     private javax.swing.JPanel GerenciarServicos;
+    private javax.swing.JPanel PaneCadastros;
     private javax.swing.JPanel PaneClientes;
     private javax.swing.JPanel PaneContatarCli;
     private javax.swing.JPanel PaneGarantias;
@@ -6530,7 +7257,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField TxtNomeCtt;
     private javax.swing.JTextField TxtTelCtt;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -6539,11 +7265,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
@@ -6562,11 +7290,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel36;
+    private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel40;
     private javax.swing.JPanel jPanel41;
+    private javax.swing.JPanel jPanel42;
+    private javax.swing.JPanel jPanel43;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -6601,6 +7333,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator30;
     private javax.swing.JSeparator jSeparator31;
     private javax.swing.JSeparator jSeparator32;
+    private javax.swing.JSeparator jSeparator33;
+    private javax.swing.JSeparator jSeparator34;
+    private javax.swing.JSeparator jSeparator35;
+    private javax.swing.JSeparator jSeparator36;
+    private javax.swing.JSeparator jSeparator37;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator7;
@@ -6630,9 +7367,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel lblNome18;
     private javax.swing.JLabel lblNome19;
     private javax.swing.JLabel lblNome2;
+    private javax.swing.JLabel lblNome20;
+    private javax.swing.JLabel lblNome21;
     private javax.swing.JLabel lblNome22;
     private javax.swing.JLabel lblNome23;
     private javax.swing.JLabel lblNome24;
+    private javax.swing.JLabel lblNome26;
+    private javax.swing.JLabel lblNome27;
+    private javax.swing.JLabel lblNome28;
+    private javax.swing.JLabel lblNome29;
     private javax.swing.JLabel lblNome3;
     private javax.swing.JLabel lblNome4;
     private javax.swing.JLabel lblNome5;
