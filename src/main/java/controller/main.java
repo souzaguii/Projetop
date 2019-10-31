@@ -6,14 +6,17 @@
 package controller;
 import view.TelaLogin;
 import java.sql.SQLException;
+import view.Principal;
 /**
  *
  * @author Real
  */
 public class main {
         public static void main(String[] args) throws SQLException {
+           
+       
         TelaLogin login = new TelaLogin();
         login.setVisible(true);
-
+        
         }
 }

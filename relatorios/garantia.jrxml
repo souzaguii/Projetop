@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="garantia" language="groovy" pageWidth="842" pageHeight="364" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="84a9e88b-6c0d-45c3-914f-626310cc4b2e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="cabecalho" hAlign="Left" vAlign="Middle" fontName="Arial" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="colunas" backcolor="#FFFFFF" fontName="Arial" fontSize="12" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="detales" hAlign="Left" vAlign="Middle" fontName="Arial" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<queryString>
+		<![CDATA[SELECT
+     cliente.`id` AS cliente_id,
+     cliente.`Nome` AS cliente_Nome,
+     cliente.`CPF` AS cliente_CPF,
+     cliente.`telefone` AS cliente_telefone,
+     cliente.`cidade` AS cliente_cidade,
+     cliente.`endereco` AS cliente_endereco,
+     cliente.`Email` AS cliente_Email,
+     garantia.`descricao` AS garantia_descricao,
+     garantia.`saida_concerto` AS garantia_saida_concerto,
+     garantia.`garantia` AS garantia_garantia,
+     manutencao.`duracao_garantia` AS manutencao_duracao_garantia,
+     garantia.`id` AS garantia_id
+FROM
+     `cliente` cliente INNER JOIN `garantia` garantia ON cliente.`Nome` = garantia.`Nome`
+     INNER JOIN `manutencao` manutencao ON garantia.`descricao` = manutencao.`descricao`]]>
+	</queryString>
+	<field name="cliente_id" class="java.lang.Integer"/>
+	<field name="cliente_Nome" class="java.lang.String"/>
+	<field name="cliente_CPF" class="java.lang.String"/>
+	<field name="cliente_telefone" class="java.lang.String"/>
+	<field name="cliente_cidade" class="java.lang.String"/>
+	<field name="cliente_endereco" class="java.lang.String"/>
+	<field name="cliente_Email" class="java.lang.String"/>
+	<field name="garantia_descricao" class="java.lang.String"/>
+	<field name="garantia_saida_concerto" class="java.sql.Date"/>
+	<field name="garantia_garantia" class="java.sql.Date"/>
+	<field name="manutencao_duracao_garantia" class="java.lang.Integer"/>
+	<field name="garantia_id" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement x="243" y="42" width="400" height="37" uuid="960be675-abc4-46a9-917e-1a6050f1bf9c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="28" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[COMPROVANTE GARANTIA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="88" width="802" height="1" uuid="b8a21142-72e7-42fa-82ef-a8518f8ba02c"/>
+			</line>
+			<image>
+				<reportElement x="1" y="-2" width="245" height="89" uuid="e106520f-f2e1-42b4-b68c-059d456621ea"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\Desktop\\Projetop2 - Cópia\\relatorios\\fotos\\Logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement style="cabecalho" x="0" y="7" width="32" height="20" uuid="de701228-6cb9-4173-b142-eba61bf33a1b"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="cabecalho" x="32" y="7" width="26" height="20" uuid="7b010afc-2ee2-4e4b-ae80-9da8cef85e66"/>
+				<textFieldExpression><![CDATA[$F{cliente_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="cabecalho" x="58" y="7" width="40" height="20" uuid="82dc0d20-a246-4093-9556-1a67fbd0831c"/>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="cabecalho" x="98" y="7" width="303" height="20" uuid="b95aba04-93ac-4236-afd1-a3f827105936"/>
+				<textFieldExpression><![CDATA[$F{cliente_Nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="cabecalho" x="58" y="27" width="32" height="20" uuid="e6325b7c-4531-4a94-bdaa-59ef582e4840"/>
+				<text><![CDATA[CPF:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="cabecalho" x="90" y="27" width="100" height="20" uuid="d52b9cf2-4e64-4775-b91b-f44fc876d216"/>
+				<textFieldExpression><![CDATA[$F{cliente_CPF}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="cabecalho" x="401" y="7" width="24" height="20" uuid="97fa8f16-777d-49c1-9aab-489862d9c9d8"/>
+				<text><![CDATA[Tel:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="cabecalho" x="425" y="7" width="101" height="20" uuid="8871e7f9-d509-4db1-94b7-005adc622b69"/>
+				<textFieldExpression><![CDATA[$F{cliente_telefone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="cabecalho" x="566" y="27" width="52" height="20" uuid="003222d1-6aa1-4093-8cd5-c2fd138bae05"/>
+				<text><![CDATA[Cidade:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="cabecalho" x="618" y="27" width="90" height="20" uuid="0632e30b-5a2f-41ca-adfe-025040fb4cc9"/>
+				<textFieldExpression><![CDATA[$F{cliente_cidade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="cabecalho" x="190" y="27" width="63" height="20" uuid="55aa8f4f-fcf8-44f4-805d-77ab170c2142"/>
+				<text><![CDATA[Endereço:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="cabecalho" x="253" y="27" width="313" height="20" uuid="f05e176f-520c-4476-8dcb-d2861b5e64db"/>
+				<textFieldExpression><![CDATA[$F{cliente_endereco}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="cabecalho" x="526" y="7" width="40" height="20" uuid="74233022-3b35-4aa3-91e5-35c49084df90"/>
+				<text><![CDATA[Email:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="cabecalho" x="566" y="7" width="236" height="20" uuid="383c4e3b-ab2e-4784-9d56-bfb1d012755c"/>
+				<textFieldExpression><![CDATA[$F{cliente_Email}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="52" width="802" height="1" uuid="f90b1f9f-11b7-41d5-98ad-114ecf21aae9"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement style="detales" x="0" y="0" width="32" height="20" uuid="f012e8cc-7c61-49f0-8638-3763857d5d8e"/>
+				<text><![CDATA[ID.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="detales" x="109" y="0" width="158" height="20" uuid="077c5ef3-2e3c-4a85-afe9-509898868ef7"/>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="detales" x="346" y="0" width="100" height="20" uuid="07c85719-d1b4-47ea-add2-42db35e1731b"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Duração garantia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="detales" x="523" y="0" width="100" height="20" uuid="72452322-4ef8-4360-8e76-513ee058fc58"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Data do Concerto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="detales" x="702" y="0" width="100" height="20" uuid="d08158ac-d5e4-4749-8718-d97b184d9417"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Data Fim Garantia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="detales" x="0" y="0" width="32" height="20" uuid="30cdba5c-1a8e-41f4-8a34-51d5f3e69779"/>
+				<textFieldExpression><![CDATA[$F{garantia_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detales" x="109" y="0" width="158" height="20" uuid="8e077eab-082d-441c-9eb1-83b3b29b801e"/>
+				<textFieldExpression><![CDATA[$F{garantia_descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detales" x="346" y="0" width="100" height="20" uuid="abf94242-e66d-411f-bec8-042500fdc61e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{manutencao_duracao_garantia}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="detales" x="523" y="0" width="100" height="20" uuid="dedaa22e-709f-4c64-b532-002742e1ce59"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{garantia_saida_concerto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="detales" x="702" y="0" width="100" height="20" uuid="0cbbbede-d984-447e-a394-47beea8c773b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{garantia_garantia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="54" uuid="d920e7f7-735d-44ca-9561-59ec7e2278f1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="26" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Obrigado Pela Preferencia!!!]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="802" height="1" uuid="f00845a3-64e0-4ec8-bc8d-f845f9012203"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

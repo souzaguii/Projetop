@@ -13,6 +13,7 @@ import dao.GarantiaDAO;
 import dao.ManutencaoDAO;
 import dao.clienteDAO;
 import dao.clienteDAO;
+import dao.Relatorio;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -1245,7 +1246,7 @@ public class Principal extends javax.swing.JFrame {
         BotaoGerenciarCliConsul4 = new javax.swing.JLabel();
         BotaoConsultarCliConsul4 = new javax.swing.JLabel();
         BotaoCadastrarCliConsul4 = new javax.swing.JLabel();
-        BotaoNovoCadastroConserto1 = new javax.swing.JButton();
+        BotaoRelatorioCliente = new javax.swing.JButton();
         RelatorioServicos = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
@@ -1414,8 +1415,6 @@ public class Principal extends javax.swing.JFrame {
                 BotaoCadastrosMouseExited(evt);
             }
         });
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoPrin.png"))); // NOI18N
 
         javax.swing.GroupLayout SideBoardLayout = new javax.swing.GroupLayout(SideBoard);
         SideBoard.setLayout(SideBoardLayout);
@@ -4731,13 +4730,13 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        BotaoNovoCadastroConserto1.setBackground(new java.awt.Color(230, 230, 230));
-        BotaoNovoCadastroConserto1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        BotaoNovoCadastroConserto1.setText("Gerar relatório");
-        BotaoNovoCadastroConserto1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BotaoNovoCadastroConserto1.addActionListener(new java.awt.event.ActionListener() {
+        BotaoRelatorioCliente.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoRelatorioCliente.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        BotaoRelatorioCliente.setText("Gerar relatório");
+        BotaoRelatorioCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoRelatorioCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoNovoCadastroConserto1ActionPerformed(evt);
+                BotaoRelatorioClienteActionPerformed(evt);
             }
         });
 
@@ -4748,7 +4747,7 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jPanel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(RelatorioClientesLayout.createSequentialGroup()
                 .addGap(98, 98, 98)
-                .addComponent(BotaoNovoCadastroConserto1)
+                .addComponent(BotaoRelatorioCliente)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         RelatorioClientesLayout.setVerticalGroup(
@@ -4756,7 +4755,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(RelatorioClientesLayout.createSequentialGroup()
                 .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(203, 203, 203)
-                .addComponent(BotaoNovoCadastroConserto1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoRelatorioCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(243, Short.MAX_VALUE))
         );
 
@@ -6413,6 +6412,9 @@ public class Principal extends javax.swing.JFrame {
 
                 GarantiaDAO garantiaDAO = new GarantiaDAO();
                 garantiaDAO.InserirGarantia(gar);
+                
+                Relatorio relatorio = new Relatorio();
+                relatorio.GeraGarantia();
 
                 try {
 
@@ -6980,23 +6982,11 @@ public class Principal extends javax.swing.JFrame {
         ResetColor(BotaoRelatorios);// TODO add your handling code here:
     }//GEN-LAST:event_BotaoRelatoriosMouseExited
 
-    private void BotaoNovoCadastroConserto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroConserto1ActionPerformed
+    private void BotaoRelatorioClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoRelatorioClienteActionPerformed
         // TODO add your handling code here:
-         try {
-            String SQL = "SELECT * FROM cliente";
-            PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
-            ResultSet rs = stmt.executeQuery();
-            JRResultSetDataSource relatorioCli = new JRResultSetDataSource(rs);
-            JasperPrint jpPrint = JasperFillManager.fillReport("relatorios/relatorioCliente.jasper", new HashMap(),relatorioCli );
-            JasperViewer jv = new JasperViewer(jpPrint,false);
-            jv.setVisible(true);
-            jv.toFront();
-          
-            }
-         catch (SQLException | JRException e) {
-            System.out.println(e.getMessage());
-             }
-    }//GEN-LAST:event_BotaoNovoCadastroConserto1ActionPerformed
+          Relatorio relatoriocli = new Relatorio();
+          relatoriocli.RelatorioCliente();
+    }//GEN-LAST:event_BotaoRelatorioClienteActionPerformed
 
     private void BotaoCadastrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrosMouseClicked
         PaneClientes.setVisible(false);
@@ -7278,8 +7268,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel BotaoNovoCadastroCliente4;
     private javax.swing.JLabel BotaoNovoCadastroCliente5;
     private javax.swing.JButton BotaoNovoCadastroConserto;
-    private javax.swing.JButton BotaoNovoCadastroConserto1;
     private javax.swing.JButton BotaoNovoGarantia;
+    private javax.swing.JButton BotaoRelatorioCliente;
     private javax.swing.JLabel BotaoRelatorios;
     private javax.swing.JButton BotaoSalvarCadastroCliente;
     private javax.swing.JButton BotaoSalvarCadastroConserto;
