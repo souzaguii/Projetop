@@ -25,7 +25,7 @@ public class TelaLogin extends javax.swing.JFrame {
         PaneInicial.setVisible(true);
     }
    public boolean checkLogin(String login, String senha) {
-        return login.equals("") && senha.equals("");
+        return login.equals("admin") && senha.equals("admin");
     }
    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
