@@ -6,7 +6,6 @@
 package controller;
 import view.TelaLogin;
 import java.sql.SQLException;
-import view.Principal;
 /**
  *
  * @author Real

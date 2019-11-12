@@ -1,13 +1,22 @@
 package dao;
 
-import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Conexao{ 
 
 public static String status = "Não conectou...";
+
+    static void closeConnection(Connection con, PreparedStatement stmt, ResultSet rs) {
+        
+    }
+
+    static Connection getConnection() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
       public Conexao() {
   }
       
