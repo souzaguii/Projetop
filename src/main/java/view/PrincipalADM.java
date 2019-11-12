@@ -14,7 +14,7 @@ import dao.LoginsDAO;
 import dao.ManutencaoDAO;
 import dao.clienteDAO;
 import dao.clienteDAO;
-import dao.Relatorio;
+import dao.RelatorioDAO;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -349,6 +349,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoAlterarGerenciarGarantia.setEnabled(false);
         BotaoExcluirGerenciarGarantia.setEnabled(false);
         BotaoCancelarGerenciarGarantia.setEnabled(false);
+        Botao2Via.setEnabled(false);
         jSeparator26.setForeground(new Color(200, 200, 200));
         jSeparator5.setForeground(new Color(200, 200, 200));
     }
@@ -365,6 +366,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoAlterarGerenciarGarantia.setEnabled(true);
         BotaoExcluirGerenciarGarantia.setEnabled(true);
         BotaoCancelarGerenciarGarantia.setEnabled(true);
+        Botao2Via.setEnabled(true);
         jSeparator26.setForeground(new Color(0, 0, 0));
         jSeparator5.setForeground(new Color(0, 0, 0));
     }
@@ -1299,6 +1301,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         lblConserto1 = new javax.swing.JLabel();
         ComboGerenciaEscolhaConserto = new javax.swing.JComboBox<>();
+        Botao2Via = new javax.swing.JButton();
         lblCPF3 = new javax.swing.JLabel();
         ComboOrdenaGarantia1 = new javax.swing.JComboBox<>();
         jPanel26 = new javax.swing.JPanel();
@@ -1568,8 +1571,6 @@ public class PrincipalADM extends javax.swing.JFrame {
                 BotaoCadastrosMouseExited(evt);
             }
         });
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\Guilherme\\Faculdade\\Outros\\Projeto Interdisciplinar\\LogoPrincipal.png")); // NOI18N
 
         javax.swing.GroupLayout SideBoardLayout = new javax.swing.GroupLayout(SideBoard);
         SideBoard.setLayout(SideBoardLayout);
@@ -2009,7 +2010,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addGroup(CadastrarClientesLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(BotaoNovoCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         PaneClientes.add(CadastrarClientes, "card3");
@@ -2256,7 +2257,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addComponent(jSeparator11)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 36, Short.MAX_VALUE))
         );
 
         PaneClientes.add(ConsultarClientes, "card4");
@@ -3519,6 +3520,26 @@ public class PrincipalADM extends javax.swing.JFrame {
         ComboGerenciaEscolhaConserto.setBackground(new java.awt.Color(240, 240, 240));
         ComboGerenciaEscolhaConserto.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         ComboGerenciaEscolhaConserto.setBorder(null);
+        ComboGerenciaEscolhaConserto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboGerenciaEscolhaConsertoActionPerformed(evt);
+            }
+        });
+
+        Botao2Via.setBackground(new java.awt.Color(230, 230, 230));
+        Botao2Via.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        Botao2Via.setText("2° Via");
+        Botao2Via.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Botao2Via.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Botao2ViaMouseClicked(evt);
+            }
+        });
+        Botao2Via.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botao2ViaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout DadosAlteraGarantiaLayout = new javax.swing.GroupLayout(DadosAlteraGarantia);
         DadosAlteraGarantia.setLayout(DadosAlteraGarantiaLayout);
@@ -3530,7 +3551,9 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
+                        .addComponent(Botao2Via, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotaoAlterarGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotaoExcluirGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3575,7 +3598,8 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoCancelarGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoExcluirGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotaoAlterarGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotaoAlterarGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Botao2Via, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -3714,7 +3738,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addComponent(BotaoBuscarGerenciarServicos1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(105, Short.MAX_VALUE))
-            .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE)
         );
         GerenciarGarantiasLayout.setVerticalGroup(
             GerenciarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4753,7 +4777,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addComponent(jScrollPane7)
                     .addComponent(DadosAlteraServicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(114, Short.MAX_VALUE))
-            .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE)
+            .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         GerenciarServicosLayout.setVerticalGroup(
             GerenciarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5335,7 +5359,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         });
 
         Fieldversenha.setEditable(false);
-        Fieldversenha.setBackground(new java.awt.Color(240, 240, 240));
         Fieldversenha.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         Fieldversenha.setForeground(new java.awt.Color(240, 240, 240));
         Fieldversenha.setBorder(null);
@@ -6620,7 +6643,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                 GarantiaDAO garantiaDAO = new GarantiaDAO();
                 garantiaDAO.InserirGarantia(gar);
 
-                Relatorio relatorio = new Relatorio();
+                RelatorioDAO relatorio = new RelatorioDAO();
                 relatorio.GeraGarantia();
 
                 try {
@@ -7175,7 +7198,7 @@ public class PrincipalADM extends javax.swing.JFrame {
 
     private void BotaoRelatorioClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoRelatorioClienteActionPerformed
         // TODO add your handling code here:
-        Relatorio relatoriocli = new Relatorio();
+        RelatorioDAO relatoriocli = new RelatorioDAO();
         relatoriocli.RelatorioCliente();
     }//GEN-LAST:event_BotaoRelatorioClienteActionPerformed
 
@@ -7453,6 +7476,29 @@ public class PrincipalADM extends javax.swing.JFrame {
         TravaCamposGerenciarLogins();
     }//GEN-LAST:event_BotaoCancelarGerLoginsActionPerformed
 
+    private void Botao2ViaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao2ViaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Botao2ViaMouseClicked
+
+    private void Botao2ViaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao2ViaActionPerformed
+        // TODO add your handling code here:
+        if (FieldIDGerenciarGarantia.getText().isEmpty()) {
+         
+            JOptionPane.showMessageDialog(null, "Selecione uma garantia para a reimpresão, caso não queira reimprimir, cancele a ação!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+       
+        }
+             
+        RelatorioDAO rel = new RelatorioDAO();
+     
+        int cod =  Integer.parseInt(FieldIDGerenciarGarantia.getText());
+        rel.RelatorioGar(cod);
+        
+    }//GEN-LAST:event_Botao2ViaActionPerformed
+
+    private void ComboGerenciaEscolhaConsertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboGerenciaEscolhaConsertoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboGerenciaEscolhaConsertoActionPerformed
+
     public void setLblColor(JLabel lbl) {
         lbl.setBackground(new Color(220, 220, 220));
     }
@@ -7462,6 +7508,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdicionarCadastros;
+    private javax.swing.JButton Botao2Via;
     private javax.swing.JButton BotaoAlterarGerLogins;
     private javax.swing.JButton BotaoAlterarGerLogins1;
     private javax.swing.JButton BotaoAlterarGerenciarGarantia;

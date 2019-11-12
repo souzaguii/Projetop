@@ -3157,7 +3157,9 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                       <Component id="FieldIDGerenciarGarantia" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace pref="343" max="32767" attributes="0"/>
+                                      <EmptySpace pref="180" max="32767" attributes="0"/>
+                                      <Component id="Botao2Via" min="-2" pref="151" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="BotaoAlterarGerenciarGarantia" min="-2" pref="151" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="BotaoExcluirGerenciarGarantia" min="-2" pref="151" max="-2" attributes="0"/>
@@ -3213,6 +3215,7 @@
                                   <Component id="BotaoCancelarGerenciarGarantia" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                                   <Component id="BotaoExcluirGerenciarGarantia" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                                   <Component id="BotaoAlterarGerenciarGarantia" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="Botao2Via" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -3401,6 +3404,24 @@
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="Botao2Via">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="e6" green="e6" red="e6" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Century Gothic" size="18" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="2&#xb0; Via"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Default Cursor"/>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Botao2ViaMouseClicked"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Botao2ViaActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>

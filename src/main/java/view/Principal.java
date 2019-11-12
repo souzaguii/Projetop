@@ -14,7 +14,7 @@ import dao.LoginsDAO;
 import dao.ManutencaoDAO;
 import dao.clienteDAO;
 import dao.clienteDAO;
-import dao.Relatorio;
+import dao.RelatorioDAO;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -284,6 +284,7 @@ public class Principal extends javax.swing.JFrame {
         BotaoAlterarGerenciarGarantia.setEnabled(false);
         BotaoExcluirGerenciarGarantia.setEnabled(false);
         BotaoCancelarGerenciarGarantia.setEnabled(false);
+        Botao2Via.setEnabled(false);
     }
 
     public void DestravaCamposGarenciarGarantia() {
@@ -298,6 +299,7 @@ public class Principal extends javax.swing.JFrame {
         BotaoAlterarGerenciarGarantia.setEnabled(true);
         BotaoExcluirGerenciarGarantia.setEnabled(true);
         BotaoCancelarGerenciarGarantia.setEnabled(true);
+        Botao2Via.setEnabled(true);
     }
 
     public void SalvarCamposGarenciarGarantia() {
@@ -1164,6 +1166,7 @@ public class Principal extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         lblConserto1 = new javax.swing.JLabel();
         ComboGerenciaEscolhaConserto = new javax.swing.JComboBox<>();
+        Botao2Via = new javax.swing.JButton();
         lblCPF3 = new javax.swing.JLabel();
         ComboOrdenaGarantia1 = new javax.swing.JComboBox<>();
         jPanel26 = new javax.swing.JPanel();
@@ -3307,6 +3310,21 @@ public class Principal extends javax.swing.JFrame {
         ComboGerenciaEscolhaConserto.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         ComboGerenciaEscolhaConserto.setBorder(null);
 
+        Botao2Via.setBackground(new java.awt.Color(230, 230, 230));
+        Botao2Via.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        Botao2Via.setText("2° Via");
+        Botao2Via.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Botao2Via.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Botao2ViaMouseClicked(evt);
+            }
+        });
+        Botao2Via.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botao2ViaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout DadosAlteraGarantiaLayout = new javax.swing.GroupLayout(DadosAlteraGarantia);
         DadosAlteraGarantia.setLayout(DadosAlteraGarantiaLayout);
         DadosAlteraGarantiaLayout.setHorizontalGroup(
@@ -3317,7 +3335,9 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
+                        .addComponent(Botao2Via, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BotaoAlterarGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotaoExcluirGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3362,7 +3382,8 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoCancelarGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoExcluirGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotaoAlterarGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotaoAlterarGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Botao2Via, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -5816,7 +5837,7 @@ public class Principal extends javax.swing.JFrame {
                 GarantiaDAO garantiaDAO = new GarantiaDAO();
                 garantiaDAO.InserirGarantia(gar);
                 
-                Relatorio relatorio = new Relatorio();
+                RelatorioDAO relatorio = new RelatorioDAO();
                 relatorio.GeraGarantia();
 
                 try {
@@ -6387,7 +6408,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void BotaoRelatorioClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoRelatorioClienteActionPerformed
         // TODO add your handling code here:
-          Relatorio relatoriocli = new Relatorio();
+          RelatorioDAO relatoriocli = new RelatorioDAO();
           relatoriocli.RelatorioCliente();
     }//GEN-LAST:event_BotaoRelatorioClienteActionPerformed
 
@@ -6431,6 +6452,24 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboEscolhaConsertoActionPerformed
 
+    private void Botao2ViaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao2ViaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Botao2ViaMouseClicked
+
+    private void Botao2ViaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao2ViaActionPerformed
+        // TODO add your handling code here:
+      if (FieldIDGerenciarGarantia.getText().isEmpty()) {
+         
+            JOptionPane.showMessageDialog(null, "Selecione uma garantia para a reimpresão, caso não queira reimprimir, cancele a ação!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+       
+        }
+             
+        RelatorioDAO rel = new RelatorioDAO();
+     
+        int cod =  Integer.parseInt(FieldIDGerenciarGarantia.getText());
+        rel.RelatorioGar(cod);
+    }//GEN-LAST:event_Botao2ViaActionPerformed
+
     public void setLblColor(JLabel lbl) {
         lbl.setBackground(new Color(220, 220, 220));
     }
@@ -6439,6 +6478,7 @@ public class Principal extends javax.swing.JFrame {
         lbl.setBackground(new Color(230, 230, 230));
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Botao2Via;
     private javax.swing.JButton BotaoAlterarGerenciarGarantia;
     private javax.swing.JButton BotaoAlterarGerenciarGarantia1;
     private javax.swing.JButton BotaoAlterarGerenciarServicos;

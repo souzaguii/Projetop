@@ -104,8 +104,6 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Guilherme\\Faculdade\\Outros\\Projeto Interdisciplinar\\LogoLogin.png")); // NOI18N
-
         lblDados.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
         lblDados.setForeground(new java.awt.Color(153, 0, 0));
         lblDados.setText("Dados inválidos!");
@@ -170,6 +168,11 @@ public class TelaLogin extends javax.swing.JFrame {
         ComboEscolhatipoconta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ComboEscolhatipocontaMouseClicked(evt);
+            }
+        });
+        ComboEscolhatipoconta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboEscolhatipocontaActionPerformed(evt);
             }
         });
         ComboEscolhatipoconta.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -455,6 +458,10 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_ComboEscolhatipocontaKeyPressed
+
+    private void ComboEscolhatipocontaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboEscolhatipocontaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboEscolhatipocontaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

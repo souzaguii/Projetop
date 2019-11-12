@@ -22,7 +22,7 @@ import net.sf.jasperreports.view.JasperViewer;
  *
  * @author user
  */
-public class Relatorio {
+public class RelatorioDAO {
     
    public void GeraGarantia(){
      try{
@@ -32,7 +32,7 @@ public class Relatorio {
       if (rs.next()) 
       {
         int cod = rs.getInt("max_id");
-        Relatorio relatorioGarantia = new Relatorio();
+        RelatorioDAO relatorioGarantia = new RelatorioDAO();
         relatorioGarantia.RelatorioGar(cod);
       }
         
@@ -81,6 +81,8 @@ public class Relatorio {
             System.out.println(e.getMessage());
              }
    }
+    
+  
 
     public void RelatorioCliente() {
         //To change body of generated methods, choose Tools | Templates.
