@@ -12,8 +12,8 @@ import dao.Conexao;
 import dao.GarantiaDAO;
 import dao.LoginsDAO;
 import dao.ManutencaoDAO;
-import dao.clienteDAO;
-import dao.clienteDAO;
+import dao.ClienteDAO;
+import dao.ClienteDAO;
 import dao.RelatorioDAO;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -384,7 +384,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     public void AutoComplete() {
-        clienteDAO clienteDAO = new clienteDAO();
+        ClienteDAO clienteDAO = new ClienteDAO();
         ArrayList<String> ListaCliente = new ArrayList<>();
 
         try {
@@ -401,7 +401,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     public void AutoComplete1() {
-        clienteDAO clienteDAO = new clienteDAO();
+        ClienteDAO clienteDAO = new ClienteDAO();
         ArrayList<String> ListaCliente = new ArrayList<>();
 
         try {
@@ -417,7 +417,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     public void AutoComplete2() {
-        clienteDAO clienteDAO = new clienteDAO();
+        ClienteDAO clienteDAO = new ClienteDAO();
         ArrayList<String> ListaCliente = new ArrayList<>();
 
         try {
@@ -481,7 +481,7 @@ public class Principal extends javax.swing.JFrame {
 
     public void atualizarTabelaConsultaCliente() {
         Cliente cli = new Cliente();
-        clienteDAO clidao = new clienteDAO();
+        ClienteDAO clidao = new ClienteDAO();
         try {
             ListaCliente = clidao.ListaCliente();
         } catch (SQLException ex) {
@@ -583,7 +583,7 @@ public class Principal extends javax.swing.JFrame {
 
     public void atualizarTableGerenciarCCliente() {
         Cliente cli = new Cliente();
-        clienteDAO clidao = new clienteDAO();
+        ClienteDAO clidao = new ClienteDAO();
         try {
             ListaCliente = clidao.ListaCliente();
         } catch (SQLException ex) {
@@ -5054,7 +5054,7 @@ public class Principal extends javax.swing.JFrame {
     private void BotaoBuscarConsultaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarConsultaClienteActionPerformed
         ListaBuscaCliente = null;
         Cliente cli = new Cliente();
-        clienteDAO clidao = new clienteDAO();
+        ClienteDAO clidao = new ClienteDAO();
 
         try {
             if (!FieldConsultaNomeCliente.getText().isEmpty()) {
@@ -5106,7 +5106,7 @@ public class Principal extends javax.swing.JFrame {
         } else {
             try {
                 Cliente cli = new Cliente();
-                clienteDAO clidao = new clienteDAO();
+                ClienteDAO clidao = new ClienteDAO();
 
                 cli.getId();
                 cli.setNome(FieldCadastroNomeCliente.getText());
@@ -5204,7 +5204,7 @@ public class Principal extends javax.swing.JFrame {
         } else if (JOptionPane.showConfirmDialog(null, "Deseja mesmo excluir esse cliente?", "Sistema", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
             try {
                 Cliente cli = new Cliente();
-                clienteDAO clidao = new clienteDAO();
+                ClienteDAO clidao = new ClienteDAO();
 
                 cli.setId(Integer.parseInt(FieldIDGerenciarClientes.getText()));
 
@@ -5242,7 +5242,7 @@ public class Principal extends javax.swing.JFrame {
         } else if (JOptionPane.showConfirmDialog(null, "Deseja mesmo alterar esse cliente?", "Sistema", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
             try {
                 Cliente cli = new Cliente();
-                clienteDAO clidao = new clienteDAO();
+                ClienteDAO clidao = new ClienteDAO();
 
                 cli.setId(Integer.parseInt(FieldIDGerenciarClientes.getText()));
                 cli.setNome(FieldNomeGerenciarClientes.getText());
@@ -5389,7 +5389,7 @@ public class Principal extends javax.swing.JFrame {
     private void BotaoBuscarConsultaCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarConsultaCliente1ActionPerformed
         ListaBuscaCliente = null;
         Cliente cli = new Cliente();
-        clienteDAO clidao = new clienteDAO();
+        ClienteDAO clidao = new ClienteDAO();
 
         try {
             if (!FieldGerenciarNomeCliente.getText().isEmpty()) {
