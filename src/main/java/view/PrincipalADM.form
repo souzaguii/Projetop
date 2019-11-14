@@ -79,7 +79,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="SideBoard" alignment="0" pref="701" max="32767" attributes="0"/>
+          <Component id="SideBoard" alignment="0" max="32767" attributes="0"/>
           <Component id="PaneMae" alignment="1" pref="701" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
@@ -1928,9 +1928,6 @@
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="null"/>
                         </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="f0" green="f0" red="f0" type="rgb"/>
-                        </Property>
                         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                           <Format format="###.###.###-##" subtype="-1" type="5"/>
                         </Property>
@@ -2225,9 +2222,6 @@
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="f0" green="f0" red="f0" type="rgb"/>
                     </Property>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                       <Format format="###.###.###-##" subtype="-1" type="5"/>
@@ -2702,9 +2696,9 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="BotaoBuscarConsultarGarantias1" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
-                                          <Component id="Botao2Via1" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="Botao2Via1" pref="185" max="32767" attributes="0"/>
+                                          <Component id="BotaoBuscarConsultarGarantias1" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Txtid" min="-2" pref="15" max="-2" attributes="0"/>
@@ -2762,7 +2756,7 @@
                                   <Component id="Botao2Via1" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="22" max="32767" attributes="0"/>
+                          <EmptySpace pref="21" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3558,6 +3552,7 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CampoGerenciaDataFormatadaMouseClicked"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoGerenciaDataFormatadaActionPerformed"/>
                       </Events>
                     </Component>
@@ -4226,15 +4221,12 @@
                           <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="lblNome5" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="455" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="jSeparator13" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="FieldNomeCadastrarConsertos" alignment="1" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="lblNome5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FieldNomeCadastrarConsertos" pref="459" max="32767" attributes="0"/>
+                                      <Component id="jSeparator13" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="jSeparator22" alignment="0" max="32767" attributes="0"/>
@@ -4441,7 +4433,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="385" max="32767" attributes="0"/>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="385" max="-2" attributes="0"/>
                           </Group>
@@ -4594,23 +4586,23 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="jPanel30" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jScrollPane3" pref="1031" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="lblNome7" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="FieldConsultaDescricaoGarantias" alignment="0" pref="614" max="32767" attributes="0"/>
                                       <Component id="jSeparator15" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
                                   <Component id="BotaoBuscarGarantias" min="-2" pref="160" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jScrollPane3" min="-2" pref="1030" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jPanel30" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -4629,8 +4621,8 @@
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Component id="jSeparator15" min="-2" pref="10" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" min="-2" pref="307" max="-2" attributes="0"/>
-                          <EmptySpace pref="19" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" min="-2" pref="276" max="-2" attributes="0"/>
+                          <EmptySpace pref="49" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -4672,6 +4664,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator15">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="f0" green="f0" red="f0" type="rgb"/>
+                    </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
@@ -4715,10 +4710,7 @@
                         </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                        </Property>
-                        <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="e6" green="e6" red="e6" type="rgb"/>
+                          <Color blue="dc" green="dc" red="dc" type="rgb"/>
                         </Property>
                         <Property name="showHorizontalLines" type="boolean" value="false"/>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -4756,9 +4748,9 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="385" max="32767" attributes="0"/>
                               <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="443" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="385" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jPanel31" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -4766,9 +4758,9 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace pref="78" max="32767" attributes="0"/>
+                              <EmptySpace pref="77" max="32767" attributes="0"/>
                               <Component id="jLabel17" min="-2" pref="50" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                               <Component id="jPanel31" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -4918,10 +4910,10 @@
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="lblNome12" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FieldNomeGerenciarServicos" alignment="0" min="-2" pref="612" max="-2" attributes="0"/>
-                                      <Component id="jSeparator20" alignment="0" min="-2" pref="612" max="-2" attributes="0"/>
+                                      <Component id="FieldNomeGerenciarServicos" alignment="0" pref="440" max="32767" attributes="0"/>
+                                      <Component id="jSeparator20" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="258" max="32767" attributes="0"/>
+                                  <EmptySpace pref="430" max="32767" attributes="0"/>
                                   <Component id="BotaoBuscarGerenciarServicos" min="-2" pref="160" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane7" alignment="0" max="32767" attributes="0"/>
@@ -4958,6 +4950,9 @@
               <SubComponents>
                 <Component class="javax.swing.JSeparator" name="jSeparator20">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="f0" green="f0" red="f0" type="rgb"/>
+                    </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
@@ -5053,10 +5048,7 @@
                         </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                        </Property>
-                        <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="e6" green="e6" red="e6" type="rgb"/>
+                          <Color blue="dc" green="dc" red="dc" type="rgb"/>
                         </Property>
                         <Property name="showHorizontalLines" type="boolean" value="false"/>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -5080,26 +5072,21 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="lblNome15" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="FieldDuracaoGerenciarConsertos" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jSeparator24" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="FieldDuracaoGerenciarConsertos" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jSeparator24" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="FieldIDGerenciarConsertos" min="-2" pref="94" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="lblNome14" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FieldNomeGerenciarConsertos" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jSeparator23" alignment="0" min="-2" pref="595" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="lblNome14" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FieldNomeGerenciarConsertos" alignment="0" pref="440" max="32767" attributes="0"/>
+                                  <Component id="jSeparator23" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="430" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="BotaoAlterarGerenciarServicos" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
                                   <Component id="BotaoExcluirGerenciarServicos" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
@@ -5216,6 +5203,9 @@
                     </Component>
                     <Component class="javax.swing.JSeparator" name="jSeparator23">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="f0" green="f0" red="f0" type="rgb"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
@@ -5257,6 +5247,9 @@
                     </Component>
                     <Component class="javax.swing.JSeparator" name="jSeparator24">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="f0" green="f0" red="f0" type="rgb"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
@@ -5319,7 +5312,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="385" max="32767" attributes="0"/>
                               <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="385" max="-2" attributes="0"/>
                           </Group>
@@ -6072,7 +6065,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel42" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="jSeparator36" alignment="0" max="32767" attributes="0"/>
                               <Component id="FielduserCadastrarlogins" alignment="0" pref="338" max="32767" attributes="0"/>
@@ -6086,13 +6079,13 @@
                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="ComboEscolhalogins" min="-2" pref="283" max="-2" attributes="0"/>
                               <Component id="lblNome29" min="-2" max="-2" attributes="0"/>
-                              <Component id="BotaoNovoCadastroCliente5" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotaoBuscarGerenciarServicos2" min="-2" pref="160" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="283" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -6121,11 +6114,11 @@
                                   <Component id="lblNome28" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="FieldsenhaCadastrarlogins" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                  <Component id="jSeparator37" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="BotaoNovoCadastroCliente5" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="BotaoBuscarGerenciarServicos2" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                          <Component id="jSeparator37" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
@@ -6134,7 +6127,7 @@
                               </Group>
                               <Component id="Fieldversenha" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="173" max="32767" attributes="0"/>
+                          <EmptySpace pref="172" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -6154,9 +6147,9 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="397" max="32767" attributes="0"/>
+                              <EmptySpace pref="463" max="32767" attributes="0"/>
                               <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="398" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="463" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jPanel43" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -6164,9 +6157,9 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                               <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="66" max="32767" attributes="0"/>
+                              <EmptySpace pref="65" max="32767" attributes="0"/>
                               <Component id="jPanel43" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           </Group>
@@ -6182,7 +6175,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="70" green="19" red="19" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="CADASTROS"/>
+                        <Property name="text" type="java.lang.String" value="LOGINS"/>
                       </Properties>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel43">
@@ -6311,34 +6304,6 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="BotaoNovoCadastroCliente5">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="e6" green="e6" red="e6" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Century Gothic" size="18" style="0"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Cadastrar"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder>
-                          <Color PropertyName="color" blue="d2" green="d2" red="d2" type="rgb"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="true"/>
-                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[150, 50]"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotaoNovoCadastroCliente5MouseClicked"/>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotaoNovoCadastroCliente5MouseEntered"/>
-                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotaoNovoCadastroCliente5MouseExited"/>
-                  </Events>
-                </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator37">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -6444,6 +6409,24 @@
                     <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="FieldNomeCadastrarConsertos.setDocument(new JTextFieldLimit(255, true));"/>
                   </AuxValues>
                 </Component>
+                <Component class="javax.swing.JButton" name="BotaoBuscarGerenciarServicos2">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="e6" green="e6" red="e6" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Century Gothic" size="18" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Default Cursor"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotaoBuscarGerenciarServicos2MouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoBuscarGerenciarServicos2ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="GerenciarCadastros">
@@ -6463,60 +6446,43 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel36" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="FieldId" min="-2" pref="26" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="lblNome26" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jSeparator35" alignment="0" pref="335" max="32767" attributes="0"/>
-                                              <Component id="FieldUserGerenciarLogins" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                          <Component id="BotaoNovoCadastroCliente4" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="GerenciarLogins" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="lblNome26" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FieldUserGerenciarLogins" pref="338" max="32767" attributes="0"/>
+                                      <Component id="jSeparator35" max="32767" attributes="0"/>
                                   </Group>
+                                  <EmptySpace min="-2" pref="541" max="-2" attributes="0"/>
+                                  <Component id="BotaoAlterarGerLogins2" min="-2" pref="151" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane9" min="-2" pref="1022" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jScrollPane9" alignment="0" max="32767" attributes="0"/>
+                              <Component id="GerenciarLogins" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                          <EmptySpace pref="57" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <Component id="jPanel36" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jPanel36" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Component id="lblNome26" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="FieldUserGerenciarLogins" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                  <Component id="jSeparator35" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="BotaoNovoCadastroCliente4" min="-2" max="-2" attributes="0"/>
+                              <Component id="BotaoAlterarGerLogins2" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                          <Component id="jSeparator35" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           <Component id="jScrollPane9" min="-2" pref="106" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="GerenciarLogins" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="FieldId" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          <Component id="GerenciarLogins" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -6537,9 +6503,9 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="480" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="446" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="463" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jPanel37" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -6547,9 +6513,9 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                               <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="66" max="32767" attributes="0"/>
+                              <EmptySpace pref="65" max="32767" attributes="0"/>
                               <Component id="jPanel37" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           </Group>
@@ -6694,64 +6660,44 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="BotaoNovoCadastroCliente4">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="e6" green="e6" red="e6" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Century Gothic" size="18" style="0"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Buscar"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder>
-                          <Color PropertyName="color" blue="d2" green="d2" red="d2" type="rgb"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="true"/>
-                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[150, 50]"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotaoNovoCadastroCliente4MouseClicked"/>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotaoNovoCadastroCliente4MouseEntered"/>
-                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotaoNovoCadastroCliente4MouseExited"/>
-                  </Events>
-                </Component>
                 <Container class="javax.swing.JPanel" name="GerenciarLogins">
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jSeparator34" min="-2" pref="338" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblNome30" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ComboTipoConta" alignment="0" min="-2" pref="283" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="BotaoAlterarGerLogins" min="-2" pref="151" max="-2" attributes="0"/>
-                                  <Component id="BotaoExcluirGerLogins" min="-2" pref="151" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="lblNome20" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblNome21" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jSeparator33" max="32767" attributes="0"/>
-                                      <Component id="FieldUser" alignment="0" min="-2" pref="338" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblNome20" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblNome21" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jSeparator33" min="-2" pref="338" max="-2" attributes="0"/>
+                                          <Component id="FieldUser" alignment="0" min="-2" pref="338" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                                      <Component id="FieldId" min="-2" pref="26" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="FieldSenha" alignment="0" min="-2" pref="338" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="FieldSenha" alignment="0" pref="338" max="32767" attributes="0"/>
+                                          <Component id="jSeparator34" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblNome30" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ComboTipoConta" alignment="0" min="-2" pref="283" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="BotaoCancelarGerLogins" min="-2" pref="151" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Component id="BotaoAlterarGerLogins" min="-2" pref="151" max="-2" attributes="0"/>
+                                      <Component id="BotaoExcluirGerLogins" min="-2" pref="151" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="BotaoCancelarGerLogins" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -6760,36 +6706,36 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblNome30" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNome20" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ComboTipoConta" min="-2" pref="25" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblNome30" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblNome20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="ComboTipoConta" min="-2" pref="25" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="FieldUser" min="-2" pref="25" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                              <Component id="jSeparator33" min="-2" pref="10" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                      <Component id="lblNome21" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                                      <Component id="FieldSenha" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="FieldUser" min="-2" pref="25" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                      <Component id="jSeparator34" min="-2" pref="10" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="BotaoAlterarGerLogins" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="BotaoExcluirGerLogins" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="BotaoCancelarGerLogins" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="jSeparator33" min="-2" pref="10" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblNome21" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FieldId" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="FieldSenha" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                              <Component id="jSeparator34" min="-2" pref="10" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="BotaoAlterarGerLogins" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="BotaoExcluirGerLogins" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="BotaoCancelarGerLogins" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -6938,6 +6884,17 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoCancelarGerLoginsActionPerformed"/>
                       </Events>
                     </Component>
+                    <Component class="javax.swing.JTextField" name="FieldId">
+                      <Properties>
+                        <Property name="editable" type="boolean" value="false"/>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="f0" green="f0" red="f0" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="null"/>
+                        </Property>
+                      </Properties>
+                    </Component>
                   </SubComponents>
                 </Container>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane9">
@@ -6993,12 +6950,9 @@
                         </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                          <Color blue="dc" green="dc" red="dc" type="rgb"/>
                         </Property>
                         <Property name="rowHeight" type="int" value="21"/>
-                        <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="e6" green="e6" red="e6" type="rgb"/>
-                        </Property>
                         <Property name="showHorizontalLines" type="boolean" value="false"/>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -7010,16 +6964,22 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JTextField" name="FieldId">
+                <Component class="javax.swing.JButton" name="BotaoAlterarGerLogins2">
                   <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="f0" green="f0" red="f0" type="rgb"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="e6" green="e6" red="e6" type="rgb"/>
                     </Property>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Century Gothic" size="18" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Buscar"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Default Cursor"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoAlterarGerLogins2ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
