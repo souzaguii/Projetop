@@ -12,7 +12,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -60,6 +64,20 @@ public class TelaLogin extends javax.swing.JFrame {
 
     public boolean checkLogin(String login) {
         return login.equals("Administrador");
+    }
+
+    {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(PrincipalADM.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(PrincipalADM.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(PrincipalADM.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(PrincipalADM.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -306,30 +324,27 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_TxtUsuarioActionPerformed
 
     private void TxtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtUsuarioKeyPressed
-//Descomentar e apagar em baixo para voltar com validação no banco de dados.
-        PrincipalADM prin = new PrincipalADM();
-        prin.setVisible(true);
-//        SeparadorSenha.setBackground(new Color(0, 0, 0));
-//        Separadoruser.setBackground(new Color(25, 25, 112));
-//        lblDados.setForeground(new Color(240, 240, 240));
-//        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-//            LoginsDAO loginsdao = new LoginsDAO();
-//            if (loginsdao.checkLogin(TxtUsuario.getText(), TxtSenha.getText(), (String) ComboEscolhatipoconta.getSelectedItem())) {
-//                if (checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
-//                    PrincipalADM prin = new PrincipalADM();
-//                    prin.setVisible(true);
-//                    this.dispose();
-//                } else {
-//                    Principal prin = new Principal();
-//                    prin.setVisible(true);
-//                    this.dispose();
-//                }
-//            } else {
-//                lblDados.setForeground(new Color(153, 0, 0));
-//                Separadoruser.setBackground(new Color(153, 0, 0));
-//                SeparadorSenha.setBackground(new Color(153, 0, 0));
-//            }
-//        }
+        SeparadorSenha.setBackground(new Color(0, 0, 0));
+        Separadoruser.setBackground(new Color(25, 25, 112));
+        lblDados.setForeground(new Color(240, 240, 240));
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            LoginsDAO loginsdao = new LoginsDAO();
+            if (loginsdao.checkLogin(TxtUsuario.getText(), TxtSenha.getText(), (String) ComboEscolhatipoconta.getSelectedItem())) {
+                if (checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
+                    PrincipalADM prin = new PrincipalADM();
+                    prin.setVisible(true);
+                    this.dispose();
+                } else {
+                    Principal prin = new Principal();
+                    prin.setVisible(true);
+                    this.dispose();
+                }
+            } else {
+                lblDados.setForeground(new Color(153, 0, 0));
+                Separadoruser.setBackground(new Color(153, 0, 0));
+                SeparadorSenha.setBackground(new Color(153, 0, 0));
+            }
+        }
     }//GEN-LAST:event_TxtUsuarioKeyPressed
 
     private void TxtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtSenhaKeyPressed
