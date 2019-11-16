@@ -39,15 +39,6 @@ public class GarantiaDAO {
         stmt.close();
     }
 
-    /*public void SalvarData(Cliente cliente) throws SQLException {
-        String SQL = "INSERT INTO cadastros.GetData (data) values (?)";
-
-            PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
-            stmt.setDate(1, Date.valueOf(cliente.getDetea()));
-
-            stmt.execute();
-            stmt.close();
-    }*/
     public void RemoverGarantia(Garantia gar) throws SQLException {
         String SQL = "Delete from cadastros.garantia where id=?";
 
@@ -103,24 +94,22 @@ public class GarantiaDAO {
         List<Garantia> retorno = new ArrayList<Garantia>();
 
         String SQL = "select * from cadastros.garantia ";
-        
+
         if (garantia.getNome() != null) {
             SQL += "where Nome like ?";
         }
-        if (garantia.getNome() != null && string == "VENCIDAS") {
+        if (garantia.getNome() != null && string == "Vencidas") {
             SQL += "and garantia < NOW() ORDER BY GARANTIA ASC";
-        } else if (garantia.getNome() != null && string == "VIGENTES") {
+        } else if (garantia.getNome() != null && string == "Vigentes") {
             SQL += "and garantia > NOW() ORDER BY GARANTIA ASC";
-        } else if (garantia.getNome() != null && string == "TODAS") { 
-        } 
-        
-        else if (garantia.getNome() == null && string == "VENCIDAS") {
+        } else if (garantia.getNome() != null && string == "Todas") {
+        } else if (garantia.getNome() == null && string == "Vencidas") {
             SQL += "WHERE garantia < NOW() ORDER BY GARANTIA ASC";
-        } else if (garantia.getNome() == null && string == "VIGENTES") {
+        } else if (garantia.getNome() == null && string == "Vigentes") {
             SQL += "WHERE garantia > NOW() ORDER BY GARANTIA ASC";
-        } else if (garantia.getNome() == null && string == "TODAS") { 
-        } 
-        
+        } else if (garantia.getNome() == null && string == "Todas") {
+        }
+
         PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
 
         if (garantia.getNome() != null) {
@@ -144,4 +133,5 @@ public class GarantiaDAO {
         }
         return retorno;
     }
+
 }
