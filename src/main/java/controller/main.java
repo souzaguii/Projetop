@@ -6,6 +6,7 @@
 package controller;
 import view.TelaLogin;
 import java.sql.SQLException;
+import view.PrincipalADM;
 /**
  *
  * @author Real
@@ -14,7 +15,7 @@ public class main {
         public static void main(String[] args) throws SQLException {
            
        
-        TelaLogin login = new TelaLogin();
+        PrincipalADM login = new PrincipalADM();
         login.setVisible(true);
         
         }
