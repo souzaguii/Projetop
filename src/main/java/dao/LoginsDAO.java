@@ -21,16 +21,16 @@ import model.Logins;
  * @author Geral
  */
 public class LoginsDAO {
-    
-    public void Cadastrarlogin (Logins logins) throws SQLException {
+
+    public void Cadastrarlogin(Logins logins) throws SQLException {
 
         String SQL = "INSERT INTO cadastros.logins (usuario, senha, tipoconta) values (?, ?, ?)";
 
-        try (PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL)) {
+        try ( PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL)) {
             stmt.setString(1, logins.getusuario());
             stmt.setString(2, logins.getsenha());
             stmt.setString(3, logins.gettipoconta());
-            
+
             stmt.execute();
         }
     }
@@ -38,16 +38,16 @@ public class LoginsDAO {
     public void Removerlogin(Logins logins) throws SQLException {
         String SQL = "Delete from cadastros.logins where id=?";
 
-        try (PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL)) {
+        try ( PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL)) {
             stmt.setInt(1, logins.getid());
             stmt.execute();
         }
     }
 
-   public void AtualizarLogins(Logins logins) {
+    public void AtualizarLogins(Logins logins) {
 
         Connection con = Conexao.getConexaoMySQL();
-        
+
         PreparedStatement stmt = null;
 
         try {
@@ -66,11 +66,11 @@ public class LoginsDAO {
         }
 
     }
- 
-     public boolean checkLogin(String login, String senha, String tipo) {
+
+    public boolean checkLogin(String login, String senha, String tipo) {
 
         Connection con = Conexao.getConexaoMySQL();
-        
+
         PreparedStatement stmt = null;
         ResultSet rs = null;
         boolean check = false;
@@ -80,12 +80,12 @@ public class LoginsDAO {
         try {
             stmt = con.prepareStatement("SELECT * FROM cadastros.logins WHERE usuario=? and senha=? and tipoconta=?");
             stmt.setString(1, login);
-             stmt.setString(2, senha);
-              stmt.setString(3, tipo);
+            stmt.setString(2, senha);
+            stmt.setString(3, tipo);
             rs = stmt.executeQuery();
 
             if (rs.next()) {
-            check = true;
+                check = true;
 
             }
 
@@ -97,12 +97,11 @@ public class LoginsDAO {
 
         return check;
     }
-     
-     
+
     public List<Logins> read() {
 
         Connection con = Conexao.getConexaoMySQL();
-        
+
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
@@ -130,10 +129,11 @@ public class LoginsDAO {
 
         return loginss;
     }
+
     public List<Logins> PesquisarLogin(String user) {
 
         Connection con = Conexao.getConexaoMySQL();
-        
+
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
@@ -141,7 +141,7 @@ public class LoginsDAO {
 
         try {
             stmt = con.prepareStatement("SELECT * FROM cadastros.logins WHERE usuario LIKE ?");
-            stmt.setString(1, "%"+user+"%");
+            stmt.setString(1, "%" + user + "%");
             rs = stmt.executeQuery();
 
             while (rs.next()) {
@@ -161,5 +161,7 @@ public class LoginsDAO {
         }
 
         return loginss;
+
     }
+
 }
