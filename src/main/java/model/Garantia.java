@@ -1,26 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import java.time.LocalDate;
 
-
-/**
- *
- * @author Real
- */
 public class Garantia {
+
     private int id;
     private String nome;
     private String descricao;
     private LocalDate saida_concerto;
     private LocalDate dt_garantia;
 
-    //private LocalDate detea = LocalDate.now();
-    
     public Garantia() {
     }
 
@@ -71,5 +60,5 @@ public class Garantia {
     public void setDt_garantia(LocalDate dt_garantia) {
         this.dt_garantia = dt_garantia;
     }
-        
+
 }
