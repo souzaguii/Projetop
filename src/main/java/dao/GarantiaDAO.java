@@ -9,11 +9,15 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import javax.swing.JOptionPane;
 import model.Garantia;
+import view.PrincipalADM;
 
 /**
  *
@@ -25,7 +29,7 @@ public class GarantiaDAO {
 
     public void InserirGarantia(Garantia garantia) throws SQLException {
 
-        String SQL = "INSERT INTO cadastros.garantia (id, nome, descricao, saida_concerto, garantia) values (?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO cadastros.garantia (id, nome, descricao, saida_concerto, garantia, valor) values (?, ?, ?, ?, ?, ?)";
 
         PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
 
@@ -34,6 +38,7 @@ public class GarantiaDAO {
         stmt.setString(3, garantia.getDescricao());
         stmt.setDate(4, Date.valueOf(garantia.getSaida_concerto()));
         stmt.setDate(5, Date.valueOf(garantia.getDt_garantia()));
+        stmt.setString(6, garantia.getValor());
 
         stmt.execute();
         stmt.close();
@@ -50,15 +55,15 @@ public class GarantiaDAO {
     }
 
     public void AlterarGarantia(Garantia gar) throws SQLException {
-        String SQL = "update cadastros.garantia set nome=?, descricao=?, saida_concerto=?, garantia=?  where id=?";
+        String SQL = "update cadastros.garantia set nome=?, descricao=?, saida_concerto=?, garantia=?, valor=?  where id=?";
 
         PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
-        System.out.println(gar.getNome() + " , " + gar.getDescricao() + " , " + gar.getSaida_concerto() + " , " + gar.getDt_garantia() + " , " + gar.getId());
         stmt.setString(1, gar.getNome());
         stmt.setString(2, gar.getDescricao());
         stmt.setDate(3, Date.valueOf(gar.getSaida_concerto()));
         stmt.setDate(4, Date.valueOf(gar.getDt_garantia()));
-        stmt.setInt(5, gar.getId());
+        stmt.setString(5, gar.getValor());
+        stmt.setInt(6, gar.getId());
 
         stmt.execute();
         stmt.close();
@@ -76,11 +81,22 @@ public class GarantiaDAO {
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
+
+                String Valorconvertido = rs.getString("valor");
+                Valorconvertido = Valorconvertido.replaceAll("\\.", "");
+                Valorconvertido = Valorconvertido.replaceAll(",", ".");
+
+                double ValorConvertido = Double.valueOf(Valorconvertido);
+
+                Locale BRAZIL = new Locale("pt", "BR");
+                NumberFormat moeda = NumberFormat.getCurrencyInstance(BRAZIL);
+
                 ListaGarantia.add(new Garantia(rs.getInt("id"),
                         rs.getString("nome"),
                         rs.getString("descricao"),
                         rs.getObject("saida_concerto", LocalDate.class),
-                        rs.getObject("garantia", LocalDate.class)
+                        rs.getObject("garantia", LocalDate.class),
+                        moeda.format(ValorConvertido)
                 ));
 
             }
@@ -118,13 +134,23 @@ public class GarantiaDAO {
         try {
 
             ResultSet rs = stmt.executeQuery();
-            System.out.println(SQL);
             while (rs.next()) {
+
+                String Valorconvertido = rs.getString("valor");
+                Valorconvertido = Valorconvertido.replaceAll("\\.", "");
+                Valorconvertido = Valorconvertido.replaceAll(",", ".");
+
+                double ValorConvertido = Double.valueOf(Valorconvertido);
+
+                Locale BRAZIL = new Locale("pt", "BR");
+                NumberFormat moeda = NumberFormat.getCurrencyInstance(BRAZIL);
+
                 retorno.add(new Garantia(rs.getInt("id"),
                         rs.getString("nome"),
                         rs.getString("descricao"),
                         rs.getObject("saida_concerto", LocalDate.class),
-                        rs.getObject("garantia", LocalDate.class)
+                        rs.getObject("garantia", LocalDate.class),
+                        moeda.format(ValorConvertido)
                 ));
 
             }
@@ -132,6 +158,90 @@ public class GarantiaDAO {
             System.out.println(e.getMessage());
         }
         return retorno;
+    }
+
+    public String SomaGarantia(String D, String M, String A) throws SQLException {
+
+        String SQL = "select* from cadastros.garantia ";
+
+        if (!D.isEmpty() && !M.isEmpty() && !A.isEmpty()) {
+
+            SQL += "WHERE DAY(saida_concerto) =" + D + " and MONTH(saida_concerto) =" + M + " and YEAR(saida_concerto) =" + A;
+
+        } else if (!D.isEmpty()) {
+
+            if (M.isEmpty() && A.isEmpty()) {
+
+                SQL += "WHERE DAY(saida_concerto) =" + D;
+
+            } else if (!M.isEmpty()) {
+
+                SQL += "WHERE DAY(saida_concerto) =" + D + " and MONTH(saida_concerto) =" + M;
+
+            } else if (!A.isEmpty()) {
+
+                SQL += "WHERE DAY(saida_concerto) =" + D + " and YEAR(saida_concerto) =" + A;
+
+            }
+
+        } else if (!M.isEmpty()) {
+
+            if (D.isEmpty() && A.isEmpty()) {
+
+                SQL += "WHERE MONTH(saida_concerto) =" + M;
+
+            } else if (!A.isEmpty()) {
+
+                SQL += "WHERE MONTH(saida_concerto) =" + M + " and YEAR(saida_concerto) =" + A;
+
+            }
+
+        } else if (!A.isEmpty()) {
+
+            if (D.isEmpty() && M.isEmpty()) {
+
+                SQL += "WHERE YEAR(saida_concerto) =" + A;
+
+            }
+
+        }
+
+        PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
+        ResultSet rs = stmt.executeQuery();
+
+        if (!rs.next()) {
+
+            String nulo = "-1.0";
+
+            stmt.close();
+
+            return nulo;
+
+        }
+
+        rs.previous();
+
+        double total = 0;
+
+        while (rs.next()) {
+
+            String Valorconvertido = rs.getString("valor");
+            Valorconvertido = Valorconvertido.replaceAll("\\.", "");
+            Valorconvertido = Valorconvertido.replaceAll(",", ".");
+
+            total = total + Double.valueOf(Valorconvertido);
+
+        }
+
+        stmt.close();
+
+        double ValorConvertido = Double.valueOf(total);
+
+        Locale BRAZIL = new Locale("pt", "BR");
+        NumberFormat moeda = NumberFormat.getCurrencyInstance(BRAZIL);
+
+        return moeda.format(ValorConvertido);
+
     }
 
 }
