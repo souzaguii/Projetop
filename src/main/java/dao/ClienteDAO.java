@@ -1,11 +1,8 @@
-
 package dao;
 
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import model.Cliente;
@@ -135,14 +132,11 @@ public class ClienteDAO {
 
     public String BuscarTel(Cliente cliente) throws SQLException {
 
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
+        String sql = "SELECT telefone FROM cadastros.cliente WHERE Nome=?";
+        PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(sql);
+        stmt.setString(1, cliente.getNome());
+        ResultSet rs = stmt.executeQuery();
 
-        String sql = "SELECT telefone FROM cadastros.cliente WHERE id=" + cliente.getId();
-
-        stmt = Conexao.getConexaoMySQL().prepareStatement(sql);
-        rs = stmt.executeQuery();
-        
         rs.first();
 
         String num = rs.getString("telefone");
