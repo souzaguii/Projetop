@@ -7,10 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Cliente;
 
-/**
- *
- * @author Real
- */
+
 public class ClienteDAO {
 
     public void InserirCliente(Cliente cliente) throws SQLException {
