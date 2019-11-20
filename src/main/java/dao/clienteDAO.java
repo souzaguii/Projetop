@@ -1,28 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import model.Cliente;
 
-/**
- *
- * @author Real
- */
-public class clienteDAO {
+
+public class ClienteDAO {
 
     public void InserirCliente(Cliente cliente) throws SQLException {
 
-        String SQL = "INSERT INTO cadastros.cliente (id, nome, cpf, telefone, cidade, endereco, email) values (?, ?, ?, ?,?,?,?)";
+        String SQL = "INSERT  INTO cadastros.cliente (id, nome, cpf, telefone, cidade, endereco, email) values (?, ?, ?, ?,?,?,?)";
 
         PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
 
@@ -49,8 +39,8 @@ public class clienteDAO {
 
     public void AlterarCliente(Cliente cliente) throws SQLException {
         String SQL = "update cadastros.cliente set nome=?, cpf=?, telefone=?, cidade=?, endereco=?, email=? where id=?";
-        System.out.println(cliente.getNome() + " , "+ cliente.getCpf()+ 
-                " , " + cliente.getTelefone()+ " , " + cliente.getCidade()+ " , "+ cliente.getEndereco());
+        System.out.println(cliente.getNome() + " , " + cliente.getCpf()
+                + " , " + cliente.getTelefone() + " , " + cliente.getCidade() + " , " + cliente.getEndereco());
         PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
 
         stmt.setString(1, cliente.getNome());
@@ -135,5 +125,19 @@ public class clienteDAO {
         }
 
         return retorno;
+    }
+
+    public String BuscarTel(Cliente cliente) throws SQLException {
+
+        String sql = "SELECT telefone FROM cadastros.cliente WHERE Nome=?";
+        PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(sql);
+        stmt.setString(1, cliente.getNome());
+        ResultSet rs = stmt.executeQuery();
+
+        rs.first();
+
+        String num = rs.getString("telefone");
+
+        return num;
     }
 }
