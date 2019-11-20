@@ -8,7 +8,7 @@ import java.util.List;
 import model.Cliente;
 
 
-public class ClienteDAO {
+public class clienteDAO {
 
     public void InserirCliente(Cliente cliente) throws SQLException {
 
