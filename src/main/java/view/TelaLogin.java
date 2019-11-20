@@ -122,6 +122,8 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Geral\\Documents\\NetBeansProjects\\Projetopdf\\src\\img\\LogoLogin.png")); // NOI18N
+
         lblDados.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
         lblDados.setForeground(new java.awt.Color(153, 0, 0));
         lblDados.setText("Dados inválidos!");
@@ -272,7 +274,7 @@ public class TelaLogin extends javax.swing.JFrame {
                                 .addGap(16, 16, 16)
                                 .addComponent(lblDados))
                             .addComponent(BotaoSalvarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PaneInicialLayout.setVerticalGroup(
             PaneInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
