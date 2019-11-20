@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package controller;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import view.TelaLogin;
 import java.sql.SQLException;
 import view.PrincipalADM;
@@ -17,6 +18,7 @@ public class main {
        
         PrincipalADM login = new PrincipalADM();
         login.setVisible(true);
+        
         
         }
 }
