@@ -99,6 +99,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         iniciaGarantia();
         TableGerenciarLoginss();
         TravaCamposGerenciarLogins();
+        TravaCamposCadastrarLogins();
 
     }
 
@@ -135,7 +136,17 @@ public class PrincipalADM extends javax.swing.JFrame {
         atualizarTabelaGerenciaCGarantia();
         ComboGerenciaEscolhaConserto();
         FieldIDGerenciarGarantia.setVisible(false);
-        ComboEscolhaConserto.setSelectedItem(null);
+
+        ManutencaoDAO manudao = new ManutencaoDAO();
+        Manutencao manu = new Manutencao();
+        try {
+            manudao.ListaManutencao();
+            manu.getDescricao();
+            ComboEscolhaConserto.setSelectedItem(manu.getDescricao());
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar serviços! " + ex, "Sistema", JOptionPane.INFORMATION_MESSAGE);
+        }
+
         ComboGerenciaEscolhaConserto.setSelectedItem(null);
         TravaCamposCadastroGarantia();
         TravaCamposGarenciarGarantia();
@@ -248,9 +259,9 @@ public class PrincipalADM extends javax.swing.JFrame {
         jSeparator4.setForeground(new Color(200, 200, 200));
         jSeparator6.setForeground(new Color(200, 200, 200));
         FieldValorGarantia.setEnabled(false);
-        lblConserto3.setForeground(new Color(200, 200, 200));
-        lblConserto2.setForeground(new Color(200, 200, 200));
+        lblConserto3.setVisible(false);
 
+        lblConserto2.setEnabled(false);
         lblNome.setEnabled(false);
         lblData.setEnabled(false);
         lblConserto.setEnabled(false);
@@ -268,12 +279,15 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoCancelarGerLogins.setEnabled(false);
         FieldUser.setText("");
         FieldSenha.setText("");
+        Fieldversenha1.setText("");
         lblNome20.setEnabled(false);
         lblNome21.setEnabled(false);
         lblNome30.setEnabled(false);
         jSeparator34.setForeground(new Color(200, 200, 200));
         ComboTipoConta.setEnabled(false);
+        ComboTipoConta.setSelectedItem("Padrão");
         jSeparator33.setForeground(new Color(200, 200, 200));
+        jLabel7.setEnabled(false);
     }
 
     public void DestravaCamposGerenciarLogins() {
@@ -290,6 +304,49 @@ public class PrincipalADM extends javax.swing.JFrame {
         ComboTipoConta.setEnabled(true);
         jSeparator33.setForeground(new Color(0, 0, 0));
         jSeparator34.setForeground(new Color(0, 0, 0));
+        jLabel7.setEnabled(true);
+
+    }
+
+    public void DestravaCamposCadastrarLogins() {
+        FielduserCadastrarlogins.setEnabled(true);
+        FieldsenhaCadastrarlogins.setEnabled(true);
+        lblNome27.setEnabled(true);
+        lblNome28.setEnabled(true);
+        BotaoBuscarGerenciarServicos2.setEnabled(true);
+        BotaoBuscarGerenciarServicos4.setEnabled(true);
+        BotaoBuscarGerenciarServicos3.setEnabled(false);
+
+        lblNome29.setEnabled(true);
+        ComboEscolhalogins.setEnabled(true);
+        jLabel6.setEnabled(true);
+
+        Fieldversenha.setEnabled(true);
+        jSeparator37.setForeground(new Color(0, 0, 0));
+        jSeparator36.setForeground(new Color(0, 0, 0));
+
+    }
+
+    public void TravaCamposCadastrarLogins() {
+        FielduserCadastrarlogins.setEnabled(false);
+        FielduserCadastrarlogins.setText("");
+        FieldsenhaCadastrarlogins.setText("");
+        Fieldversenha.setText("");
+        FieldsenhaCadastrarlogins.setEnabled(false);
+        lblNome27.setEnabled(false);
+        lblNome28.setEnabled(false);
+        BotaoBuscarGerenciarServicos2.setEnabled(false);
+        BotaoBuscarGerenciarServicos3.setEnabled(true);
+
+        lblNome29.setEnabled(false);
+        ComboEscolhalogins.setEnabled(false);
+        ComboEscolhalogins.setSelectedItem("Padrão");
+        jLabel6.setEnabled(false);
+        BotaoBuscarGerenciarServicos4.setEnabled(false);
+
+        Fieldversenha.setEnabled(false);
+        jSeparator37.setForeground(new Color(200, 200, 200));
+        jSeparator36.setForeground(new Color(200, 200, 200));
 
     }
 
@@ -299,6 +356,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         ComboEscolhaConserto.setEnabled(true);
         BotaoSalvarGarantia.setEnabled(true);
         FieldValorGarantia.setEnabled(true);
+        lblConserto2.setEnabled(true);
 
         lblNome.setEnabled(true);
         lblData.setEnabled(true);
@@ -306,8 +364,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         jSeparator2.setForeground(new Color(0, 0, 0));
         jSeparator4.setForeground(new Color(0, 0, 0));
         jSeparator6.setForeground(new Color(0, 0, 0));
-        lblConserto3.setForeground(new Color(0, 0, 0));
-        lblConserto2.setForeground(new Color(0, 0, 0));
 
         BotaoCancelarGarantia.setEnabled(true);
         BotaoNovoGarantia.setEnabled(false);
@@ -320,8 +376,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         ComboEscolhaConserto.setSelectedItem(null);
         jSeparator6.setForeground(new Color(200, 200, 200));
         FieldValorGarantia.setEnabled(false);
-        lblConserto3.setForeground(new Color(200, 200, 200));
-        lblConserto2.setForeground(new Color(200, 200, 200));
 
         TravaCamposCadastroGarantia();
 
@@ -366,12 +420,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         TravaCamposGerenciarServicos();
     }
 
-    public void SalvarCamposGerenciarLogins() {
-        FieldUser.setText("");
-        FieldSenha.setText("");
-        GerenciarLogins.setEnabled(false);
-    }
-    
     //-----------------------------------
     public void TravaCamposGarenciarGarantia() {
         FieldNomeGerenciarGarantia.setEnabled(false);
@@ -382,7 +430,8 @@ public class PrincipalADM extends javax.swing.JFrame {
         lblNome18.setEnabled(false);
         lblData1.setEnabled(false);
         lblConserto1.setEnabled(false);
-        
+        lblConserto4.setVisible(false);
+
         BotaoAlterarGerenciarGarantia.setEnabled(false);
         BotaoExcluirGerenciarGarantia.setEnabled(false);
         BotaoCancelarGerenciarGarantia.setEnabled(false);
@@ -418,11 +467,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldValorGarantiaGer.setText("");
 
         TravaCamposGarenciarGarantia();
-    }
-
-    public void RedefinirCamposGerenciarLogins() {
-        FieldUser.setText("");
-        FieldSenha.setText("");
     }
 
     //-----------------------------------
@@ -1232,21 +1276,18 @@ public class PrincipalADM extends javax.swing.JFrame {
             modelo.addRow(new Object[]{
                 login.getid(),
                 login.getusuario(),
-                login.getsenha(),
                 login.gettipoconta(),});
 
         }
         TableGerenciarLogins.getColumnModel().getColumn(0).setPreferredWidth(10);
         TableGerenciarLogins.getColumnModel().getColumn(1).setPreferredWidth(190);
         TableGerenciarLogins.getColumnModel().getColumn(2).setPreferredWidth(190);
-        TableGerenciarLogins.getColumnModel().getColumn(3).setPreferredWidth(190);
 
         DefaultTableCellRenderer centralizado = new DefaultTableCellRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
         TableGerenciarLogins.getColumnModel().getColumn(0).setCellRenderer(centralizado);
         TableGerenciarLogins.getColumnModel().getColumn(1).setCellRenderer(centralizado);
         TableGerenciarLogins.getColumnModel().getColumn(2).setCellRenderer(centralizado);
-        TableGerenciarLogins.getColumnModel().getColumn(3).setCellRenderer(centralizado);
         TableGerenciarLogins.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         TableGerenciarLogins.setRowHeight(25);
@@ -1269,8 +1310,8 @@ public class PrincipalADM extends javax.swing.JFrame {
             modelo.addRow(new Object[]{
                 login.getid(),
                 login.getusuario(),
-                login.getsenha(),
                 login.gettipoconta(),});
+
             DefaultTableCellRenderer centralizado = new DefaultTableCellRenderer();
             JTableHeader titulotabela = TableGerenciarLogins.getTableHeader();
             titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
@@ -1284,53 +1325,63 @@ public class PrincipalADM extends javax.swing.JFrame {
     public void ValorTotal() {
 
         try {
-            GarantiaDAO gardao = new GarantiaDAO();
 
-            String DiaConvertido = String.valueOf(FieldDia.getText());
-            String MesConvertido = String.valueOf(ComboMes.getSelectedItem());
-            String AnoConvertido = String.valueOf(FieldAno.getText());
+            if (FieldValorTotal.getText().equals("")) {
 
-            DiaConvertido = DiaConvertido.replaceAll("Todos", "");
-
-            MesConvertido = MesConvertido.replaceAll("Todos", "");
-            MesConvertido = MesConvertido.replaceAll("Janeiro", "01");
-            MesConvertido = MesConvertido.replaceAll("Fevereiro", "02");
-            MesConvertido = MesConvertido.replaceAll("Março", "03");
-            MesConvertido = MesConvertido.replaceAll("Abril", "04");
-            MesConvertido = MesConvertido.replaceAll("Maio", "05");
-            MesConvertido = MesConvertido.replaceAll("Junho", "06");
-            MesConvertido = MesConvertido.replaceAll("Julho", "07");
-            MesConvertido = MesConvertido.replaceAll("Agosto", "08");
-            MesConvertido = MesConvertido.replaceAll("Setembro", "09");
-            MesConvertido = MesConvertido.replaceAll("Outubro", "10");
-            MesConvertido = MesConvertido.replaceAll("Novembro", "11");
-            MesConvertido = MesConvertido.replaceAll("Dezembro", "12");
-
-            AnoConvertido = AnoConvertido.replaceAll("Todos", "");
-
-            String ValorTotal;
-            ValorTotal = gardao.SomaGarantia(DiaConvertido, MesConvertido, AnoConvertido);
-
-            if (ValorTotal.equals("-1.0")) {
-
-                ValorTotal = gardao.SomaGarantia("", "", "");
-                
-                FieldDia.setText("Todos");
-                ComboMes.setSelectedItem("Todos");
-                FieldAno.setText("Todos");
-                
-                FieldValorTotal.setText(ValorTotal);
-
-                JOptionPane.showMessageDialog(null, "Não há registros no período selecionado!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
-
-                FieldDia.setText("Todos");
-                ComboMes.setSelectedItem("Todos");
-                FieldAno.setText("Todos");
+                FieldValorTotal.setText("R$ 0,00");
 
             } else {
 
-                FieldValorTotal.setText(ValorTotal);
-                
+                GarantiaDAO gardao = new GarantiaDAO();
+
+                String DiaConvertido = String.valueOf(FieldDia.getText());
+                String MesConvertido = String.valueOf(ComboMes.getSelectedItem());
+                String AnoConvertido = String.valueOf(FieldAno.getText());
+
+                DiaConvertido = DiaConvertido.replaceAll("Todos", "");
+
+                MesConvertido = MesConvertido.replaceAll("Todos", "");
+                MesConvertido = MesConvertido.replaceAll("Janeiro", "01");
+                MesConvertido = MesConvertido.replaceAll("Fevereiro", "02");
+                MesConvertido = MesConvertido.replaceAll("Março", "03");
+                MesConvertido = MesConvertido.replaceAll("Abril", "04");
+                MesConvertido = MesConvertido.replaceAll("Maio", "05");
+                MesConvertido = MesConvertido.replaceAll("Junho", "06");
+                MesConvertido = MesConvertido.replaceAll("Julho", "07");
+                MesConvertido = MesConvertido.replaceAll("Agosto", "08");
+                MesConvertido = MesConvertido.replaceAll("Setembro", "09");
+                MesConvertido = MesConvertido.replaceAll("Outubro", "10");
+                MesConvertido = MesConvertido.replaceAll("Novembro", "11");
+                MesConvertido = MesConvertido.replaceAll("Dezembro", "12");
+
+                AnoConvertido = AnoConvertido.replaceAll("Todos", "");
+
+                String ValorTotal;
+                ValorTotal = gardao.SomaGarantia(DiaConvertido, MesConvertido, AnoConvertido);
+
+                if (ValorTotal.equals("-1.0")) {
+
+                    ValorTotal = gardao.SomaGarantia("", "", "");
+
+                    FieldDia.setText("Todos");
+                    ComboMes.setSelectedItem("Todos");
+                    FieldAno.setText("Todos");
+
+                    if (ValorTotal.equals("-1.0")) {
+
+                        FieldValorTotal.setText("R$ 0,00");
+
+                    } else {
+
+                        FieldValorTotal.setText(ValorTotal);
+
+                        JOptionPane.showMessageDialog(null, "Não há registros no período selecionado!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                } else {
+
+                    FieldValorTotal.setText(ValorTotal);
+
+                }
             }
 
         } catch (SQLException ex) {
@@ -1517,6 +1568,8 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldValorGarantiaGer = new javax.swing.JTextField();
         lblConserto5 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
+        lblConserto4 = new javax.swing.JLabel();
+        a = new javax.swing.JTextField();
         lblCPF3 = new javax.swing.JLabel();
         ComboOrdenaGarantia1 = new javax.swing.JComboBox<>();
         jPanel26 = new javax.swing.JPanel();
@@ -1638,6 +1691,8 @@ public class PrincipalADM extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         Fieldversenha = new javax.swing.JTextField();
         BotaoBuscarGerenciarServicos2 = new javax.swing.JButton();
+        BotaoBuscarGerenciarServicos3 = new javax.swing.JButton();
+        BotaoBuscarGerenciarServicos4 = new javax.swing.JButton();
         GerenciarCadastros = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
@@ -1655,11 +1710,14 @@ public class PrincipalADM extends javax.swing.JFrame {
         ComboTipoConta = new javax.swing.JComboBox<>();
         lblNome30 = new javax.swing.JLabel();
         FieldUser = new javax.swing.JTextField();
-        FieldSenha = new javax.swing.JTextField();
         BotaoAlterarGerLogins = new javax.swing.JButton();
         BotaoExcluirGerLogins = new javax.swing.JButton();
         BotaoCancelarGerLogins = new javax.swing.JButton();
         FieldId = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        Fieldversenha1 = new javax.swing.JTextField();
+        FieldSenha = new javax.swing.JPasswordField();
+        cont = new javax.swing.JTextField();
         jScrollPane9 = new javax.swing.JScrollPane();
         TableGerenciarLogins = new javax.swing.JTable();
         BotaoAlterarGerLogins2 = new javax.swing.JButton();
@@ -2242,7 +2300,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addComponent(BotaoNovoCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoSalvarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoCancelarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         PaneClientes.add(CadastrarClientes, "card3");
@@ -3352,6 +3410,16 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldValorGarantia.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         FieldValorGarantia.setBorder(null);
         FieldValorGarantia.setPreferredSize(new java.awt.Dimension(1, 25));
+        FieldValorGarantia.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FieldValorGarantiaFocusLost(evt);
+            }
+        });
+        FieldValorGarantia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FieldValorGarantiaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout CadastrarGarantiasLayout = new javax.swing.GroupLayout(CadastrarGarantias);
         CadastrarGarantias.setLayout(CadastrarGarantiasLayout);
@@ -3383,7 +3451,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, CadastrarGarantiasLayout.createSequentialGroup()
                                     .addComponent(lblConserto3)
-                                    .addGap(2, 2, 2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(FieldValorGarantia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarGarantiasLayout.createSequentialGroup()
@@ -3424,7 +3492,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addComponent(FieldValorGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(1, 1, 1)
                         .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
                 .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoCancelarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoNovoGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4121,12 +4189,42 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldValorGarantiaGer.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         FieldValorGarantiaGer.setBorder(null);
         FieldValorGarantiaGer.setPreferredSize(new java.awt.Dimension(1, 25));
+        FieldValorGarantiaGer.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FieldValorGarantiaGerFocusLost(evt);
+            }
+        });
+        FieldValorGarantiaGer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FieldValorGarantiaGerMouseClicked(evt);
+            }
+        });
 
         lblConserto5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         lblConserto5.setText("Valor");
 
         jSeparator8.setBackground(new java.awt.Color(240, 240, 240));
         jSeparator8.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblConserto4.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        lblConserto4.setText("R$");
+
+        a.setBackground(new java.awt.Color(240, 240, 240));
+        a.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        a.setBorder(null);
+        a.setMaximumSize(new java.awt.Dimension(25, 25));
+        a.setMinimumSize(new java.awt.Dimension(25, 25));
+        CampoNome.setDocument(new JTextFieldLimit(40, true));
+        a.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aMouseClicked(evt);
+            }
+        });
+        a.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                aKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout DadosAlteraGarantiaLayout = new javax.swing.GroupLayout(DadosAlteraGarantia);
         DadosAlteraGarantia.setLayout(DadosAlteraGarantiaLayout);
@@ -4137,19 +4235,24 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addComponent(lblNome18)
                     .addComponent(lblConserto1)
                     .addComponent(ComboGerenciaEscolhaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
+                        .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(FieldNomeGerenciarGarantia, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
                     .addComponent(jSeparator26))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(CampoGerenciaDataFormatada, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblData1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(CampoGerenciaDataFormatada)
+                    .addComponent(jSeparator5)
+                    .addComponent(lblData1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblConserto5)
                     .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(FieldValorGarantiaGer, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, DadosAlteraGarantiaLayout.createSequentialGroup()
+                            .addComponent(lblConserto4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(FieldValorGarantiaGer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(133, 133, 133)
                 .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BotaoCancelarGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4159,7 +4262,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         DadosAlteraGarantiaLayout.setVerticalGroup(
             DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(BotaoAlterarGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4171,34 +4274,35 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addGap(7, 7, 7)
                         .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                                .addGap(151, 151, 151)
-                                .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblNome18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(FieldNomeGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(1, 1, 1)
+                                .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                                .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                                        .addComponent(lblNome18)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(FieldNomeGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(1, 1, 1)
-                                        .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                                        .addComponent(lblData1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(CampoGerenciaDataFormatada, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(1, 1, 1)
-                                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(25, 25, 25)
-                                .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                                        .addComponent(lblConserto5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(FieldValorGarantiaGer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(1, 1, 1)
-                                        .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                                        .addComponent(lblConserto1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ComboGerenciaEscolhaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                .addComponent(lblData1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(CampoGerenciaDataFormatada, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(1, 1, 1)
+                                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(25, 25, 25)
+                        .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
+                                .addComponent(lblConserto5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(FieldValorGarantiaGer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblConserto4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(1, 1, 1)
+                                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
+                                .addComponent(lblConserto1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ComboGerenciaEscolhaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(11, 11, 11))
         );
 
@@ -4628,7 +4732,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addComponent(BotaoBuscarConsultarGarantias2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BotaoBuscarConsultarGarantias3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 64, Short.MAX_VALUE))
+                .addGap(0, 65, Short.MAX_VALUE))
         );
 
         PaneGarantias.add(ContatarClientes, "card6");
@@ -5069,7 +5173,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         PaneServicos.add(ConsultarServicos, "card5");
@@ -5443,7 +5547,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DadosAlteraServicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
 
         PaneServicos.add(GerenciarServicos, "card6");
@@ -5976,6 +6080,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(100, 100, 100));
         jLabel6.setText("Ver senha");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -6023,12 +6128,42 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
+        BotaoBuscarGerenciarServicos3.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoBuscarGerenciarServicos3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        BotaoBuscarGerenciarServicos3.setText("Novo");
+        BotaoBuscarGerenciarServicos3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoBuscarGerenciarServicos3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoBuscarGerenciarServicos3MouseClicked(evt);
+            }
+        });
+        BotaoBuscarGerenciarServicos3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoBuscarGerenciarServicos3ActionPerformed(evt);
+            }
+        });
+
+        BotaoBuscarGerenciarServicos4.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoBuscarGerenciarServicos4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        BotaoBuscarGerenciarServicos4.setText("Cancelar");
+        BotaoBuscarGerenciarServicos4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoBuscarGerenciarServicos4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoBuscarGerenciarServicos4MouseClicked(evt);
+            }
+        });
+        BotaoBuscarGerenciarServicos4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoBuscarGerenciarServicos4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout AdicionarCadastrosLayout = new javax.swing.GroupLayout(AdicionarCadastros);
         AdicionarCadastros.setLayout(AdicionarCadastrosLayout);
         AdicionarCadastrosLayout.setHorizontalGroup(
             AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(AdicionarCadastrosLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdicionarCadastrosLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jSeparator36, javax.swing.GroupLayout.Alignment.LEADING)
@@ -6041,27 +6176,34 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addComponent(Fieldversenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6)))
-                .addGap(120, 120, 120)
+                .addGap(124, 124, 124)
                 .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ComboEscolhalogins, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNome29)
                     .addComponent(BotaoBuscarGerenciarServicos2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotaoBuscarGerenciarServicos3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoBuscarGerenciarServicos4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57))
         );
         AdicionarCadastrosLayout.setVerticalGroup(
             AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AdicionarCadastrosLayout.createSequentialGroup()
-                .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
                 .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(AdicionarCadastrosLayout.createSequentialGroup()
-                        .addComponent(lblNome27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(FielduserCadastrarlogins, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AdicionarCadastrosLayout.createSequentialGroup()
-                        .addComponent(lblNome29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ComboEscolhalogins, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61)
+                        .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(AdicionarCadastrosLayout.createSequentialGroup()
+                                .addComponent(lblNome27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(FielduserCadastrarlogins, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(AdicionarCadastrosLayout.createSequentialGroup()
+                                .addComponent(lblNome29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ComboEscolhalogins, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(BotaoBuscarGerenciarServicos3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1)
                 .addComponent(jSeparator36, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
@@ -6072,14 +6214,16 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addComponent(FieldsenhaCadastrarlogins, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
                         .addComponent(jSeparator37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(BotaoBuscarGerenciarServicos2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(BotaoBuscarGerenciarServicos2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotaoBuscarGerenciarServicos4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, 0)
                 .addGroup(AdicionarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AdicionarCadastrosLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jLabel6))
                     .addComponent(Fieldversenha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
 
         PaneCadastros.add(AdicionarCadastros, "card3");
@@ -6155,11 +6299,11 @@ public class PrincipalADM extends javax.swing.JFrame {
         jPanel36.setLayout(jPanel36Layout);
         jPanel36Layout.setHorizontalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel36Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel20)
                 .addGap(463, 463, 463))
-            .addComponent(jPanel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6195,6 +6339,8 @@ public class PrincipalADM extends javax.swing.JFrame {
         jSeparator35.setBackground(new java.awt.Color(240, 240, 240));
         jSeparator35.setForeground(new java.awt.Color(0, 0, 0));
 
+        GerenciarLogins.setPreferredSize(new java.awt.Dimension(1030, 199));
+
         jSeparator33.setBackground(new java.awt.Color(240, 240, 240));
         jSeparator33.setForeground(new java.awt.Color(0, 0, 0));
 
@@ -6218,10 +6364,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldUser.setBackground(new java.awt.Color(240, 240, 240));
         FieldUser.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         FieldUser.setBorder(null);
-
-        FieldSenha.setBackground(new java.awt.Color(240, 240, 240));
-        FieldSenha.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        FieldSenha.setBorder(null);
 
         BotaoAlterarGerLogins.setBackground(new java.awt.Color(230, 230, 230));
         BotaoAlterarGerLogins.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -6257,6 +6399,59 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldId.setForeground(new java.awt.Color(240, 240, 240));
         FieldId.setBorder(null);
 
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(100, 100, 100));
+        jLabel7.setText("Ver senha");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel7MouseExited(evt);
+            }
+        });
+
+        Fieldversenha1.setEditable(false);
+        Fieldversenha1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        Fieldversenha1.setForeground(new java.awt.Color(240, 240, 240));
+        Fieldversenha1.setBorder(null);
+        Fieldversenha1.setMaximumSize(new java.awt.Dimension(25, 25));
+        Fieldversenha1.setMinimumSize(new java.awt.Dimension(25, 25));
+        Fieldversenha1.setOpaque(false);
+        FieldNomeCadastrarConsertos.setDocument(new JTextFieldLimit(255, true));
+        Fieldversenha1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Fieldversenha1MouseClicked(evt);
+            }
+        });
+        Fieldversenha1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Fieldversenha1ActionPerformed(evt);
+            }
+        });
+        Fieldversenha1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Fieldversenha1KeyPressed(evt);
+            }
+        });
+
+        FieldSenha.setBackground(new java.awt.Color(240, 240, 240));
+        FieldSenha.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        FieldSenha.setBorder(null);
+        FieldSenha.setPreferredSize(new java.awt.Dimension(1, 25));
+        FieldSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FieldSenhaKeyTyped(evt);
+            }
+        });
+
+        cont.setBackground(new java.awt.Color(240, 240, 240));
+        cont.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        cont.setBorder(null);
+
         javax.swing.GroupLayout GerenciarLoginsLayout = new javax.swing.GroupLayout(GerenciarLogins);
         GerenciarLogins.setLayout(GerenciarLoginsLayout);
         GerenciarLoginsLayout.setHorizontalGroup(
@@ -6271,12 +6466,18 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addComponent(FieldUser, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(78, 78, 78)
                         .addComponent(FieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(75, 75, 75)
+                        .addComponent(cont, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(GerenciarLoginsLayout.createSequentialGroup()
                         .addGroup(GerenciarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(FieldSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                            .addComponent(jSeparator34, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FieldSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, GerenciarLoginsLayout.createSequentialGroup()
+                                .addComponent(Fieldversenha1, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7))
+                            .addComponent(jSeparator34))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                         .addGroup(GerenciarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblNome30)
                             .addComponent(ComboTipoConta, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -6301,22 +6502,35 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addComponent(FieldUser, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
                         .addComponent(jSeparator33, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(29, 29, 29)
-                .addGroup(GerenciarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNome21)
-                    .addComponent(FieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(FieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jSeparator34, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GerenciarLoginsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(GerenciarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GerenciarLoginsLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(GerenciarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblNome21)
+                            .addComponent(FieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(FieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(jSeparator34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(GerenciarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(GerenciarLoginsLayout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(jLabel7))
+                            .addGroup(GerenciarLoginsLayout.createSequentialGroup()
+                                .addComponent(Fieldversenha1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())))
+                    .addGroup(GerenciarLoginsLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(cont, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(GerenciarLoginsLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addComponent(BotaoAlterarGerLogins, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BotaoExcluirGerLogins, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BotaoCancelarGerLogins, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         TableGerenciarLogins.setAutoCreateRowSorter(true);
@@ -6324,17 +6538,17 @@ public class PrincipalADM extends javax.swing.JFrame {
         TableGerenciarLogins.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         TableGerenciarLogins.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null}
+                {null, null, null}
             },
             new String [] {
-                "ID", "Usuário", "Senha", "Tipo de conta"
+                "ID", "Usuário", "Tipo de conta"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -6390,7 +6604,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             GerenciarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(GerenciarCadastrosLayout.createSequentialGroup()
                 .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(43, 43, 43)
                 .addGroup(GerenciarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(GerenciarCadastrosLayout.createSequentialGroup()
                         .addComponent(lblNome26)
@@ -6401,9 +6615,9 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addComponent(BotaoAlterarGerLogins2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
+                .addGap(9, 9, 9)
                 .addComponent(GerenciarLogins, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
 
         PaneCadastros.add(GerenciarCadastros, "card2");
@@ -7154,7 +7368,13 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldNomeGerenciarGarantia.setText(TableGerenciarGarantia.getValueAt(TableGerenciarGarantia.getSelectedRow(), 1).toString());
         ComboGerenciaEscolhaConserto.getModel().setSelectedItem(TableGerenciarGarantia.getValueAt(TableGerenciarGarantia.getSelectedRow(), 2).toString());
         CampoGerenciaDataFormatada.setText(TableGerenciarGarantia.getValueAt(TableGerenciarGarantia.getSelectedRow(), 3).toString());
-        FieldValorGarantiaGer.setText(TableGerenciarGarantia.getValueAt(TableGerenciarGarantia.getSelectedRow(), 5).toString());
+        String ValorConvertido = TableGerenciarGarantia.getValueAt(TableGerenciarGarantia.getSelectedRow(), 5).toString();
+        ValorConvertido = ValorConvertido.replaceAll("\\$", "");
+        
+        ValorConvertido = ValorConvertido.replaceAll("R", "");
+
+        FieldValorGarantiaGer.setText(ValorConvertido);
+
         DestravaCamposGarenciarGarantia();
         DadosAlteraGarantia.setVisible(true);
     }//GEN-LAST:event_TableGerenciarGarantiaMouseClicked
@@ -7222,28 +7442,21 @@ public class PrincipalADM extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoCancelarGarantiaActionPerformed
 
     private void BotaoSalvarGarantiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSalvarGarantiaActionPerformed
-        if (CampoNome.getText().isEmpty() || FieldValorGarantia.getText().isEmpty() || ComboEscolhaConserto.getSelectedItem()==null || CampoDataFormatada.getText().equals("  /  /    ")) {
+        if (CampoNome.getText().isEmpty() || FieldValorGarantia.getText().isEmpty() || ComboEscolhaConserto.getSelectedItem() == null || CampoDataFormatada.getText().equals("  /  /    ")) {
             JOptionPane.showMessageDialog(null, "Há campos vazios, preencha-os por favor!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
         } else {
             Garantia gar = new Garantia();
 
-            try {              
-                
+            try {
+
                 gar.getId();
                 gar.setNome(CampoNome.getText());
                 gar.setDescricao((String) ComboEscolhaConserto.getSelectedItem());
                 gar.setSaida_concerto(LocalDate.parse(CampoDataFormatada.getText(), formatter));
                 gar.setDt_garantia(LocalDate.parse(FuncGarantia(gar.getSaida_concerto(), gar.getDescricao()), formatter));
                 String Valor = FieldValorGarantia.getText();
-                Valor = Valor.replaceAll("\\.", "");
-                Valor = Valor.replaceAll(",", ".");
-                
-                double ValorConvertido = Double.valueOf(Valor);
-                
-                Locale BRAZIL = new Locale("pt", "BR");                
-                NumberFormat moeda = NumberFormat.getCurrencyInstance(BRAZIL);
-                
-                gar.setValor(moeda.format(ValorConvertido));    
+                gar.setValor(Valor);
+
                 GarantiaDAO garantiaDAO = new GarantiaDAO();
                 garantiaDAO.InserirGarantia(gar);
                 RelatorioDAO relatorio = new RelatorioDAO();
@@ -7257,11 +7470,10 @@ public class PrincipalADM extends javax.swing.JFrame {
                     atualizarTabelaGerenciaCGarantia();
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Algo de errado ocorreu! Erro: " + ex.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
-                    System.out.println(ex.getMessage());
+
                 }
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "O nome do cliente inserido não está cadastrado. Cadastre-o para prosseguir!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
-                System.out.println(ex.getMessage());
             }
 
         }
@@ -7929,10 +8141,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboEscolhaConsertoActionPerformed
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel6MouseClicked
-
     private void FieldversenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldversenhaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_FieldversenhaMouseClicked
@@ -7941,24 +8149,18 @@ public class PrincipalADM extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FieldversenhaKeyPressed
 
-    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
-        Fieldversenha.setText(FieldsenhaCadastrarlogins.getText());
-        Fieldversenha.setForeground(new Color(0, 0, 0));
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 12));
-    }//GEN-LAST:event_jLabel6MouseEntered
-
-    private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
-        Fieldversenha.setForeground(new Color(240, 240, 240));
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 11));
-    }//GEN-LAST:event_jLabel6MouseExited
-
     private void TableGerenciarLoginsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableGerenciarLoginsMouseClicked
-        TableGerenciarLogins.getTableHeader().setReorderingAllowed(false);
-        FieldId.setText(TableGerenciarLogins.getValueAt(TableGerenciarLogins.getSelectedRow(), 0).toString());
-        FieldUser.setText(TableGerenciarLogins.getValueAt(TableGerenciarLogins.getSelectedRow(), 1).toString());
-        FieldSenha.setText(TableGerenciarLogins.getValueAt(TableGerenciarLogins.getSelectedRow(), 2).toString());
-        DestravaCamposGerenciarLogins();
-
+        try {
+            LoginsDAO loginsdao = new LoginsDAO();
+            TableGerenciarLogins.getTableHeader().setReorderingAllowed(false);
+            FieldId.setText(TableGerenciarLogins.getValueAt(TableGerenciarLogins.getSelectedRow(), 0).toString());
+            FieldUser.setText(TableGerenciarLogins.getValueAt(TableGerenciarLogins.getSelectedRow(), 1).toString());
+            ComboTipoConta.setSelectedItem(TableGerenciarLogins.getValueAt(TableGerenciarLogins.getSelectedRow(), 2).toString());
+            FieldSenha.setText(loginsdao.PesquisarSenha(FieldUser.getText()));
+            DestravaCamposGerenciarLogins();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao selecionar informações!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_TableGerenciarLoginsMouseClicked
 
     private void BotaoAlterarGerLoginsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAlterarGerLoginsActionPerformed
@@ -7974,9 +8176,8 @@ public class PrincipalADM extends javax.swing.JFrame {
             loginsdao.AtualizarLogins(logins);
             PesquisarTabela(FieldUserGerenciarLogins.getText());
             TravaCamposGerenciarLogins();
-            RedefinirCamposGerenciarLogins();
         }
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_BotaoAlterarGerLoginsActionPerformed
 
     private void BotaoExcluirGerLoginsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoExcluirGerLoginsActionPerformed
@@ -7985,8 +8186,8 @@ public class PrincipalADM extends javax.swing.JFrame {
         logins.setid(Integer.parseInt(FieldId.getText()));
         loginsdao.read();
 
-        if (logins.getusuario() == null) {
-            JOptionPane.showMessageDialog(null, "Cadastre pelo menos dois logins para excluir!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+        if (cont.getText().equals("1")) {
+            JOptionPane.showMessageDialog(null, "É necessário ter um login para aceder ao sistema!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
 
         } else if (FieldId.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Selecione um login para remoção, caso não queira remover, cancele a ação!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
@@ -7998,7 +8199,6 @@ public class PrincipalADM extends javax.swing.JFrame {
                 loginsdao.Removerlogin(logins);
                 try {
                     TravaCamposGerenciarLogins();
-                    RedefinirCamposGerenciarLogins();
                     PesquisarTabela(FieldUserGerenciarLogins.getText());
                     JOptionPane.showMessageDialog(null, "Login excluído com sucesso! Verifique se há logins cadastrados antes de sair do sistema.", "Sistema", JOptionPane.INFORMATION_MESSAGE);
                 } catch (Exception e) {
@@ -8021,7 +8221,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     private void FieldsenhaCadastrarloginsKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldsenhaCadastrarloginsKeyTyped
         Fieldversenha.setText(FieldsenhaCadastrarlogins.getText());
         Fieldversenha.setForeground(new Color(240, 240, 240));
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 11));
+        jLabel6.setForeground(new Color(100, 100, 100));
     }//GEN-LAST:event_FieldsenhaCadastrarloginsKeyTyped
 
     private void BotaoAlterarGerLogins1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAlterarGerLogins1ActionPerformed
@@ -8249,15 +8449,15 @@ public class PrincipalADM extends javax.swing.JFrame {
 
                 try {
                     JOptionPane.showMessageDialog(null, "Login cadastrado com sucesso!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
-                    SalvarCamposCadastroClientes();
+                    TravaCamposCadastrarLogins();
 
                 } catch (HeadlessException ex) {
                     JOptionPane.showMessageDialog(null, "Algo de errado ocorreu! Erro: " + ex.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
-                    System.out.println(ex.getMessage());
+
                 }
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Nome de usuário em uso!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
-                System.out.println(ex.getMessage());
+
             }
         }        // TODO add your handling code here:
     }//GEN-LAST:event_BotaoBuscarGerenciarServicos2ActionPerformed
@@ -8376,7 +8576,11 @@ public class PrincipalADM extends javax.swing.JFrame {
     }//GEN-LAST:event_FieldDiaFocusLost
 
     private void BotaoBuscarConsultarGarantias5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarConsultarGarantias5ActionPerformed
-        ValorTotal();
+        if (FieldValorTotal.getText().equals("R$ 0,00")) {
+            JOptionPane.showMessageDialog(null, "É necessário ter pelo menos um conserto cadastrado para filtrar!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            ValorTotal();
+        }
     }//GEN-LAST:event_BotaoBuscarConsultarGarantias5ActionPerformed
 
     private void ComboOrdenaGarantiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComboOrdenaGarantiaMouseClicked
@@ -8422,6 +8626,106 @@ public class PrincipalADM extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ComboOrdenaGarantia1ActionPerformed
 
+    private void FieldValorGarantiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldValorGarantiaMouseClicked
+        lblConserto3.setVisible(true);
+    }//GEN-LAST:event_FieldValorGarantiaMouseClicked
+
+    private void FieldValorGarantiaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FieldValorGarantiaFocusLost
+        if (FieldValorGarantia.getText().isEmpty()) {
+
+            lblConserto3.setVisible(true);
+
+        }
+    }//GEN-LAST:event_FieldValorGarantiaFocusLost
+
+    private void BotaoBuscarGerenciarServicos3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoBuscarGerenciarServicos3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoBuscarGerenciarServicos3MouseClicked
+
+    private void BotaoBuscarGerenciarServicos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarGerenciarServicos3ActionPerformed
+        DestravaCamposCadastrarLogins();
+    }//GEN-LAST:event_BotaoBuscarGerenciarServicos3ActionPerformed
+
+    private void BotaoBuscarGerenciarServicos4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoBuscarGerenciarServicos4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoBuscarGerenciarServicos4MouseClicked
+
+    private void BotaoBuscarGerenciarServicos4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarGerenciarServicos4ActionPerformed
+        TravaCamposCadastrarLogins();
+    }//GEN-LAST:event_BotaoBuscarGerenciarServicos4ActionPerformed
+
+    private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
+        Fieldversenha.setForeground(new Color(240, 240, 240));
+        jLabel6.setForeground(new Color(100, 100, 100));
+    }//GEN-LAST:event_jLabel6MouseExited
+
+    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
+        Fieldversenha.setText(FieldsenhaCadastrarlogins.getText());
+        Fieldversenha.setForeground(new Color(0, 0, 0));
+        jLabel6.setForeground(new Color(0, 0, 0));
+    }//GEN-LAST:event_jLabel6MouseEntered
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
+        Fieldversenha1.setText(FieldSenha.getText());
+        jLabel7.setForeground(new Color(0, 0, 0));
+        Fieldversenha1.setForeground(new Color(0, 0, 0));
+    }//GEN-LAST:event_jLabel7MouseEntered
+
+    private void jLabel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseExited
+        Fieldversenha1.setForeground(new Color(240, 240, 240));
+        jLabel7.setForeground(new Color(100, 100, 100));
+    }//GEN-LAST:event_jLabel7MouseExited
+
+    private void Fieldversenha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Fieldversenha1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Fieldversenha1MouseClicked
+
+    private void Fieldversenha1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fieldversenha1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Fieldversenha1KeyPressed
+
+    private void Fieldversenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fieldversenha1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Fieldversenha1ActionPerformed
+
+    private void FieldSenhaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldSenhaKeyTyped
+        Fieldversenha1.setText(FieldsenhaCadastrarlogins.getText());
+        Fieldversenha1.setForeground(new Color(240, 240, 240));
+        jLabel7.setForeground(new Color(100, 100, 100));
+    }//GEN-LAST:event_FieldSenhaKeyTyped
+
+    private void FieldValorGarantiaGerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldValorGarantiaGerMouseClicked
+        lblConserto4.setVisible(true);
+        
+        String valor = FieldValorGarantia.getText();
+        
+        valor = valor.replaceAll(" ", "");
+        
+        FieldValorGarantia.setText(valor);
+    }//GEN-LAST:event_FieldValorGarantiaGerMouseClicked
+
+    private void FieldValorGarantiaGerFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FieldValorGarantiaGerFocusLost
+        if (FieldValorGarantiaGer.getText().isEmpty()) {
+            lblConserto4.setVisible(false);
+        }
+    }//GEN-LAST:event_FieldValorGarantiaGerFocusLost
+
+    private void aMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aMouseClicked
+
+    private void aKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aKeyPressed
+
     public void setLblColor(JLabel lbl) {
         lbl.setBackground(new Color(220, 220, 220));
     }
@@ -8450,6 +8754,8 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JButton BotaoBuscarGerenciarServicos;
     private javax.swing.JButton BotaoBuscarGerenciarServicos1;
     private javax.swing.JButton BotaoBuscarGerenciarServicos2;
+    private javax.swing.JButton BotaoBuscarGerenciarServicos3;
+    private javax.swing.JButton BotaoBuscarGerenciarServicos4;
     private javax.swing.JLabel BotaoCadastrarCliConsul;
     private javax.swing.JLabel BotaoCadastrarCliConsul1;
     private javax.swing.JLabel BotaoCadastrarCliConsul2;
@@ -8568,7 +8874,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JTextField FieldNomeGerenciarGarantia;
     private javax.swing.JTextField FieldNomeGerenciarServicos;
     private javax.swing.JTextField FieldNomeGerenciarServicos1;
-    private javax.swing.JTextField FieldSenha;
+    private javax.swing.JPasswordField FieldSenha;
     private javax.swing.JFormattedTextField FieldTelefoneGerenciarClientes;
     private javax.swing.JTextField FieldUser;
     private javax.swing.JTextField FieldUserGerenciarLogins;
@@ -8578,6 +8884,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JPasswordField FieldsenhaCadastrarlogins;
     private javax.swing.JTextField FielduserCadastrarlogins;
     private javax.swing.JTextField Fieldversenha;
+    private javax.swing.JTextField Fieldversenha1;
     private javax.swing.JPanel GerenciarCadastros;
     private javax.swing.JPanel GerenciarClientes;
     private javax.swing.JPanel GerenciarGarantias;
@@ -8604,6 +8911,8 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JTextField TxtNomeCtt;
     private javax.swing.JFormattedTextField TxtNumCtt;
     private javax.swing.JTextField Txtid;
+    private javax.swing.JTextField a;
+    public javax.swing.JTextField cont;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -8621,6 +8930,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -8720,6 +9030,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JLabel lblConserto1;
     private javax.swing.JLabel lblConserto2;
     private javax.swing.JLabel lblConserto3;
+    private javax.swing.JLabel lblConserto4;
     private javax.swing.JLabel lblConserto5;
     private javax.swing.JLabel lblData;
     private javax.swing.JLabel lblData1;
