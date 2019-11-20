@@ -1835,8 +1835,6 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Geral\\Documents\\NetBeansProjects\\Projetopdf\\src\\img\\LogoPrincipal.png")); // NOI18N
-
         javax.swing.GroupLayout SideBoardLayout = new javax.swing.GroupLayout(SideBoard);
         SideBoard.setLayout(SideBoardLayout);
         SideBoardLayout.setHorizontalGroup(
@@ -2867,7 +2865,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addGap(15, 15, 15))
                         .addComponent(FieldEmailGerenciarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(FieldNomeGerenciarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
                 .addGroup(DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DadosAlteraClientesLayout.createSequentialGroup()
                         .addComponent(BotaoAlterarGerenciarGarantia1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -8223,6 +8221,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         try {
             Cliente cliente = new Cliente();
             clienteDAO clientedao = new clienteDAO();
+            Txtid.setText(TableConsultaGarantia.getValueAt(TableConsultaGarantia.getSelectedRow(), 0).toString());
             TxtNomeCtt.setText(TableConsultaGarantia.getValueAt(TableConsultaGarantia.getSelectedRow(), 1).toString());
             cliente.setNome(TableConsultaGarantia.getValueAt(TableConsultaGarantia.getSelectedRow(), 1).toString());
             TxtNumCtt.setText(clientedao.BuscarTel(cliente));
@@ -8318,7 +8317,7 @@ public class PrincipalADM extends javax.swing.JFrame {
 
             RelatorioDAO rel = new RelatorioDAO();
 
-            int cod = Integer.parseInt(FieldIDGerenciarGarantia.getText());
+            int cod = Integer.parseInt(Txtid.getText());
             rel.RelatorioGar(cod);
         }
     }//GEN-LAST:event_Botao2Via1ActionPerformed

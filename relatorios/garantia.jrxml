@@ -3,6 +3,8 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="ireport.background.image" value="C:\Users\user\Documents\NetBeansProjects\Projetop\relatorios\fotos\Logo.jpg"/>
+	<property name="ireport.background.image.properties" value="true,true,0.25,-8,-8,0,0,261,105"/>
 	<style name="cabecalho" hAlign="Left" vAlign="Middle" fontName="Arial" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="colunas" backcolor="#FFFFFF" fontName="Arial" fontSize="12" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="detales" hAlign="Left" vAlign="Middle" fontName="Arial" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
@@ -19,7 +21,8 @@
      garantia.`saida_concerto` AS garantia_saida_concerto,
      garantia.`garantia` AS garantia_garantia,
      manutencao.`duracao_garantia` AS manutencao_duracao_garantia,
-     garantia.`id` AS garantia_id
+     garantia.`id` AS garantia_id,
+     garantia.`valor` AS garantia_valor
 FROM
      `cliente` cliente INNER JOIN `garantia` garantia ON cliente.`Nome` = garantia.`Nome`
      INNER JOIN `manutencao` manutencao ON garantia.`descricao` = manutencao.`descricao`]]>
@@ -36,6 +39,7 @@ FROM
 	<field name="garantia_garantia" class="java.sql.Date"/>
 	<field name="manutencao_duracao_garantia" class="java.lang.Integer"/>
 	<field name="garantia_id" class="java.lang.Integer"/>
+	<field name="garantia_valor" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -52,8 +56,8 @@ FROM
 				<reportElement x="0" y="88" width="802" height="1" uuid="b8a21142-72e7-42fa-82ef-a8518f8ba02c"/>
 			</line>
 			<image>
-				<reportElement x="1" y="-2" width="245" height="89" uuid="e106520f-f2e1-42b4-b68c-059d456621ea"/>
-				<imageExpression><![CDATA["C:\\Users\\user\\Desktop\\Projetop2 - Cópia\\relatorios\\fotos\\Logo.jpg"]]></imageExpression>
+				<reportElement x="-4" y="-2" width="245" height="89" uuid="bdec6ec1-286e-4ea7-b22e-4c4c85a364b6"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\Documents\\NetBeansProjects\\Projetop\\relatorios\\fotos\\Logo.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -131,19 +135,23 @@ FROM
 				<text><![CDATA[Descrição]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="detales" x="346" y="0" width="100" height="20" uuid="07c85719-d1b4-47ea-add2-42db35e1731b"/>
+				<reportElement style="detales" x="297" y="0" width="75" height="20" uuid="07c85719-d1b4-47ea-add2-42db35e1731b"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[Duração garantia]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="detales" x="523" y="0" width="100" height="20" uuid="72452322-4ef8-4360-8e76-513ee058fc58"/>
+				<reportElement style="detales" x="426" y="0" width="100" height="20" uuid="72452322-4ef8-4360-8e76-513ee058fc58"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[Data do Concerto]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="detales" x="702" y="0" width="100" height="20" uuid="d08158ac-d5e4-4749-8718-d97b184d9417"/>
+				<reportElement style="detales" x="575" y="0" width="100" height="20" uuid="d08158ac-d5e4-4749-8718-d97b184d9417"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[Data Fim Garantia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="detales" x="698" y="0" width="100" height="20" uuid="f57433df-e771-4fc1-96cd-fc9ae851c0b5"/>
+				<text><![CDATA[Valor pago]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -158,20 +166,30 @@ FROM
 				<textFieldExpression><![CDATA[$F{garantia_descricao}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="detales" x="346" y="0" width="100" height="20" uuid="abf94242-e66d-411f-bec8-042500fdc61e"/>
+				<reportElement style="detales" x="297" y="0" width="75" height="20" uuid="abf94242-e66d-411f-bec8-042500fdc61e"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{manutencao_duracao_garantia}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="detales" x="523" y="0" width="100" height="20" uuid="dedaa22e-709f-4c64-b532-002742e1ce59"/>
+				<reportElement style="detales" x="426" y="0" width="100" height="20" uuid="dedaa22e-709f-4c64-b532-002742e1ce59"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{garantia_saida_concerto}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="detales" x="702" y="0" width="100" height="20" uuid="0cbbbede-d984-447e-a394-47beea8c773b"/>
+				<reportElement style="detales" x="575" y="0" width="100" height="20" uuid="0cbbbede-d984-447e-a394-47beea8c773b"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{garantia_garantia}]]></textFieldExpression>
 			</textField>
+			<textField pattern="###0.00">
+				<reportElement style="detales" x="721" y="0" width="59" height="20" uuid="79829169-9273-4b5a-bb51-de1f08b08169"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{garantia_valor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="detales" x="695" y="0" width="23" height="20" uuid="5817fadf-4fa8-4ce5-9bba-a3460148e87c"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[R$]]></text>
+			</staticText>
 		</band>
 	</detail>
 	<pageFooter>

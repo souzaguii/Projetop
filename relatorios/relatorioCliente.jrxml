@@ -35,8 +35,8 @@ FROM
 				<text><![CDATA[RELATÓRIO DE CLIENTES]]></text>
 			</staticText>
 			<image>
-				<reportElement x="167" y="1" width="208" height="76" uuid="32753c7a-f6ec-43b1-9317-390ab53e0a90"/>
-				<imageExpression><![CDATA["C:\\Users\\Geral\\Documents\\NetBeansProjects\\Projetopdf\\src\\img\\LogoLogin.png"]]></imageExpression>
+				<reportElement x="167" y="0" width="206" height="76" uuid="3c2d74b5-e281-43ce-ac41-b53b55484346"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\Documents\\NetBeansProjects\\Projetop\\relatorios\\fotos\\Logo.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</title>

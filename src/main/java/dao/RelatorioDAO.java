@@ -62,7 +62,8 @@ public class RelatorioDAO {
 "     garantia.`saida_concerto` AS garantia_saida_concerto,\n" +
 "     garantia.`garantia` AS garantia_garantia,\n" +
 "     manutencao.`duracao_garantia` AS manutencao_duracao_garantia,\n" +
-"     garantia.`id` AS garantia_id\n" +
+"     garantia.`id` AS garantia_id,\n" +
+"     garantia.`valor` AS garantia_valor\n" +
 "FROM\n" +
 "     `cliente` cliente INNER JOIN `garantia` garantia ON cliente.`Nome` = garantia.`Nome`\n" +
 "     INNER JOIN `manutencao` manutencao ON garantia.`descricao` = manutencao.`descricao`"+
