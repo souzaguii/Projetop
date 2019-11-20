@@ -12,7 +12,7 @@ import dao.Conexao;
 import dao.GarantiaDAO;
 import dao.LoginsDAO;
 import dao.ManutencaoDAO;
-import dao.ClienteDAO;
+import dao.clienteDAO;
 import dao.RelatorioDAO;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -554,7 +554,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     }
 
     public void AutoComplete() {
-        ClienteDAO clienteDAO = new ClienteDAO();
+        clienteDAO clienteDAO = new clienteDAO();
         ArrayList<String> ListaCliente = new ArrayList<>();
 
         try {
@@ -571,7 +571,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     }
 
     public void AutoComplete1() {
-        ClienteDAO clienteDAO = new ClienteDAO();
+        clienteDAO clienteDAO = new clienteDAO();
         ArrayList<String> ListaCliente = new ArrayList<>();
 
         try {
@@ -587,7 +587,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     }
 
     public void AutoComplete2() {
-        ClienteDAO clienteDAO = new ClienteDAO();
+        clienteDAO clienteDAO = new clienteDAO();
         ArrayList<String> ListaCliente = new ArrayList<>();
 
         try {
@@ -651,7 +651,7 @@ public class PrincipalADM extends javax.swing.JFrame {
 
     public void atualizarTabelaConsultaCliente() {
         Cliente cli = new Cliente();
-        ClienteDAO clidao = new ClienteDAO();
+        clienteDAO clidao = new clienteDAO();
         try {
             ListaCliente = clidao.ListaCliente();
         } catch (SQLException ex) {
@@ -763,7 +763,7 @@ public class PrincipalADM extends javax.swing.JFrame {
 
     public void atualizarTableGerenciarCCliente() {
         Cliente cli = new Cliente();
-        ClienteDAO clidao = new ClienteDAO();
+        clienteDAO clidao = new clienteDAO();
         try {
             ListaCliente = clidao.ListaCliente();
         } catch (SQLException ex) {
@@ -6704,7 +6704,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     private void BotaoBuscarConsultaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarConsultaClienteActionPerformed
         ListaBuscaCliente = null;
         Cliente cli = new Cliente();
-        ClienteDAO clidao = new ClienteDAO();
+        clienteDAO clidao = new clienteDAO();
 
         try {
             if (!FieldConsultaNomeCliente.getText().isEmpty()) {
@@ -6756,7 +6756,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         } else {
             try {
                 Cliente cli = new Cliente();
-                ClienteDAO clidao = new ClienteDAO();
+                clienteDAO clidao = new clienteDAO();
 
                 cli.getId();
                 cli.setNome(FieldCadastroNomeCliente.getText());
@@ -6830,7 +6830,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         } else if (JOptionPane.showConfirmDialog(null, "Deseja mesmo excluir esse cliente?", "Sistema", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
             try {
                 Cliente cli = new Cliente();
-                ClienteDAO clidao = new ClienteDAO();
+                clienteDAO clidao = new clienteDAO();
 
                 cli.setId(Integer.parseInt(FieldIDGerenciarClientes.getText()));
 
@@ -6868,7 +6868,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         } else if (JOptionPane.showConfirmDialog(null, "Deseja mesmo alterar esse cliente?", "Sistema", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
             try {
                 Cliente cli = new Cliente();
-                ClienteDAO clidao = new ClienteDAO();
+                clienteDAO clidao = new clienteDAO();
 
                 cli.setId(Integer.parseInt(FieldIDGerenciarClientes.getText()));
                 cli.setNome(FieldNomeGerenciarClientes.getText());
@@ -6990,7 +6990,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     private void BotaoBuscarConsultaCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarConsultaCliente1ActionPerformed
         ListaBuscaCliente = null;
         Cliente cli = new Cliente();
-        ClienteDAO clidao = new ClienteDAO();
+        clienteDAO clidao = new clienteDAO();
 
         try {
             if (!FieldGerenciarNomeCliente.getText().isEmpty()) {
@@ -8243,7 +8243,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     private void TableConsultaGarantiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableConsultaGarantiaMouseClicked
         try {
             Cliente cliente = new Cliente();
-            ClienteDAO clientedao = new ClienteDAO();
+            clienteDAO clientedao = new clienteDAO();
             TxtNomeCtt.setText(TableConsultaGarantia.getValueAt(TableConsultaGarantia.getSelectedRow(), 1).toString());
             cliente.setNome(TableConsultaGarantia.getValueAt(TableConsultaGarantia.getSelectedRow(), 1).toString());
             TxtNumCtt.setText(clientedao.BuscarTel(cliente));
