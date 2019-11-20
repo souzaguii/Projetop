@@ -3157,7 +3157,7 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                       <Component id="FieldIDGerenciarGarantia" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace pref="180" max="32767" attributes="0"/>
+                                      <EmptySpace pref="182" max="32767" attributes="0"/>
                                       <Component id="Botao2Via" min="-2" pref="151" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="BotaoAlterarGerenciarGarantia" min="-2" pref="151" max="-2" attributes="0"/>
