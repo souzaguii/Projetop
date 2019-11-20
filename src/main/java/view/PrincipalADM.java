@@ -82,7 +82,7 @@ public class PrincipalADM extends javax.swing.JFrame {
 
     public PrincipalADM() {
         initComponents();
-
+        setExtendedState(MAXIMIZED_BOTH);
         PaneClientes.setVisible(true);
         PaneGarantias.setVisible(false);
         PaneServicos.setVisible(false);
@@ -450,6 +450,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         lblData1.setEnabled(true);
         lblConserto1.setEnabled(true);
         lblConserto5.setEnabled(true);
+        lblConserto4.setVisible(true);
 
         BotaoAlterarGerenciarGarantia.setEnabled(true);
         BotaoExcluirGerenciarGarantia.setEnabled(true);
@@ -1569,7 +1570,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         lblConserto5 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
         lblConserto4 = new javax.swing.JLabel();
-        a = new javax.swing.JTextField();
         lblCPF3 = new javax.swing.JLabel();
         ComboOrdenaGarantia1 = new javax.swing.JComboBox<>();
         jPanel26 = new javax.swing.JPanel();
@@ -2189,7 +2189,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldCadastroTelefoneCliente.setBackground(new java.awt.Color(240, 240, 240));
         FieldCadastroTelefoneCliente.setBorder(null);
         try {
-            FieldCadastroTelefoneCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###########")));
+            FieldCadastroTelefoneCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -4130,6 +4130,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         jSeparator26.setBackground(new java.awt.Color(240, 240, 240));
         jSeparator26.setForeground(new java.awt.Color(0, 0, 0));
 
+        FieldIDGerenciarGarantia.setEditable(false);
         FieldIDGerenciarGarantia.setBackground(new java.awt.Color(240, 240, 240));
         FieldIDGerenciarGarantia.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         FieldIDGerenciarGarantia.setBorder(null);
@@ -4209,23 +4210,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         lblConserto4.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         lblConserto4.setText("R$");
 
-        a.setBackground(new java.awt.Color(240, 240, 240));
-        a.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        a.setBorder(null);
-        a.setMaximumSize(new java.awt.Dimension(25, 25));
-        a.setMinimumSize(new java.awt.Dimension(25, 25));
-        CampoNome.setDocument(new JTextFieldLimit(40, true));
-        a.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                aMouseClicked(evt);
-            }
-        });
-        a.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                aKeyPressed(evt);
-            }
-        });
-
         javax.swing.GroupLayout DadosAlteraGarantiaLayout = new javax.swing.GroupLayout(DadosAlteraGarantia);
         DadosAlteraGarantia.setLayout(DadosAlteraGarantiaLayout);
         DadosAlteraGarantiaLayout.setHorizontalGroup(
@@ -4235,10 +4219,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addComponent(lblNome18)
                     .addComponent(lblConserto1)
                     .addComponent(ComboGerenciaEscolhaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                        .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FieldNomeGerenciarGarantia, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
                     .addComponent(jSeparator26))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
@@ -4300,9 +4281,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(ComboGerenciaEscolhaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(11, 11, 11))
         );
 
@@ -6751,7 +6730,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoCancelarCadastroClienteActionPerformed
 
     private void BotaoSalvarCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSalvarCadastroClienteActionPerformed
-        if (FieldCadastroNomeCliente.getText().isEmpty() || FieldCadastroCPFCliente.getText().equals("   .   .   -  ") || FieldCadastroTelefoneCliente.getText().isEmpty()) {
+        if (FieldCadastroNomeCliente.getText().isEmpty() || FieldCadastroCPFCliente.getText().equals("   .   .   -  ") || FieldCadastroTelefoneCliente.getText().equals("(  )      -    ")) {
             JOptionPane.showMessageDialog(null, "Preencha os campos obrigatórios (*), por favor!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
         } else {
             try {
@@ -8378,7 +8357,9 @@ public class PrincipalADM extends javax.swing.JFrame {
     }//GEN-LAST:event_FieldCadastroCPFClienteMouseClicked
 
     private void FieldCadastroTelefoneClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldCadastroTelefoneClienteMouseClicked
-        FieldCadastroTelefoneCliente.setCaretPosition(0);
+         if (FieldCadastroTelefoneCliente.getText().equals("(  )      -    ")) {
+            FieldCadastroTelefoneCliente.setCaretPosition(0);
+        }
     }//GEN-LAST:event_FieldCadastroTelefoneClienteMouseClicked
 
     private void FieldConsultaCPFClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldConsultaCPFClienteMouseClicked
@@ -8721,14 +8702,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_FieldValorGarantiaGerFocusLost
 
-    private void aMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aMouseClicked
-
-    private void aKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aKeyPressed
-
     public void setLblColor(JLabel lbl) {
         lbl.setBackground(new Color(220, 220, 220));
     }
@@ -8914,7 +8887,6 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JTextField TxtNomeCtt;
     private javax.swing.JFormattedTextField TxtNumCtt;
     private javax.swing.JTextField Txtid;
-    private javax.swing.JTextField a;
     public javax.swing.JTextField cont;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
