@@ -7370,7 +7370,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         CampoGerenciaDataFormatada.setText(TableGerenciarGarantia.getValueAt(TableGerenciarGarantia.getSelectedRow(), 3).toString());
         String ValorConvertido = TableGerenciarGarantia.getValueAt(TableGerenciarGarantia.getSelectedRow(), 5).toString();
         ValorConvertido = ValorConvertido.replaceAll("\\$", "");
-        
+
         ValorConvertido = ValorConvertido.replaceAll("R", "");
 
         FieldValorGarantiaGer.setText(ValorConvertido);
@@ -8577,6 +8577,9 @@ public class PrincipalADM extends javax.swing.JFrame {
 
     private void BotaoBuscarConsultarGarantias5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarConsultarGarantias5ActionPerformed
         if (FieldValorTotal.getText().equals("R$ 0,00")) {
+            FieldDia.setText("Todos");
+            ComboMes.setSelectedItem("Todos");
+            FieldAno.setText("Todos");
             JOptionPane.showMessageDialog(null, "É necessário ter pelo menos um conserto cadastrado para filtrar!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
         } else {
             ValorTotal();
@@ -8704,11 +8707,11 @@ public class PrincipalADM extends javax.swing.JFrame {
 
     private void FieldValorGarantiaGerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldValorGarantiaGerMouseClicked
         lblConserto4.setVisible(true);
-        
+
         String valor = FieldValorGarantia.getText();
-        
+
         valor = valor.replaceAll(" ", "");
-        
+
         FieldValorGarantia.setText(valor);
     }//GEN-LAST:event_FieldValorGarantiaGerMouseClicked
 
