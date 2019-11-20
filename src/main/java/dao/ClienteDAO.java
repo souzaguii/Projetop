@@ -12,7 +12,7 @@ public class ClienteDAO {
 
     public void InserirCliente(Cliente cliente) throws SQLException {
 
-        String SQL = "INSERT INTO cadastros.cliente (id, nome, cpf, telefone, cidade, endereco, email) values (?, ?, ?, ?,?,?,?)";
+        String SQL = "INSERT  INTO cadastros.cliente (id, nome, cpf, telefone, cidade, endereco, email) values (?, ?, ?, ?,?,?,?)";
 
         PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
 
