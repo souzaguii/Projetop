@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Logins;
+import view.PrincipalADM;
 
 /**
  *
@@ -26,7 +27,7 @@ public class LoginsDAO {
 
         String SQL = "INSERT INTO cadastros.logins (usuario, senha, tipoconta) values (?, ?, ?)";
 
-        try ( PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL)) {
+        try (PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL)) {
             stmt.setString(1, logins.getusuario());
             stmt.setString(2, logins.getsenha());
             stmt.setString(3, logins.gettipoconta());
@@ -38,7 +39,7 @@ public class LoginsDAO {
     public void Removerlogin(Logins logins) throws SQLException {
         String SQL = "Delete from cadastros.logins where id=?";
 
-        try ( PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL)) {
+        try (PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL)) {
             stmt.setInt(1, logins.getid());
             stmt.execute();
         }
@@ -110,7 +111,7 @@ public class LoginsDAO {
         try {
             stmt = con.prepareStatement("SELECT * FROM cadastros.logins");
             rs = stmt.executeQuery();
-
+            int  cont = 0;
             while (rs.next()) {
 
                 Logins logins = new Logins();
@@ -119,8 +120,12 @@ public class LoginsDAO {
                 logins.setsenha(rs.getString("senha"));
                 logins.settipoconta(rs.getString("tipoconta"));
                 loginss.add(logins);
-            }
-
+                cont++;
+            }                       
+//                PrincipalADM prin = new PrincipalADM();
+//                
+//                prin.cont.setText(String.valueOf(cont));
+                
         } catch (SQLException ex) {
             Logger.getLogger(LoginsDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -161,6 +166,25 @@ public class LoginsDAO {
         }
 
         return loginss;
+
+    }
+
+    public String PesquisarSenha(String user) throws SQLException {
+
+        Connection con = Conexao.getConexaoMySQL();
+
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        stmt = con.prepareStatement("SELECT senha FROM cadastros.logins WHERE usuario =?");
+        stmt.setString(1, user);
+        rs = stmt.executeQuery();
+
+        rs.first();
+
+        String senha = rs.getString("senha");
+
+        return senha;
 
     }
 
