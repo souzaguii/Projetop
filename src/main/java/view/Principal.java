@@ -5837,7 +5837,7 @@ public class Principal extends javax.swing.JFrame {
                 garantiaDAO.InserirGarantia(gar);
                 
                 RelatorioDAO relatorio = new RelatorioDAO();
-                relatorio.GeraGarantia();
+                relatorio.GeraGarantia(null);
 
                 try {
 
@@ -6466,7 +6466,7 @@ public class Principal extends javax.swing.JFrame {
         RelatorioDAO rel = new RelatorioDAO();
      
         int cod =  Integer.parseInt(FieldIDGerenciarGarantia.getText());
-        rel.RelatorioGar(cod);
+        rel.RelatorioGar(cod, null);
     }//GEN-LAST:event_Botao2ViaActionPerformed
 
     public void setLblColor(JLabel lbl) {
