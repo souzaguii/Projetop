@@ -60,6 +60,7 @@ public class RelatorioDAO {
             parametros.clear();
             parametros.put("logo", this.getClass().getResourceAsStream("/LogoRelatório.png"));
             parametros.put("valor", valor);
+            parametros.put("logofundo", this.getClass().getResourceAsStream("/MarcaLogoRelatório.png"));
 
             PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
             ResultSet rs = stmt.executeQuery();
@@ -91,7 +92,7 @@ public class RelatorioDAO {
             Map parametros = new HashMap();
             parametros.clear();
             parametros.put("logo", this.getClass().getResourceAsStream("/LogoRelatório.png"));
-
+  
             PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
             ResultSet rs = stmt.executeQuery();
             JRResultSetDataSource relatorioCli = new JRResultSetDataSource(rs);
