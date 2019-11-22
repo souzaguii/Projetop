@@ -478,10 +478,10 @@ public class PrincipalADM extends javax.swing.JFrame {
     public void TravaCamposGerenciarClientes() {
         FieldNomeGerenciarClientes.setEnabled(false);
         FieldCPFGerenciarClientes.setEnabled(false);
-        FieldTelefoneGerenciarClientes.setEnabled(false);
-        FieldCidadeGerenciarClientes.setEnabled(false);
         FieldEnderecoGerenciarClientes.setEnabled(false);
+        FieldCidadeGerenciarClientes.setEnabled(false);
         FieldEmailGerenciarClientes.setEnabled(false);
+        FieldTelefoneGerenciarClientes.setEnabled(false);
         jSeparator19.setForeground(new Color(200, 200, 200));
         jSeparator27.setForeground(new Color(200, 200, 200));
         jSeparator28.setForeground(new Color(200, 200, 200));
@@ -503,10 +503,10 @@ public class PrincipalADM extends javax.swing.JFrame {
     public void DestravaCamposGerenciarClientes() {
         FieldNomeGerenciarClientes.setEnabled(true);
         FieldCPFGerenciarClientes.setEnabled(true);
-        FieldTelefoneGerenciarClientes.setEnabled(true);
         FieldCidadeGerenciarClientes.setEnabled(true);
         FieldEnderecoGerenciarClientes.setEnabled(true);
         FieldEmailGerenciarClientes.setEnabled(true);
+        FieldTelefoneGerenciarClientes.setEnabled(true);
         jSeparator19.setForeground(new Color(0, 0, 0));
         jSeparator27.setForeground(new Color(0, 0, 0));
         jSeparator28.setForeground(new Color(0, 0, 0));
@@ -529,9 +529,9 @@ public class PrincipalADM extends javax.swing.JFrame {
     public void SalvarCamposGerenciarClientes() {
         FieldNomeGerenciarClientes.setText("");
         FieldCPFGerenciarClientes.setText("");
-        FieldTelefoneGerenciarClientes.setText("");
-        FieldCidadeGerenciarClientes.setText("");
         FieldEnderecoGerenciarClientes.setText("");
+        FieldCidadeGerenciarClientes.setText("");
+        FieldTelefoneGerenciarClientes.setText("");
         FieldEmailGerenciarClientes.setText("");
 
         TravaCamposGerenciarClientes();
@@ -819,7 +819,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TableGerenciarCliente.updateUI();
 
         JTableHeader titulotabela = TableGerenciarCliente.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
 
@@ -872,7 +872,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TableGerenciarCliente.updateUI();
 
         JTableHeader titulotabela = TableGerenciarCliente.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
     }
@@ -1862,9 +1862,9 @@ public class PrincipalADM extends javax.swing.JFrame {
         SideBoardLayout.setVerticalGroup(
             SideBoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SideBoardLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addGap(75, 75, 75)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74)
+                .addGap(73, 73, 73)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
                 .addComponent(BotaoClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1907,10 +1907,10 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
-        lblNome3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblNome3.setText("Nome do cliente*");
 
-        lblNome6.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblNome6.setText("Endereço");
 
         FieldCadastroNomeCliente.setBackground(new java.awt.Color(240, 240, 240));
@@ -1918,7 +1918,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldCadastroNomeCliente.setBorder(null);
         FieldCadastroNomeCliente.setMaximumSize(new java.awt.Dimension(25, 25));
         FieldCadastroNomeCliente.setMinimumSize(new java.awt.Dimension(25, 25));
-        FieldCadastroNomeCliente.setDocument(new JTextFieldLimit(255, true, false));
         FieldCadastroNomeCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FieldCadastroNomeClienteMouseClicked(evt);
@@ -1933,6 +1932,9 @@ public class PrincipalADM extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 FieldCadastroNomeClienteKeyPressed(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FieldCadastroNomeClienteKeyTyped(evt);
+            }
         });
 
         FieldCadastroEnderecoCliente.setBackground(new java.awt.Color(240, 240, 240));
@@ -1940,7 +1942,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldCadastroEnderecoCliente.setBorder(null);
         FieldCadastroEnderecoCliente.setMaximumSize(new java.awt.Dimension(25, 25));
         FieldCadastroEnderecoCliente.setMinimumSize(new java.awt.Dimension(25, 25));
-        FieldCadastroEnderecoCliente.setDocument(new JTextFieldLimit(255, true, false));
         FieldCadastroEnderecoCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FieldCadastroEnderecoClienteMouseClicked(evt);
@@ -1973,7 +1974,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
-        lblNome8.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome8.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblNome8.setText("Email");
 
         jSeparator12.setBackground(new java.awt.Color(240, 240, 240));
@@ -2001,16 +2002,16 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
-        lblNome4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblNome4.setText("Telefone*");
 
         jSeparator17.setBackground(new java.awt.Color(240, 240, 240));
         jSeparator17.setForeground(new java.awt.Color(0, 0, 0));
 
-        lblNome9.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome9.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblNome9.setText("Cidade");
 
-        lblCPF4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblCPF4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblCPF4.setText("CPF*");
 
         FieldCadastroCidadeCliente.setBackground(new java.awt.Color(240, 240, 240));
@@ -2018,7 +2019,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldCadastroCidadeCliente.setBorder(null);
         FieldCadastroCidadeCliente.setMaximumSize(new java.awt.Dimension(25, 25));
         FieldCadastroCidadeCliente.setMinimumSize(new java.awt.Dimension(25, 25));
-        FieldCadastroCidadeCliente.setDocument(new JTextFieldLimit(255, true, false));
         FieldCadastroCidadeCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FieldCadastroCidadeClienteMouseClicked(evt);
@@ -2207,6 +2207,11 @@ public class PrincipalADM extends javax.swing.JFrame {
                 FieldCadastroTelefoneClienteMouseClicked(evt);
             }
         });
+        FieldCadastroTelefoneCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FieldCadastroTelefoneClienteKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout CadastrarClientesLayout = new javax.swing.GroupLayout(CadastrarClientes);
         CadastrarClientes.setLayout(CadastrarClientesLayout);
@@ -2228,24 +2233,22 @@ public class PrincipalADM extends javax.swing.JFrame {
                                 .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(FieldCadastroEmailCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
                                     .addComponent(lblNome9, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BotaoNovoCadastroCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BotaoNovoCadastroCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblNome3, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(FieldCadastroCidadeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jSeparator21, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(FieldCadastroNomeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jSeparator9))
-                                .addGap(166, 166, 166)
+                                .addGap(167, 167, 167)
                                 .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(CadastrarClientesLayout.createSequentialGroup()
-                                        .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(lblNome6)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarClientesLayout.createSequentialGroup()
-                                                .addComponent(BotaoSalvarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
-                                                .addComponent(BotaoCancelarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jSeparator16)
-                                            .addComponent(FieldCadastroEnderecoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(lblNome6)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarClientesLayout.createSequentialGroup()
+                                            .addComponent(BotaoSalvarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                                            .addComponent(BotaoCancelarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jSeparator16)
+                                        .addComponent(FieldCadastroEnderecoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(CadastrarClientesLayout.createSequentialGroup()
                                         .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addComponent(FieldCadastroCPFCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2253,14 +2256,14 @@ public class PrincipalADM extends javax.swing.JFrame {
                                             .addComponent(jSeparator14, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
                                         .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(CadastrarClientesLayout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jSeparator12, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                                    .addComponent(FieldCadastroTelefoneCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                            .addGroup(CadastrarClientesLayout.createSequentialGroup()
                                                 .addGap(73, 73, 73)
                                                 .addComponent(lblNome4)
-                                                .addGap(0, 0, Short.MAX_VALUE)))))))
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarClientesLayout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jSeparator12)
+                                                    .addComponent(FieldCadastroTelefoneCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))))))
                         .addContainerGap(57, Short.MAX_VALUE))))
         );
         CadastrarClientesLayout.setVerticalGroup(
@@ -2283,21 +2286,21 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addComponent(jSeparator9)
                     .addComponent(jSeparator12))
                 .addGap(26, 26, 26)
-                .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(CadastrarClientesLayout.createSequentialGroup()
                         .addComponent(lblNome9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(FieldCadastroCidadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
-                        .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(CadastrarClientesLayout.createSequentialGroup()
                         .addComponent(lblNome6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(FieldCadastroEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
-                        .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jSeparator16)))
                 .addGap(26, 26, 26)
-                .addComponent(lblNome8)
+                .addComponent(lblNome8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(FieldCadastroEmailCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
@@ -2307,14 +2310,14 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addComponent(BotaoNovoCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoSalvarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoCancelarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         PaneClientes.add(CadastrarClientes, "card3");
 
         ConsultarClientes.setPreferredSize(new java.awt.Dimension(1144, 700));
 
-        lblNome2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblNome2.setText("Nome do cliente");
 
         FieldConsultaNomeCliente.setBackground(new java.awt.Color(240, 240, 240));
@@ -2322,7 +2325,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldConsultaNomeCliente.setBorder(null);
         FieldConsultaNomeCliente.setMaximumSize(new java.awt.Dimension(25, 25));
         FieldConsultaNomeCliente.setMinimumSize(new java.awt.Dimension(25, 25));
-        FieldConsultaNomeCliente.setDocument(new JTextFieldLimit(255, true, false));
         FieldConsultaNomeCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FieldConsultaNomeClienteMouseClicked(evt);
@@ -2342,7 +2344,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         jSeparator7.setBackground(new java.awt.Color(240, 240, 240));
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
 
-        lblCPF2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblCPF2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblCPF2.setText("CPF");
 
         TableConsultaCliente.setAutoCreateRowSorter(true);
@@ -2528,7 +2530,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         FieldConsultaCPFCliente.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        FieldConsultaCPFCliente.setPreferredSize(new java.awt.Dimension(110, 25));
+        FieldConsultaCPFCliente.setPreferredSize(new java.awt.Dimension(205, 25));
         FieldConsultaCPFCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FieldConsultaCPFClienteMouseClicked(evt);
@@ -2537,6 +2539,9 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldConsultaCPFCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 FieldConsultaCPFClienteKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FieldConsultaCPFClienteKeyTyped(evt);
             }
         });
 
@@ -2551,16 +2556,16 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addComponent(jScrollPane2)
                     .addGroup(ConsultarClientesLayout.createSequentialGroup()
                         .addGroup(ConsultarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(FieldConsultaNomeCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
                             .addComponent(lblNome2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FieldConsultaNomeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
                             .addComponent(jSeparator7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(ConsultarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblCPF2)
-                            .addComponent(jSeparator11, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(FieldConsultaCPFCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jSeparator11)
+                            .addComponent(FieldConsultaCPFCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(70, 70, 70)
-                        .addComponent(BotaoBuscarConsultaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BotaoBuscarConsultaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(57, 57, 57))
         );
         ConsultarClientesLayout.setVerticalGroup(
@@ -2583,16 +2588,16 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addGap(1, 1, 1)
                             .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(BotaoBuscarConsultaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
+                .addGap(48, 48, 48)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         PaneClientes.add(ConsultarClientes, "card4");
 
         GerenciarClientes.setPreferredSize(new java.awt.Dimension(1144, 700));
 
-        lblNome10.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome10.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblNome10.setText("Nome do cliente");
 
         TableGerenciarCliente.setAutoCreateRowSorter(true);
@@ -2665,7 +2670,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
-        lblNome19.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome19.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblNome19.setText("Nome do cliente*");
 
         FieldNomeGerenciarClientes.setBackground(new java.awt.Color(240, 240, 240));
@@ -2673,7 +2678,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldNomeGerenciarClientes.setBorder(null);
         FieldNomeGerenciarClientes.setMaximumSize(new java.awt.Dimension(25, 25));
         FieldNomeGerenciarClientes.setMinimumSize(new java.awt.Dimension(25, 25));
-        FieldNomeGerenciarClientes.setDocument(new JTextFieldLimit(255, true, false));
         FieldNomeGerenciarClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FieldNomeGerenciarClientesMouseClicked(evt);
@@ -2705,7 +2709,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
-        lblCPF5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblCPF5.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblCPF5.setText("CPF*");
 
         jSeparator19.setBackground(new java.awt.Color(240, 240, 240));
@@ -2714,10 +2718,10 @@ public class PrincipalADM extends javax.swing.JFrame {
         jSeparator28.setBackground(new java.awt.Color(240, 240, 240));
         jSeparator28.setForeground(new java.awt.Color(0, 0, 0));
 
-        lblNome11.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome11.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblNome11.setText("Telefone*");
 
-        lblNome22.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome22.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblNome22.setText("Cidade");
 
         FieldCidadeGerenciarClientes.setBackground(new java.awt.Color(240, 240, 240));
@@ -2725,7 +2729,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldCidadeGerenciarClientes.setBorder(null);
         FieldCidadeGerenciarClientes.setMaximumSize(new java.awt.Dimension(25, 25));
         FieldCidadeGerenciarClientes.setMinimumSize(new java.awt.Dimension(25, 25));
-        FieldCidadeGerenciarClientes.setDocument(new JTextFieldLimit(255, true, false));
         FieldCidadeGerenciarClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FieldCidadeGerenciarClientesMouseClicked(evt);
@@ -2745,7 +2748,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         jSeparator29.setBackground(new java.awt.Color(240, 240, 240));
         jSeparator29.setForeground(new java.awt.Color(0, 0, 0));
 
-        lblNome23.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome23.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblNome23.setText("Endereço");
 
         FieldEnderecoGerenciarClientes.setBackground(new java.awt.Color(240, 240, 240));
@@ -2753,7 +2756,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldEnderecoGerenciarClientes.setBorder(null);
         FieldEnderecoGerenciarClientes.setMaximumSize(new java.awt.Dimension(25, 25));
         FieldEnderecoGerenciarClientes.setMinimumSize(new java.awt.Dimension(25, 25));
-        FieldEnderecoGerenciarClientes.setDocument(new JTextFieldLimit(255, true, false));
         FieldEnderecoGerenciarClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FieldEnderecoGerenciarClientesMouseClicked(evt);
@@ -2773,7 +2775,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         jSeparator30.setBackground(new java.awt.Color(240, 240, 240));
         jSeparator30.setForeground(new java.awt.Color(0, 0, 0));
 
-        lblNome24.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblNome24.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblNome24.setText("Email");
 
         FieldEmailGerenciarClientes.setBackground(new java.awt.Color(240, 240, 240));
@@ -2782,7 +2784,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldEmailGerenciarClientes.setMaximumSize(new java.awt.Dimension(25, 25));
         FieldEmailGerenciarClientes.setMinimumSize(new java.awt.Dimension(25, 25));
         FieldEmailGerenciarClientes.setPreferredSize(new java.awt.Dimension(1, 25));
-        //FieldEmailGerenciarClientes.setDocument(new JTextFieldLimit(255, false));
         FieldEmailGerenciarClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FieldEmailGerenciarClientesMouseClicked(evt);
@@ -2840,7 +2841,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldTelefoneGerenciarClientes.setBackground(new java.awt.Color(240, 240, 240));
         FieldTelefoneGerenciarClientes.setBorder(null);
         try {
-            FieldTelefoneGerenciarClientes.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###########")));
+            FieldTelefoneGerenciarClientes.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -2849,6 +2850,11 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldTelefoneGerenciarClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FieldTelefoneGerenciarClientesMouseClicked(evt);
+            }
+        });
+        FieldTelefoneGerenciarClientes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FieldTelefoneGerenciarClientesKeyTyped(evt);
             }
         });
 
@@ -2872,29 +2878,27 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addGap(15, 15, 15))
                         .addComponent(FieldEmailGerenciarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(FieldNomeGerenciarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
-                .addGroup(DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(135, 135, 135)
+                .addGroup(DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DadosAlteraClientesLayout.createSequentialGroup()
-                        .addComponent(BotaoAlterarGerenciarGarantia1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(BotaoExcluirGerenciarGarantia1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(BotaoCancelarGerenciarServicos2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BotaoAlterarGerenciarGarantia1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(BotaoExcluirGerenciarGarantia1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addComponent(BotaoCancelarGerenciarServicos2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DadosAlteraClientesLayout.createSequentialGroup()
                         .addGroup(DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblCPF5)
-                            .addComponent(jSeparator19, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                            .addComponent(jSeparator19)
                             .addComponent(lblNome23)
-                            .addComponent(jSeparator30, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                            .addComponent(FieldEnderecoGerenciarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                            .addComponent(FieldEnderecoGerenciarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+                            .addComponent(jSeparator30)
                             .addComponent(FieldCPFGerenciarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(133, 133, 133)
-                        .addGroup(DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator28)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, DadosAlteraClientesLayout.createSequentialGroup()
-                                .addComponent(lblNome11)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(FieldTelefoneGerenciarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator28, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FieldTelefoneGerenciarClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNome11)))))
         );
         DadosAlteraClientesLayout.setVerticalGroup(
             DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2976,7 +2980,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         jSeparator32.setBackground(new java.awt.Color(240, 240, 240));
         jSeparator32.setForeground(new java.awt.Color(0, 0, 0));
 
-        lblCPF6.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblCPF6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblCPF6.setText("CPF");
 
         BotaoBuscarConsultaCliente1.setBackground(new java.awt.Color(230, 230, 230));
@@ -3134,6 +3138,9 @@ public class PrincipalADM extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 FieldGerenciarCPFClienteKeyPressed(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FieldGerenciarCPFClienteKeyTyped(evt);
+            }
         });
 
         javax.swing.GroupLayout GerenciarClientesLayout = new javax.swing.GroupLayout(GerenciarClientes);
@@ -3151,13 +3158,13 @@ public class PrincipalADM extends javax.swing.JFrame {
                                 .addComponent(FieldGerenciarNomeCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                                 .addComponent(jSeparator10))
                             .addComponent(lblNome10))
-                        .addGap(137, 137, 137)
+                        .addGap(135, 135, 135)
                         .addGroup(GerenciarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblCPF6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FieldGerenciarCPFCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                            .addComponent(jSeparator32))
-                        .addGap(124, 124, 124)
-                        .addComponent(BotaoBuscarConsultaCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator32)
+                            .addComponent(FieldGerenciarCPFCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotaoBuscarConsultaCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(DadosAlteraClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
@@ -3178,7 +3185,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addGap(1, 1, 1)
                         .addGroup(GerenciarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jSeparator32, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(GerenciarClientesLayout.createSequentialGroup()
                         .addComponent(BotaoBuscarConsultaCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)))
@@ -3188,8 +3195,6 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addComponent(DadosAlteraClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
-
-        DadosAlteraClientes.getAccessibleContext().setAccessibleName("");
 
         PaneClientes.add(GerenciarClientes, "card5");
 
@@ -6686,21 +6691,27 @@ public class PrincipalADM extends javax.swing.JFrame {
     }//GEN-LAST:event_FieldConsultaNomeClienteKeyPressed
 
     private void BotaoBuscarConsultaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarConsultaClienteActionPerformed
-        ListaBuscaCliente = null;
-        Cliente cli = new Cliente();
-        clienteDAO clidao = new clienteDAO();
+        if (FieldConsultaNomeCliente.getText().isEmpty() && FieldConsultaCPFCliente.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Digite o nome do cliente ou o CPF antes de buscar!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+        } else {
 
-        try {
-            if (!FieldConsultaNomeCliente.getText().isEmpty()) {
-                cli.setNome(FieldConsultaNomeCliente.getText());
+            ListaBuscaCliente = null;
+            Cliente cli = new Cliente();
+            clienteDAO clidao = new clienteDAO();
+
+            try {
+
+                if (!FieldConsultaNomeCliente.getText().isEmpty() || !FieldConsultaCPFCliente.getText().isEmpty()) {
+                    cli.setNome(FieldConsultaNomeCliente.getText());
+                    cli.setCpf(FieldConsultaCPFCliente.getText());
+
+                }
+                ListaBuscaCliente = clidao.ListaBuscaCliente(cli);
+                atualizarTabelaBuscaCliente();
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
-            if (!FieldConsultaCPFCliente.getText().isEmpty()) {
-                cli.setCpf(FieldConsultaCPFCliente.getText());
-            }
-            ListaBuscaCliente = clidao.ListaBuscaCliente(cli);
-            atualizarTabelaBuscaCliente();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_BotaoBuscarConsultaClienteActionPerformed
 
@@ -6793,203 +6804,6 @@ public class PrincipalADM extends javax.swing.JFrame {
     private void FieldCadastroCidadeClienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldCadastroCidadeClienteKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_FieldCadastroCidadeClienteKeyPressed
-
-    private void BotaoCancelarGerenciarServicos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCancelarGerenciarServicos2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoCancelarGerenciarServicos2MouseClicked
-
-    private void BotaoCancelarGerenciarServicos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCancelarGerenciarServicos2ActionPerformed
-        SalvarCamposGerenciarClientes();
-    }//GEN-LAST:event_BotaoCancelarGerenciarServicos2ActionPerformed
-
-    private void BotaoExcluirGerenciarGarantia1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoExcluirGerenciarGarantia1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoExcluirGerenciarGarantia1MouseClicked
-
-    private void BotaoExcluirGerenciarGarantia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoExcluirGerenciarGarantia1ActionPerformed
-        if (FieldIDGerenciarClientes.getText().isEmpty()
-                || FieldNomeGerenciarClientes.getText().isEmpty()
-                || FieldCPFGerenciarClientes.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Selecione um cliente para remoção, caso não queira remover, cancele a ação!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
-        } else if (JOptionPane.showConfirmDialog(null, "Deseja mesmo excluir esse cliente?", "Sistema", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
-            try {
-                Cliente cli = new Cliente();
-                clienteDAO clidao = new clienteDAO();
-
-                cli.setId(Integer.parseInt(FieldIDGerenciarClientes.getText()));
-
-                clidao.RemoverCliente(cli);
-
-                try {
-                    atualizarTableGerenciarCCliente();
-                    atualizarTabelaConsultaCliente();
-
-                    AutoComplete();
-                    AutoComplete1();
-                    AutoComplete2();
-
-                    SalvarCamposGerenciarClientes();
-
-                    JOptionPane.showMessageDialog(null, "Cliente excluído com sucesso!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Algo de errado ocorreu! Erro: " + ex.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
-                    System.out.println(ex.getMessage());
-                }
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Não foi possível excluir esse cliente, talvez ele já esteja vinculado à alguma garantia!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
-                System.out.println(ex.getMessage());
-            }
-        }
-    }//GEN-LAST:event_BotaoExcluirGerenciarGarantia1ActionPerformed
-
-    private void BotaoAlterarGerenciarGarantia1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoAlterarGerenciarGarantia1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoAlterarGerenciarGarantia1MouseClicked
-
-    private void BotaoAlterarGerenciarGarantia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAlterarGerenciarGarantia1ActionPerformed
-        if (FieldIDGerenciarClientes.getText().isEmpty() || FieldNomeGerenciarClientes.getText().isEmpty() || FieldCPFGerenciarClientes.getText().equals("   .   .   -  ") || FieldTelefoneGerenciarClientes.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Há campos vazios, preencha os campos obrigatórios (*) para proceder com a alteração!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
-        } else if (JOptionPane.showConfirmDialog(null, "Deseja mesmo alterar esse cliente?", "Sistema", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
-            try {
-                Cliente cli = new Cliente();
-                clienteDAO clidao = new clienteDAO();
-
-                cli.setId(Integer.parseInt(FieldIDGerenciarClientes.getText()));
-                cli.setNome(FieldNomeGerenciarClientes.getText());
-                cli.setCpf(FieldCPFGerenciarClientes.getText());
-                cli.setTelefone(FieldTelefoneGerenciarClientes.getText());
-                cli.setCidade(FieldCidadeGerenciarClientes.getText());
-                cli.setEndereco(FieldEnderecoGerenciarClientes.getText());
-                cli.setEmail(FieldEmailGerenciarClientes.getText());
-
-                clidao.AlterarCliente(cli);
-
-                try {
-                    atualizarTableGerenciarCCliente();
-                    atualizarTabelaConsultaCliente();
-
-                    AutoComplete();
-                    AutoComplete1();
-                    AutoComplete2();
-
-                    SalvarCamposGerenciarClientes();
-
-                    JOptionPane.showMessageDialog(null, "Cliente alterado com sucesso!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Algo de errado ocorreu! Erro: " + ex.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
-                    System.out.println(ex.getMessage());
-                }
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Não foi possível alterar esse cliente, talvez ele já esteja vinculado à alguma garantia!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
-                System.out.println(ex.getMessage());
-            }
-        }
-    }//GEN-LAST:event_BotaoAlterarGerenciarGarantia1ActionPerformed
-
-    private void FieldNomeGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldNomeGerenciarClientesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldNomeGerenciarClientesMouseClicked
-
-    private void FieldNomeGerenciarClientesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldNomeGerenciarClientesKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldNomeGerenciarClientesKeyPressed
-
-    private void FieldIDGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldIDGerenciarClientesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldIDGerenciarClientesMouseClicked
-
-    private void FieldIDGerenciarClientesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldIDGerenciarClientesKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldIDGerenciarClientesKeyPressed
-
-    private void FieldCidadeGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldCidadeGerenciarClientesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldCidadeGerenciarClientesMouseClicked
-
-    private void FieldCidadeGerenciarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldCidadeGerenciarClientesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldCidadeGerenciarClientesActionPerformed
-
-    private void FieldCidadeGerenciarClientesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldCidadeGerenciarClientesKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldCidadeGerenciarClientesKeyPressed
-
-    private void FieldEnderecoGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldEnderecoGerenciarClientesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldEnderecoGerenciarClientesMouseClicked
-
-    private void FieldEnderecoGerenciarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldEnderecoGerenciarClientesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldEnderecoGerenciarClientesActionPerformed
-
-    private void FieldEnderecoGerenciarClientesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldEnderecoGerenciarClientesKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldEnderecoGerenciarClientesKeyPressed
-
-    private void FieldEmailGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldEmailGerenciarClientesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldEmailGerenciarClientesMouseClicked
-
-    private void FieldEmailGerenciarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldEmailGerenciarClientesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldEmailGerenciarClientesActionPerformed
-
-    private void FieldEmailGerenciarClientesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldEmailGerenciarClientesKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldEmailGerenciarClientesKeyPressed
-
-    private void TableGerenciarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableGerenciarClienteMouseClicked
-        TableGerenciarCliente.getTableHeader().setReorderingAllowed(false);
-        FieldIDGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 0).toString());
-        FieldNomeGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 1).toString());
-        FieldCPFGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 2).toString());
-        FieldTelefoneGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 3).toString());
-        if (TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 4).toString() != null) {
-            FieldCidadeGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 4).toString());
-        }
-        if (TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 5).toString() != null) {
-            FieldEnderecoGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 5).toString());
-        }
-        if (TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 6).toString() != null) {
-            FieldEmailGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 6).toString());
-        }
-
-        DestravaCamposGerenciarClientes();
-
-        DadosAlteraClientes.setVisible(true);
-    }//GEN-LAST:event_TableGerenciarClienteMouseClicked
-
-    private void FieldGerenciarNomeClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldGerenciarNomeClienteMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldGerenciarNomeClienteMouseClicked
-
-    private void FieldGerenciarNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldGerenciarNomeClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldGerenciarNomeClienteActionPerformed
-
-    private void FieldGerenciarNomeClienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldGerenciarNomeClienteKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldGerenciarNomeClienteKeyPressed
-
-    private void BotaoBuscarConsultaCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarConsultaCliente1ActionPerformed
-        ListaBuscaCliente = null;
-        Cliente cli = new Cliente();
-        clienteDAO clidao = new clienteDAO();
-
-        try {
-            if (!FieldGerenciarNomeCliente.getText().isEmpty()) {
-                cli.setNome(FieldGerenciarNomeCliente.getText());
-            }
-            if (!FieldGerenciarCPFCliente.getText().isEmpty()) {
-                cli.setCpf(FieldGerenciarCPFCliente.getText());
-            }
-            ListaBuscaCliente = clidao.ListaBuscaCliente(cli);
-            atualizarTableGerenciarBCliente();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-    }//GEN-LAST:event_BotaoBuscarConsultaCliente1ActionPerformed
 
     private void FieldDuracaoGerenciarConsertosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldDuracaoGerenciarConsertosKeyPressed
         // TODO add your handling code here:
@@ -7440,13 +7254,13 @@ public class PrincipalADM extends javax.swing.JFrame {
 
                 Locale BRAZIL = new Locale("pt", "BR");
                 NumberFormat moeda = NumberFormat.getCurrencyInstance(BRAZIL);
-                String valor =  moeda.format(ValorConvertido);
+                String valor = moeda.format(ValorConvertido);
 
                 gar.getId();
                 gar.setNome(CampoNome.getText());
                 gar.setDescricao((String) ComboEscolhaConserto.getSelectedItem());
                 gar.setSaida_concerto(LocalDate.parse(CampoDataFormatada.getText(), formatter));
-                gar.setDt_garantia(LocalDate.parse(FuncGarantia(gar.getSaida_concerto(), gar.getDescricao()), formatter));           
+                gar.setDt_garantia(LocalDate.parse(FuncGarantia(gar.getSaida_concerto(), gar.getDescricao()), formatter));
                 gar.setValor(FieldValorGarantia.getText());
                 GarantiaDAO garantiaDAO = new GarantiaDAO();
                 garantiaDAO.InserirGarantia(gar);
@@ -7559,50 +7373,6 @@ public class PrincipalADM extends javax.swing.JFrame {
     private void BotaoCadastrarCliConsulMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliConsulMouseExited
         BotaoCadastrarCliConsul.setBackground(new Color(230, 230, 230));        // TODO add your handling code here:
     }//GEN-LAST:event_BotaoCadastrarCliConsulMouseExited
-
-    private void BotaoGerenciarCliGerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCliGerMouseClicked
-        ConsultarClientes.setVisible(false);
-        CadastrarClientes.setVisible(false);
-        GerenciarClientes.setVisible(true);
-        atualizarTableGerenciarCCliente();
-    }//GEN-LAST:event_BotaoGerenciarCliGerMouseClicked
-
-    private void BotaoGerenciarCliGerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCliGerMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoGerenciarCliGerMouseEntered
-
-    private void BotaoGerenciarCliGerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCliGerMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoGerenciarCliGerMouseExited
-
-    private void BotaoConsultarCliGerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliGerMouseClicked
-        ConsultarClientes.setVisible(true);
-        CadastrarClientes.setVisible(false);
-        GerenciarClientes.setVisible(false);
-        atualizarTabelaConsultaCliente();// TODO add your handling code here:
-    }//GEN-LAST:event_BotaoConsultarCliGerMouseClicked
-
-    private void BotaoConsultarCliGerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliGerMouseEntered
-        BotaoConsultarCliGer.setBackground(new Color(220, 220, 220));
-    }//GEN-LAST:event_BotaoConsultarCliGerMouseEntered
-
-    private void BotaoConsultarCliGerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliGerMouseExited
-        BotaoConsultarCliGer.setBackground(new Color(230, 230, 230));
-    }//GEN-LAST:event_BotaoConsultarCliGerMouseExited
-
-    private void BotaoCadastrarCliGerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliGerMouseClicked
-        ConsultarClientes.setVisible(false);
-        CadastrarClientes.setVisible(true);
-        GerenciarClientes.setVisible(false);
-    }//GEN-LAST:event_BotaoCadastrarCliGerMouseClicked
-
-    private void BotaoCadastrarCliGerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliGerMouseEntered
-        BotaoCadastrarCliGer.setBackground(new Color(220, 220, 220));
-    }//GEN-LAST:event_BotaoCadastrarCliGerMouseEntered
-
-    private void BotaoCadastrarCliGerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliGerMouseExited
-        BotaoCadastrarCliGer.setBackground(new Color(230, 230, 230));
-    }//GEN-LAST:event_BotaoCadastrarCliGerMouseExited
 
     private void BotaoGerenciarCliGer1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCliGer1MouseClicked
         // TODO add your handling code here:
@@ -8206,7 +7976,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoExcluirGerLoginsActionPerformed
 
     private void BotaoNovoCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoCadastroClienteActionPerformed
-        DestravaCamposCadastroClientes(); // TODO add your handling code here:
+        DestravaCamposCadastroClientes();
     }//GEN-LAST:event_BotaoNovoCadastroClienteActionPerformed
 
     private void FieldsenhaCadastrarloginsKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldsenhaCadastrarloginsKeyTyped
@@ -8305,19 +8075,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         ResetColor(BotaoGerenciarCli4);
     }//GEN-LAST:event_BotaoGerenciarCli4MouseExited
 
-    private void BotaoGerenciarCli5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli5MouseClicked
-        RelatorioDAO relatoriocli = new RelatorioDAO();
-        relatoriocli.RelatorioCliente();// TODO add your handling code here:
-    }//GEN-LAST:event_BotaoGerenciarCli5MouseClicked
-
-    private void BotaoGerenciarCli5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli5MouseEntered
-        setLblColor(BotaoGerenciarCli5);// TODO add your handling code here:
-    }//GEN-LAST:event_BotaoGerenciarCli5MouseEntered
-
-    private void BotaoGerenciarCli5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli5MouseExited
-        ResetColor(BotaoGerenciarCli5);
-    }//GEN-LAST:event_BotaoGerenciarCli5MouseExited
-
     private void Botao2Via1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao2Via1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_Botao2Via1MouseClicked
@@ -8354,19 +8111,10 @@ public class PrincipalADM extends javax.swing.JFrame {
 
     }//GEN-LAST:event_FieldConsultaCPFClienteKeyPressed
 
-    private void FieldGerenciarCPFClienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldGerenciarCPFClienteKeyPressed
-
-    }//GEN-LAST:event_FieldGerenciarCPFClienteKeyPressed
-
-    private void FieldCPFGerenciarClientesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldCPFGerenciarClientesKeyPressed
-
-    }//GEN-LAST:event_FieldCPFGerenciarClientesKeyPressed
-
     private void FieldCadastroCPFClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldCadastroCPFClienteMouseClicked
         if (FieldCadastroCPFCliente.getText().equals("   .   .   -  ")) {
             FieldCadastroCPFCliente.setCaretPosition(0);
         }
-
     }//GEN-LAST:event_FieldCadastroCPFClienteMouseClicked
 
     private void FieldCadastroTelefoneClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldCadastroTelefoneClienteMouseClicked
@@ -8381,25 +8129,10 @@ public class PrincipalADM extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_FieldConsultaCPFClienteMouseClicked
 
-    private void FieldGerenciarCPFClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldGerenciarCPFClienteMouseClicked
-        if (FieldGerenciarCPFCliente.getText().equals("   .   .   -  ")) {
-            FieldGerenciarCPFCliente.setCaretPosition(0);
-        }
-
-    }//GEN-LAST:event_FieldGerenciarCPFClienteMouseClicked
-
-    private void FieldCPFGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldCPFGerenciarClientesMouseClicked
-        if (FieldCPFGerenciarClientes.getText().equals("   .   .   -  ")) {
-            FieldCPFGerenciarClientes.setCaretPosition(0);
-        }
-    }//GEN-LAST:event_FieldCPFGerenciarClientesMouseClicked
-
-    private void FieldTelefoneGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldTelefoneGerenciarClientesMouseClicked
-        FieldTelefoneGerenciarClientes.setCaretPosition(0);
-    }//GEN-LAST:event_FieldTelefoneGerenciarClientesMouseClicked
-
     private void FieldCadastroCPFClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldCadastroCPFClienteKeyTyped
-
+        if (FieldCadastroCPFCliente.getText().equals("   .   .   -  ")) {
+            FieldCadastroCPFCliente.setCaretPosition(0);
+        }
     }//GEN-LAST:event_FieldCadastroCPFClienteKeyTyped
 
     private void FieldCadastroCPFClienteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldCadastroCPFClienteKeyReleased
@@ -8714,6 +8447,313 @@ public class PrincipalADM extends javax.swing.JFrame {
             lblConserto4.setVisible(false);
         }
     }//GEN-LAST:event_FieldValorGarantiaGerFocusLost
+
+    private void FieldCadastroTelefoneClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldCadastroTelefoneClienteKeyTyped
+        if (FieldCadastroTelefoneCliente.getText().equals("(  )      -    ")) {
+            FieldCadastroTelefoneCliente.setCaretPosition(0);
+        }
+    }//GEN-LAST:event_FieldCadastroTelefoneClienteKeyTyped
+
+    private void FieldCadastroNomeClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldCadastroNomeClienteKeyTyped
+
+    }//GEN-LAST:event_FieldCadastroNomeClienteKeyTyped
+
+    private void FieldConsultaCPFClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldConsultaCPFClienteKeyTyped
+        if (FieldConsultaCPFCliente.getText().equals("   .   .   -  ")) {
+            FieldConsultaCPFCliente.setCaretPosition(0);
+        }
+    }//GEN-LAST:event_FieldConsultaCPFClienteKeyTyped
+
+    private void TableGerenciarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableGerenciarClienteMouseClicked
+        TableGerenciarCliente.getTableHeader().setReorderingAllowed(false);
+        FieldIDGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 0).toString());
+        FieldNomeGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 1).toString());
+        FieldCPFGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 2).toString());
+        FieldTelefoneGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 3).toString());
+        if (TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 4).toString() != null) {
+            FieldCidadeGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 4).toString());
+        }
+        if (TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 5).toString() != null) {
+            FieldEnderecoGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 5).toString());
+        }
+        if (TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 6).toString() != null) {
+            FieldEmailGerenciarClientes.setText(TableGerenciarCliente.getValueAt(TableGerenciarCliente.getSelectedRow(), 6).toString());
+        }
+
+        DestravaCamposGerenciarClientes();
+
+        DadosAlteraClientes.setVisible(true);
+    }//GEN-LAST:event_TableGerenciarClienteMouseClicked
+
+    private void BotaoExcluirGerenciarGarantia1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoExcluirGerenciarGarantia1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoExcluirGerenciarGarantia1MouseClicked
+
+    private void BotaoExcluirGerenciarGarantia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoExcluirGerenciarGarantia1ActionPerformed
+        if (FieldIDGerenciarClientes.getText().isEmpty()
+                || FieldNomeGerenciarClientes.getText().isEmpty()
+                || FieldCPFGerenciarClientes.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Selecione um cliente para remoção, caso não queira remover, cancele a ação!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+        } else if (JOptionPane.showConfirmDialog(null, "Deseja mesmo excluir esse cliente?", "Sistema", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+            try {
+                Cliente cli = new Cliente();
+                clienteDAO clidao = new clienteDAO();
+
+                cli.setId(Integer.parseInt(FieldIDGerenciarClientes.getText()));
+
+                clidao.RemoverCliente(cli);
+
+                try {
+                    atualizarTableGerenciarCCliente();
+                    atualizarTabelaConsultaCliente();
+
+                    AutoComplete();
+                    AutoComplete1();
+                    AutoComplete2();
+
+                    SalvarCamposGerenciarClientes();
+
+                    JOptionPane.showMessageDialog(null, "Cliente excluído com sucesso!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Algo de errado ocorreu! Erro: " + ex.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                    System.out.println(ex.getMessage());
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Não foi possível excluir esse cliente, talvez ele já esteja vinculado à alguma garantia!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                System.out.println(ex.getMessage());
+            }
+        }
+    }//GEN-LAST:event_BotaoExcluirGerenciarGarantia1ActionPerformed
+
+    private void BotaoAlterarGerenciarGarantia1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoAlterarGerenciarGarantia1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoAlterarGerenciarGarantia1MouseClicked
+
+    private void BotaoAlterarGerenciarGarantia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAlterarGerenciarGarantia1ActionPerformed
+        if (FieldIDGerenciarClientes.getText().isEmpty() || FieldNomeGerenciarClientes.getText().isEmpty() || FieldCPFGerenciarClientes.getText().equals("   .   .   -  ") || FieldTelefoneGerenciarClientes.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Há campos vazios, preencha os campos obrigatórios (*) para proceder com a alteração!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+        } else if (JOptionPane.showConfirmDialog(null, "Deseja mesmo alterar esse cliente?", "Sistema", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+            try {
+                Cliente cli = new Cliente();
+                clienteDAO clidao = new clienteDAO();
+
+                cli.setId(Integer.parseInt(FieldIDGerenciarClientes.getText()));
+                cli.setNome(FieldNomeGerenciarClientes.getText());
+                cli.setCpf(FieldCPFGerenciarClientes.getText());
+                cli.setTelefone(FieldTelefoneGerenciarClientes.getText());
+                cli.setCidade(FieldCidadeGerenciarClientes.getText());
+                cli.setEndereco(FieldEnderecoGerenciarClientes.getText());
+                cli.setEmail(FieldEmailGerenciarClientes.getText());
+
+                clidao.AlterarCliente(cli);
+
+                try {
+                    atualizarTableGerenciarCCliente();
+                    atualizarTabelaConsultaCliente();
+
+                    AutoComplete();
+                    AutoComplete1();
+                    AutoComplete2();
+
+                    SalvarCamposGerenciarClientes();
+
+                    JOptionPane.showMessageDialog(null, "Cliente alterado com sucesso!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Algo de errado ocorreu! Erro: " + ex.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                    System.out.println(ex.getMessage());
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Não foi possível alterar esse cliente, talvez ele já esteja vinculado à alguma garantia!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                System.out.println(ex.getMessage());
+            }
+        }
+    }//GEN-LAST:event_BotaoAlterarGerenciarGarantia1ActionPerformed
+
+    private void FieldNomeGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldNomeGerenciarClientesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNomeGerenciarClientesMouseClicked
+
+    private void FieldNomeGerenciarClientesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldNomeGerenciarClientesKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNomeGerenciarClientesKeyPressed
+
+    private void FieldIDGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldIDGerenciarClientesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldIDGerenciarClientesMouseClicked
+
+    private void FieldIDGerenciarClientesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldIDGerenciarClientesKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldIDGerenciarClientesKeyPressed
+
+    private void FieldCidadeGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldCidadeGerenciarClientesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldCidadeGerenciarClientesMouseClicked
+
+    private void FieldCidadeGerenciarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldCidadeGerenciarClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldCidadeGerenciarClientesActionPerformed
+
+    private void FieldCidadeGerenciarClientesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldCidadeGerenciarClientesKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldCidadeGerenciarClientesKeyPressed
+
+    private void FieldEnderecoGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldEnderecoGerenciarClientesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldEnderecoGerenciarClientesMouseClicked
+
+    private void FieldEnderecoGerenciarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldEnderecoGerenciarClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldEnderecoGerenciarClientesActionPerformed
+
+    private void FieldEnderecoGerenciarClientesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldEnderecoGerenciarClientesKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldEnderecoGerenciarClientesKeyPressed
+
+    private void FieldEmailGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldEmailGerenciarClientesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldEmailGerenciarClientesMouseClicked
+
+    private void FieldEmailGerenciarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldEmailGerenciarClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldEmailGerenciarClientesActionPerformed
+
+    private void FieldEmailGerenciarClientesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldEmailGerenciarClientesKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldEmailGerenciarClientesKeyPressed
+
+    private void BotaoCancelarGerenciarServicos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCancelarGerenciarServicos2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoCancelarGerenciarServicos2MouseClicked
+
+    private void BotaoCancelarGerenciarServicos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCancelarGerenciarServicos2ActionPerformed
+        SalvarCamposGerenciarClientes();
+    }//GEN-LAST:event_BotaoCancelarGerenciarServicos2ActionPerformed
+
+    private void FieldCPFGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldCPFGerenciarClientesMouseClicked
+        if (FieldCPFGerenciarClientes.getText().equals("   .   .   -  ")) {
+            FieldCPFGerenciarClientes.setCaretPosition(0);
+        }
+    }//GEN-LAST:event_FieldCPFGerenciarClientesMouseClicked
+
+    private void FieldCPFGerenciarClientesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldCPFGerenciarClientesKeyPressed
+
+    }//GEN-LAST:event_FieldCPFGerenciarClientesKeyPressed
+
+    private void FieldGerenciarNomeClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldGerenciarNomeClienteMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldGerenciarNomeClienteMouseClicked
+
+    private void FieldGerenciarNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldGerenciarNomeClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldGerenciarNomeClienteActionPerformed
+
+    private void FieldGerenciarNomeClienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldGerenciarNomeClienteKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldGerenciarNomeClienteKeyPressed
+
+    private void BotaoBuscarConsultaCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarConsultaCliente1ActionPerformed
+        ListaBuscaCliente = null;
+        Cliente cli = new Cliente();
+        clienteDAO clidao = new clienteDAO();
+
+        try {
+            if (!FieldGerenciarNomeCliente.getText().isEmpty()) {
+                cli.setNome(FieldGerenciarNomeCliente.getText());
+            }
+            if (!FieldGerenciarCPFCliente.getText().isEmpty()) {
+                cli.setCpf(FieldGerenciarCPFCliente.getText());
+            }
+            ListaBuscaCliente = clidao.ListaBuscaCliente(cli);
+            atualizarTableGerenciarBCliente();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_BotaoBuscarConsultaCliente1ActionPerformed
+
+    private void BotaoGerenciarCliGerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCliGerMouseClicked
+        ConsultarClientes.setVisible(false);
+        CadastrarClientes.setVisible(false);
+        GerenciarClientes.setVisible(true);
+        atualizarTableGerenciarCCliente();
+    }//GEN-LAST:event_BotaoGerenciarCliGerMouseClicked
+
+    private void BotaoGerenciarCliGerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCliGerMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoGerenciarCliGerMouseEntered
+
+    private void BotaoGerenciarCliGerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCliGerMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoGerenciarCliGerMouseExited
+
+    private void BotaoConsultarCliGerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliGerMouseClicked
+        ConsultarClientes.setVisible(true);
+        CadastrarClientes.setVisible(false);
+        GerenciarClientes.setVisible(false);
+        atualizarTabelaConsultaCliente();// TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliGerMouseClicked
+
+    private void BotaoConsultarCliGerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliGerMouseEntered
+        BotaoConsultarCliGer.setBackground(new Color(220, 220, 220));
+    }//GEN-LAST:event_BotaoConsultarCliGerMouseEntered
+
+    private void BotaoConsultarCliGerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliGerMouseExited
+        BotaoConsultarCliGer.setBackground(new Color(230, 230, 230));
+    }//GEN-LAST:event_BotaoConsultarCliGerMouseExited
+
+    private void BotaoCadastrarCliGerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliGerMouseClicked
+        ConsultarClientes.setVisible(false);
+        CadastrarClientes.setVisible(true);
+        GerenciarClientes.setVisible(false);
+    }//GEN-LAST:event_BotaoCadastrarCliGerMouseClicked
+
+    private void BotaoCadastrarCliGerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliGerMouseEntered
+        BotaoCadastrarCliGer.setBackground(new Color(220, 220, 220));
+    }//GEN-LAST:event_BotaoCadastrarCliGerMouseEntered
+
+    private void BotaoCadastrarCliGerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliGerMouseExited
+        BotaoCadastrarCliGer.setBackground(new Color(230, 230, 230));
+    }//GEN-LAST:event_BotaoCadastrarCliGerMouseExited
+
+    private void BotaoGerenciarCli5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli5MouseClicked
+        RelatorioDAO relatoriocli = new RelatorioDAO();
+        relatoriocli.RelatorioCliente();// TODO add your handling code here:
+    }//GEN-LAST:event_BotaoGerenciarCli5MouseClicked
+
+    private void BotaoGerenciarCli5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli5MouseEntered
+        setLblColor(BotaoGerenciarCli5);// TODO add your handling code here:
+    }//GEN-LAST:event_BotaoGerenciarCli5MouseEntered
+
+    private void BotaoGerenciarCli5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli5MouseExited
+        ResetColor(BotaoGerenciarCli5);
+    }//GEN-LAST:event_BotaoGerenciarCli5MouseExited
+
+    private void FieldGerenciarCPFClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldGerenciarCPFClienteMouseClicked
+        if (FieldGerenciarCPFCliente.getText().equals("   .   .   -  ")) {
+            FieldGerenciarCPFCliente.setCaretPosition(0);
+        }
+    }//GEN-LAST:event_FieldGerenciarCPFClienteMouseClicked
+
+    private void FieldGerenciarCPFClienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldGerenciarCPFClienteKeyPressed
+
+    }//GEN-LAST:event_FieldGerenciarCPFClienteKeyPressed
+
+    private void FieldTelefoneGerenciarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldTelefoneGerenciarClientesMouseClicked
+        if (FieldTelefoneGerenciarClientes.getText().equals("(  )      -    ")) {
+            FieldTelefoneGerenciarClientes.setCaretPosition(0);
+        }
+    }//GEN-LAST:event_FieldTelefoneGerenciarClientesMouseClicked
+
+    private void FieldTelefoneGerenciarClientesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldTelefoneGerenciarClientesKeyTyped
+        if (FieldTelefoneGerenciarClientes.getText().equals("(  )      -    ")) {
+            FieldTelefoneGerenciarClientes.setCaretPosition(0);
+        }
+    }//GEN-LAST:event_FieldTelefoneGerenciarClientesKeyTyped
+
+    private void FieldGerenciarCPFClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldGerenciarCPFClienteKeyTyped
+if (FieldGerenciarCPFCliente.getText().equals("   .   .   -  ")) {
+            FieldGerenciarCPFCliente.setCaretPosition(0);
+        }       
+    }//GEN-LAST:event_FieldGerenciarCPFClienteKeyTyped
 
     public void setLblColor(JLabel lbl) {
         lbl.setBackground(new Color(220, 220, 220));
