@@ -243,5 +243,17 @@ public class GarantiaDAO {
         return moeda.format(ValorConvertido);
 
     }
+     
+    public int TotalConsertos() throws SQLException {
+  
+        String SQL = "select* from cadastros.garantia";
+
+            PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
+            ResultSet rs = stmt.executeQuery();
+
+             rs.last();
+
+        return rs.getInt("id");
+    }
 
 }
