@@ -65,7 +65,7 @@ public class RelatorioDAO {
             PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
             ResultSet rs = stmt.executeQuery();
             JRResultSetDataSource relatorioGarantia = new JRResultSetDataSource(rs);
-            JasperPrint JpPrint = JasperFillManager.fillReport("relatorios/garantia.jasper", parametros, relatorioGarantia);
+            JasperPrint JpPrint = JasperFillManager.fillReport("relatorios/ComprovanteGarantia.jasper", parametros, relatorioGarantia);
             JasperViewer jc = new JasperViewer(JpPrint, false);
             jc.setVisible(true);
             jc.toFront();
@@ -76,7 +76,7 @@ public class RelatorioDAO {
     }
 
     public void RelatorioCliente() {
-        //To change body of generated methods, choose Tools | Templates.
+        
         try {
             String SQL = "SELECT\n"
                     + "     cliente.`id` AS cliente_id,\n"
@@ -96,7 +96,7 @@ public class RelatorioDAO {
             PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
             ResultSet rs = stmt.executeQuery();
             JRResultSetDataSource relatorioCli = new JRResultSetDataSource(rs);
-            JasperPrint jpPrint = JasperFillManager.fillReport("relatorios/relatorioCliente.jasper", parametros, relatorioCli);
+            JasperPrint jpPrint = JasperFillManager.fillReport("relatorios/RelatórioCliente.jasper", parametros, relatorioCli);
             JasperViewer jv = new JasperViewer(jpPrint, false);
             jv.setVisible(true);
             jv.toFront();

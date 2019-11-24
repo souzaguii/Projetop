@@ -55,15 +55,14 @@ public class GarantiaDAO {
     }
 
     public void AlterarGarantia(Garantia gar) throws SQLException {
-        String SQL = "update cadastros.garantia set nome=?, descricao=?, saida_concerto=?, garantia=?, valor=?  where id=?";
+        String SQL = "update cadastros.garantia set descricao=?, saida_concerto=?, garantia=?, valor=?  where id=?";
 
         PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
-        stmt.setString(1, gar.getNome());
-        stmt.setString(2, gar.getDescricao());
-        stmt.setDate(3, Date.valueOf(gar.getSaida_concerto()));
-        stmt.setDate(4, Date.valueOf(gar.getDt_garantia()));
-        stmt.setString(5, gar.getValor());
-        stmt.setInt(6, gar.getId());
+        stmt.setString(1, gar.getDescricao());
+        stmt.setDate(2, Date.valueOf(gar.getSaida_concerto()));
+        stmt.setDate(3, Date.valueOf(gar.getDt_garantia()));
+        stmt.setString(4, gar.getValor());
+        stmt.setInt(5, gar.getId());
 
         stmt.execute();
         stmt.close();

@@ -87,9 +87,9 @@ public class PrincipalADM extends javax.swing.JFrame {
     public PrincipalADM() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
-        PaneMae.setVisible(false);
-        SideBoard.setVisible(false);
-        PaneTelaInicial.setVisible(true);
+//        PaneMae.setVisible(false);
+//        SideBoard.setVisible(false);
+        PaneTelaInicial.setVisible(false);
         setLblColor(BotaoClientes);
         ResetColor(BotaoGarantias);
         ResetColor(BotaoConsertos);
@@ -433,12 +433,10 @@ public class PrincipalADM extends javax.swing.JFrame {
 
     //-----------------------------------
     public void TravaCamposGarenciarGarantia() {
-        FieldNomeGerenciarGarantia.setEnabled(false);
         CampoGerenciaDataFormatada.setEnabled(false);
         ComboGerenciaEscolhaConserto.setEnabled(false);
         FieldValorGarantiaGer.setEnabled(false);
         lblConserto5.setEnabled(false);
-        lblNome18.setEnabled(false);
         lblData1.setEnabled(false);
         lblConserto1.setEnabled(false);
         lblConserto4.setVisible(false);
@@ -446,18 +444,15 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoAlterarGerenciarGarantia.setEnabled(false);
         BotaoExcluirGerenciarGarantia.setEnabled(false);
         BotaoCancelarGerenciarGarantia.setEnabled(false);
-        jSeparator26.setForeground(new Color(200, 200, 200));
         jSeparator5.setForeground(new Color(200, 200, 200));
         jSeparator8.setForeground(new Color(200, 200, 200));
     }
 
     public void DestravaCamposGarenciarGarantia() {
-        FieldNomeGerenciarGarantia.setEnabled(true);
         CampoGerenciaDataFormatada.setEnabled(true);
         ComboGerenciaEscolhaConserto.setEnabled(true);
         FieldValorGarantiaGer.setEnabled(true);
 
-        lblNome18.setEnabled(true);
         lblData1.setEnabled(true);
         lblConserto1.setEnabled(true);
         lblConserto5.setEnabled(true);
@@ -467,13 +462,11 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoExcluirGerenciarGarantia.setEnabled(true);
         BotaoCancelarGerenciarGarantia.setEnabled(true);
 
-        jSeparator26.setForeground(new Color(0, 0, 0));
         jSeparator5.setForeground(new Color(0, 0, 0));
         jSeparator8.setForeground(new Color(0, 0, 0));
     }
 
     public void SalvarCamposGarenciarGarantia() {
-        FieldNomeGerenciarGarantia.setText("");
         CampoGerenciaDataFormatada.setText("");
         ComboGerenciaEscolhaConserto.setSelectedItem(null);
         FieldValorGarantiaGer.setText("");
@@ -714,7 +707,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TableConsultaCliente.updateUI();
 
         JTableHeader titulotabela = TableConsultaCliente.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
 
@@ -767,7 +760,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TableConsultaCliente.updateUI();
 
         JTableHeader titulotabela = TableConsultaCliente.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
     }
@@ -935,7 +928,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TableConsultaGarantia.updateUI();
 
         JTableHeader titulotabela = TableConsultaGarantia.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
 
@@ -989,7 +982,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TableConsultaGarantia.updateUI();
 
         JTableHeader titulotabela = TableConsultaGarantia.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
 
@@ -1048,7 +1041,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TableGerenciarGarantia.updateUI();
 
         JTableHeader titulotabela = TableGerenciarGarantia.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
     }
@@ -1097,7 +1090,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TableGerenciarGarantia.updateUI();
 
         JTableHeader titulotabela = TableGerenciarGarantia.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
     }
@@ -1144,7 +1137,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TabelaConsultaManutencao.updateUI();
 
         JTableHeader titulotabela = TabelaConsultaManutencao.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
     }
@@ -1184,7 +1177,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TabelaConsultaManutencao.updateUI();
 
         JTableHeader titulotabela = TabelaConsultaManutencao.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
     }
@@ -1231,7 +1224,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TableGerenciarServicos.updateUI();
 
         JTableHeader titulotabela = TableGerenciarServicos.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
     }
@@ -1271,7 +1264,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TableGerenciarServicos.updateUI();
 
         JTableHeader titulotabela = TableGerenciarServicos.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
     }
@@ -1306,7 +1299,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         TableGerenciarLogins.updateUI();
 
         JTableHeader titulotabela = TableGerenciarLogins.getTableHeader();
-        titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+        titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
         centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
         centralizado.setHorizontalAlignment(SwingConstants.CENTER);
     }
@@ -1326,7 +1319,7 @@ public class PrincipalADM extends javax.swing.JFrame {
 
             DefaultTableCellRenderer centralizado = new DefaultTableCellRenderer();
             JTableHeader titulotabela = TableGerenciarLogins.getTableHeader();
-            titulotabela.setFont(new java.awt.Font("Century Gothic", 0, 12));
+            titulotabela.setFont(new java.awt.Font("Century Gothic", 1, 12));
             centralizado = (DefaultTableCellRenderer) titulotabela.getDefaultRenderer();
             centralizado.setHorizontalAlignment(SwingConstants.CENTER);
 
@@ -1573,9 +1566,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoCancelarGerenciarGarantia = new javax.swing.JButton();
         BotaoExcluirGerenciarGarantia = new javax.swing.JButton();
         BotaoAlterarGerenciarGarantia = new javax.swing.JButton();
-        lblNome18 = new javax.swing.JLabel();
-        FieldNomeGerenciarGarantia = new javax.swing.JTextField();
-        jSeparator26 = new javax.swing.JSeparator();
         FieldIDGerenciarGarantia = new javax.swing.JTextField();
         lblData1 = new javax.swing.JLabel();
         CampoGerenciaDataFormatada = new javax.swing.JFormattedTextField();
@@ -1878,6 +1868,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         );
 
         PaneTelaInicial.setPreferredSize(new java.awt.Dimension(1366, 706));
+        PaneTelaInicial.setLayout(null);
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 27)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(25, 25, 112));
@@ -1894,55 +1885,28 @@ public class PrincipalADM extends javax.swing.JFrame {
                 jLabel11MouseExited(evt);
             }
         });
+        PaneTelaInicial.add(jLabel11);
+        jLabel11.setBounds(10, 490, 300, 28);
 
         jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(240, 240, 240));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        PaneTelaInicial.add(jLabel10);
+        jLabel10.setBounds(500, 569, 830, 22);
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(240, 240, 240));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        PaneTelaInicial.add(jLabel8);
+        jLabel8.setBounds(500, 542, 830, 20);
 
         Layout.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         Layout.setForeground(new java.awt.Color(240, 240, 240));
         Layout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LayoutTelaInicial.png"))); // NOI18N
-
-        javax.swing.GroupLayout PaneTelaInicialLayout = new javax.swing.GroupLayout(PaneTelaInicial);
-        PaneTelaInicial.setLayout(PaneTelaInicialLayout);
-        PaneTelaInicialLayout.setHorizontalGroup(
-            PaneTelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PaneTelaInicialLayout.createSequentialGroup()
-                .addGroup(PaneTelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PaneTelaInicialLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PaneTelaInicialLayout.createSequentialGroup()
-                        .addGap(500, 500, 500)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PaneTelaInicialLayout.createSequentialGroup()
-                        .addGap(500, 500, 500)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(Layout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        PaneTelaInicialLayout.setVerticalGroup(
-            PaneTelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PaneTelaInicialLayout.createSequentialGroup()
-                .addGroup(PaneTelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PaneTelaInicialLayout.createSequentialGroup()
-                        .addGap(490, 490, 490)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PaneTelaInicialLayout.createSequentialGroup()
-                        .addGap(570, 570, 570)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PaneTelaInicialLayout.createSequentialGroup()
-                        .addGap(540, 540, 540)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(Layout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        PaneTelaInicial.add(Layout);
+        Layout.setBounds(0, 0, 1366, 706);
 
         PaneMae.setPreferredSize(new java.awt.Dimension(1150, 706));
         PaneMae.setLayout(new java.awt.CardLayout());
@@ -2210,9 +2174,9 @@ public class PrincipalADM extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(459, Short.MAX_VALUE)
+                .addContainerGap(449, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(446, 446, 446))
+                .addGap(449, 449, 449))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -2284,54 +2248,44 @@ public class PrincipalADM extends javax.swing.JFrame {
         CadastrarClientes.setLayout(CadastrarClientesLayout);
         CadastrarClientesLayout.setHorizontalGroup(
             CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1157, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
             .addGroup(CadastrarClientesLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(59, 59, 59)
                 .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CadastrarClientesLayout.createSequentialGroup()
-                        .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(CadastrarClientesLayout.createSequentialGroup()
-                        .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CadastrarClientesLayout.createSequentialGroup()
-                                .addComponent(lblNome8)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(CadastrarClientesLayout.createSequentialGroup()
-                                .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(FieldCadastroEmailCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
-                                    .addComponent(lblNome9, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BotaoNovoCadastroCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblNome3, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(FieldCadastroCidadeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jSeparator21, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(FieldCadastroNomeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jSeparator9))
-                                .addGap(167, 167, 167)
-                                .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(lblNome6)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarClientesLayout.createSequentialGroup()
-                                            .addComponent(BotaoSalvarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
-                                            .addComponent(BotaoCancelarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jSeparator16)
-                                        .addComponent(FieldCadastroEnderecoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(CadastrarClientesLayout.createSequentialGroup()
-                                        .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(FieldCadastroCPFCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(lblCPF4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jSeparator14, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
-                                        .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(CadastrarClientesLayout.createSequentialGroup()
-                                                .addGap(73, 73, 73)
-                                                .addComponent(lblNome4)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarClientesLayout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jSeparator12)
-                                                    .addComponent(FieldCadastroTelefoneCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))))))
-                        .addGap(64, 64, 64))))
+                        .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(FieldCadastroEmailCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
+                            .addComponent(lblNome9, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BotaoNovoCadastroCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNome3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FieldCadastroCidadeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator21, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FieldCadastroNomeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator9))
+                        .addGap(167, 167, 167)
+                        .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(FieldCadastroEnderecoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblNome6)
+                                .addGroup(CadastrarClientesLayout.createSequentialGroup()
+                                    .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(FieldCadastroCPFCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblCPF4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jSeparator14, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
+                                    .addGap(73, 73, 73)
+                                    .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblNome4)
+                                        .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jSeparator12)
+                                            .addComponent(FieldCadastroTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarClientesLayout.createSequentialGroup()
+                                .addComponent(BotaoSalvarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(49, 49, 49)
+                                .addComponent(BotaoCancelarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNome8))
+                .addContainerGap())
         );
         CadastrarClientesLayout.setVerticalGroup(
             CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2365,19 +2319,19 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(FieldCadastroEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
-                        .addComponent(jSeparator16)))
+                        .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26)
                 .addComponent(lblNome8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(FieldCadastroEmailCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(61, 61, 61)
                 .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoNovoCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoSalvarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoCancelarCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         PaneClientes.add(CadastrarClientes, "card3");
@@ -2575,9 +2529,9 @@ public class PrincipalADM extends javax.swing.JFrame {
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                .addContainerGap(452, Short.MAX_VALUE)
+                .addContainerGap(449, Short.MAX_VALUE)
                 .addComponent(jLabel13)
-                .addGap(446, 446, 446))
+                .addGap(449, 449, 449))
             .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel22Layout.setVerticalGroup(
@@ -2618,7 +2572,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             ConsultarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ConsultarClientesLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(59, 59, 59)
                 .addGroup(ConsultarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane2)
                     .addGroup(ConsultarClientesLayout.createSequentialGroup()
@@ -2938,7 +2892,6 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addComponent(lblNome22)
                     .addGroup(DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jSeparator29, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(FieldCidadeGerenciarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jSeparator27, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jSeparator31, javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, DadosAlteraClientesLayout.createSequentialGroup()
@@ -2947,28 +2900,32 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addComponent(FieldIDGerenciarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(15, 15, 15))
                         .addComponent(FieldEmailGerenciarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(FieldNomeGerenciarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(FieldNomeGerenciarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FieldCidadeGerenciarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(135, 135, 135)
                 .addGroup(DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DadosAlteraClientesLayout.createSequentialGroup()
                         .addComponent(BotaoAlterarGerenciarGarantia1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
+                        .addGap(34, 34, 34)
                         .addComponent(BotaoExcluirGerenciarGarantia1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BotaoCancelarGerenciarServicos2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DadosAlteraClientesLayout.createSequentialGroup()
                         .addGroup(DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblCPF5)
                             .addComponent(jSeparator19)
                             .addComponent(lblNome23)
-                            .addComponent(FieldEnderecoGerenciarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
-                            .addComponent(jSeparator30)
-                            .addComponent(FieldCPFGerenciarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(FieldCPFGerenciarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jSeparator28, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(FieldTelefoneGerenciarClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNome11)))))
+                            .addComponent(lblNome11)))
+                    .addGroup(DadosAlteraClientesLayout.createSequentialGroup()
+                        .addGroup(DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jSeparator30, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FieldEnderecoGerenciarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         DadosAlteraClientesLayout.setVerticalGroup(
             DadosAlteraClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3179,7 +3136,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel24Layout.createSequentialGroup()
-                .addGap(446, 446, 446)
+                .addGap(449, 449, 449)
                 .addComponent(jLabel14)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -3220,24 +3177,23 @@ public class PrincipalADM extends javax.swing.JFrame {
         GerenciarClientesLayout.setHorizontalGroup(
             GerenciarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(GerenciarClientesLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(GerenciarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane5)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, GerenciarClientesLayout.createSequentialGroup()
+                    .addGroup(GerenciarClientesLayout.createSequentialGroup()
                         .addGroup(GerenciarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(GerenciarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(FieldGerenciarNomeCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                                .addComponent(jSeparator10))
+                            .addComponent(FieldGerenciarNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblNome10))
                         .addGap(135, 135, 135)
                         .addGroup(GerenciarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblCPF6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator32)
-                            .addComponent(FieldGerenciarCPFCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator32, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FieldGerenciarCPFCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(139, 139, 139)
                         .addComponent(BotaoBuscarConsultaCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(DadosAlteraClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DadosAlteraClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1033, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, 1153, Short.MAX_VALUE)
         );
         GerenciarClientesLayout.setVerticalGroup(
@@ -3470,9 +3426,9 @@ public class PrincipalADM extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(408, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(405, 405, 405))
+                .addGap(408, 408, 408))
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
@@ -3519,37 +3475,37 @@ public class PrincipalADM extends javax.swing.JFrame {
             CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
             .addGroup(CadastrarGarantiasLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(59, 59, 59)
+                .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(CadastrarGarantiasLayout.createSequentialGroup()
-                        .addComponent(BotaoNovoGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(728, 728, 728)
-                        .addComponent(BotaoCancelarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarGarantiasLayout.createSequentialGroup()
                         .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblNome)
-                                .addComponent(CampoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
-                                .addComponent(jSeparator2))
+                            .addComponent(lblNome)
+                            .addComponent(CampoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(CampoDataFormatada, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblData, javax.swing.GroupLayout.Alignment.TRAILING)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(308, 308, 308)
                         .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ComboEscolhaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblConserto2)
-                            .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, CadastrarGarantiasLayout.createSequentialGroup()
-                                    .addComponent(lblConserto3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(FieldValorGarantia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarGarantiasLayout.createSequentialGroup()
-                        .addComponent(BotaoSalvarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(198, 198, 198)))
-                .addGap(57, 57, 57))
+                            .addGroup(CadastrarGarantiasLayout.createSequentialGroup()
+                                .addComponent(lblConserto3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FieldValorGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboEscolhaConserto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(CadastrarGarantiasLayout.createSequentialGroup()
+                        .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(CadastrarGarantiasLayout.createSequentialGroup()
+                                .addComponent(BotaoNovoGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarGarantiasLayout.createSequentialGroup()
+                                .addComponent(BotaoSalvarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(49, 49, 49)))
+                        .addComponent(BotaoCancelarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(59, 59, 59))
         );
         CadastrarGarantiasLayout.setVerticalGroup(
             CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3582,12 +3538,12 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addComponent(FieldValorGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(1, 1, 1)
                         .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                 .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoCancelarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoNovoGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoSalvarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47))
+                .addGap(49, 49, 49))
         );
 
         PaneGarantias.add(CadastrarGarantias, "card3");
@@ -3794,7 +3750,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel28Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel16)
-                .addGap(405, 405, 405))
+                .addGap(408, 408, 408))
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3969,7 +3925,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
             .addGroup(ConsultarGarantiasLayout.createSequentialGroup()
                 .addComponent(Txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(44, 44, 44)
                 .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ConsultarGarantiasLayout.createSequentialGroup()
                         .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -4018,7 +3974,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                                 .addComponent(ComboOrdenaGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(BotaoBuscarConsultarGarantias, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         ConsultarGarantiasLayout.setVerticalGroup(
             ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4198,29 +4154,6 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
-        lblNome18.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        lblNome18.setText("Nome do cliente");
-
-        FieldNomeGerenciarGarantia.setBackground(new java.awt.Color(240, 240, 240));
-        FieldNomeGerenciarGarantia.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        FieldNomeGerenciarGarantia.setBorder(null);
-        FieldNomeGerenciarGarantia.setMaximumSize(new java.awt.Dimension(25, 25));
-        FieldNomeGerenciarGarantia.setMinimumSize(new java.awt.Dimension(25, 25));
-        FieldNomeGerenciarGarantia.setDocument(new JTextFieldLimit(255, true, false));
-        FieldNomeGerenciarGarantia.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                FieldNomeGerenciarGarantiaMouseClicked(evt);
-            }
-        });
-        FieldNomeGerenciarGarantia.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                FieldNomeGerenciarGarantiaKeyPressed(evt);
-            }
-        });
-
-        jSeparator26.setBackground(new java.awt.Color(240, 240, 240));
-        jSeparator26.setForeground(new java.awt.Color(0, 0, 0));
-
         FieldIDGerenciarGarantia.setEditable(false);
         FieldIDGerenciarGarantia.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         FieldIDGerenciarGarantia.setBorder(null);
@@ -4310,25 +4243,27 @@ public class PrincipalADM extends javax.swing.JFrame {
         DadosAlteraGarantiaLayout.setHorizontalGroup(
             DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblNome18)
-                    .addComponent(lblConserto1)
-                    .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FieldNomeGerenciarGarantia, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
-                    .addComponent(jSeparator26)
-                    .addComponent(ComboGerenciaEscolhaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CampoGerenciaDataFormatada)
-                    .addComponent(jSeparator5)
-                    .addComponent(lblData1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblConserto5)
-                    .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                        .addComponent(lblConserto4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FieldValorGarantiaGer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(138, 138, 138)
+                        .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboGerenciaEscolhaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblConserto1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CampoGerenciaDataFormatada)
+                            .addComponent(jSeparator5)
+                            .addComponent(lblData1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(138, 138, 138))
+                    .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
+                        .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblConserto5)
+                            .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
+                                .addComponent(lblConserto4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FieldValorGarantiaGer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BotaoCancelarGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoExcluirGerenciarGarantia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4347,35 +4282,26 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addComponent(BotaoCancelarGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
                         .addGap(7, 7, 7)
-                        .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                                .addComponent(lblNome18)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(FieldNomeGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(1, 1, 1)
-                                .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                                .addComponent(lblData1)
+                                .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblData1)
+                                    .addComponent(lblConserto1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(CampoGerenciaDataFormatada, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(1, 1, 1)
-                                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ComboGerenciaEscolhaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)
-                        .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                                .addComponent(lblConserto1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(ComboGerenciaEscolhaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
-                                .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(DadosAlteraGarantiaLayout.createSequentialGroup()
-                                .addComponent(lblConserto5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(FieldValorGarantiaGer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblConserto4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(1, 1, 1)
-                                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(lblConserto5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(DadosAlteraGarantiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(FieldValorGarantiaGer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblConserto4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1)
+                        .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(FieldIDGerenciarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(11, 11, 11))
         );
 
@@ -4484,7 +4410,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel26Layout.createSequentialGroup()
-                .addGap(405, 405, 405)
+                .addGap(408, 408, 408)
                 .addComponent(jLabel15)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -4503,7 +4429,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             GerenciarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GerenciarGarantiasLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(59, 59, 59)
                 .addGroup(GerenciarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(DadosAlteraGarantia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane8)
@@ -4512,7 +4438,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addComponent(lblNome17)
                             .addComponent(FieldNomeGerenciarServicos1, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                         .addGroup(GerenciarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCPF3)
                             .addComponent(ComboOrdenaGarantia1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -4776,7 +4702,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             ContatarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel44, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
             .addGroup(ContatarClientesLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(59, 59, 59)
                 .addGroup(ContatarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(TxtMsgWpp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
                     .addComponent(jSeparator38, javax.swing.GroupLayout.Alignment.LEADING)
@@ -4982,9 +4908,9 @@ public class PrincipalADM extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(391, Short.MAX_VALUE)
+                .addContainerGap(388, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(385, 385, 385))
+                .addGap(388, 388, 388))
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
@@ -5001,13 +4927,13 @@ public class PrincipalADM extends javax.swing.JFrame {
         CadastrarServicosLayout.setHorizontalGroup(
             CadastrarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CadastrarServicosLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(59, 59, 59)
                 .addGroup(CadastrarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(CadastrarServicosLayout.createSequentialGroup()
                         .addComponent(BotaoNovoCadastroConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BotaoSalvarCadastroConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62)
+                        .addGap(49, 49, 49)
                         .addComponent(BotaoCancelarCadastroConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(CadastrarServicosLayout.createSequentialGroup()
                         .addGroup(CadastrarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -5020,7 +4946,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addGroup(CadastrarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(FieldDuracaoCadastrarConsertos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jSeparator22, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)))))
-                .addGap(57, 57, 57))
+                .addGap(59, 59, 59))
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
         );
         CadastrarServicosLayout.setVerticalGroup(
@@ -5041,12 +4967,12 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addComponent(FieldDuracaoCadastrarConsertos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
                         .addComponent(jSeparator22)))
-                .addGap(234, 234, 234)
+                .addGap(241, 241, 241)
                 .addGroup(CadastrarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoSalvarCadastroConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoCancelarCadastroConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoNovoCadastroConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50))
+                .addGap(49, 49, 49))
         );
 
         PaneServicos.add(CadastrarServicos, "card4");
@@ -5201,9 +5127,9 @@ public class PrincipalADM extends javax.swing.JFrame {
         jPanel30Layout.setHorizontalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel30Layout.createSequentialGroup()
-                .addContainerGap(391, Short.MAX_VALUE)
+                .addContainerGap(388, Short.MAX_VALUE)
                 .addComponent(jLabel17)
-                .addGap(385, 385, 385))
+                .addGap(388, 388, 388))
             .addComponent(jPanel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel30Layout.setVerticalGroup(
@@ -5221,7 +5147,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             ConsultarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
             .addGroup(ConsultarServicosLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(59, 59, 59)
                 .addGroup(ConsultarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(ConsultarServicosLayout.createSequentialGroup()
                         .addGroup(ConsultarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -5253,7 +5179,7 @@ public class PrincipalADM extends javax.swing.JFrame {
 
         PaneServicos.add(ConsultarServicos, "card5");
 
-        GerenciarServicos.setPreferredSize(new java.awt.Dimension(1144, 700));
+        GerenciarServicos.setPreferredSize(new java.awt.Dimension(1150, 706));
 
         jSeparator20.setBackground(new java.awt.Color(240, 240, 240));
         jSeparator20.setForeground(new java.awt.Color(0, 0, 0));
@@ -5573,9 +5499,9 @@ public class PrincipalADM extends javax.swing.JFrame {
         jPanel32Layout.setHorizontalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
-                .addContainerGap(391, Short.MAX_VALUE)
+                .addContainerGap(388, Short.MAX_VALUE)
                 .addComponent(jLabel18)
-                .addGap(385, 385, 385))
+                .addGap(388, 388, 388))
             .addComponent(jPanel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel32Layout.setVerticalGroup(
@@ -5593,7 +5519,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             GerenciarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
             .addGroup(GerenciarServicosLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(59, 59, 59)
                 .addGroup(GerenciarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(GerenciarServicosLayout.createSequentialGroup()
                         .addGroup(GerenciarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -5623,7 +5549,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DadosAlteraServicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(13, 13, 13))
         );
 
         PaneServicos.add(GerenciarServicos, "card6");
@@ -5852,34 +5778,31 @@ public class PrincipalADM extends javax.swing.JFrame {
             AdicionarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel42, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdicionarLoginsLayout.createSequentialGroup()
-                .addGroup(AdicionarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(59, 59, 59)
+                .addGroup(AdicionarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AdicionarLoginsLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BotaoBuscarGerenciarServicos2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AdicionarLoginsLayout.createSequentialGroup()
-                        .addGap(57, 57, 57)
+                        .addGroup(AdicionarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jSeparator36, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FielduserCadastrarlogins, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                            .addComponent(lblNome27, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNome28, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator37, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                            .addComponent(FieldsenhaCadastrarlogins, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AdicionarLoginsLayout.createSequentialGroup()
+                                .addComponent(Fieldversenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(AdicionarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(AdicionarLoginsLayout.createSequentialGroup()
-                                .addGroup(AdicionarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jSeparator36, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(FielduserCadastrarlogins, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                                    .addComponent(lblNome27, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNome28, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator37, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                                    .addComponent(FieldsenhaCadastrarlogins, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(AdicionarLoginsLayout.createSequentialGroup()
-                                        .addComponent(Fieldversenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel6)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(AdicionarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ComboEscolhalogins, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblNome29)))
-                            .addGroup(AdicionarLoginsLayout.createSequentialGroup()
-                                .addComponent(BotaoBuscarGerenciarServicos3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BotaoBuscarGerenciarServicos4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(57, 57, 57))
+                            .addComponent(ComboEscolhalogins, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNome29)))
+                    .addGroup(AdicionarLoginsLayout.createSequentialGroup()
+                        .addComponent(BotaoBuscarGerenciarServicos3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotaoBuscarGerenciarServicos2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(BotaoBuscarGerenciarServicos4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(59, 59, 59))
         );
         AdicionarLoginsLayout.setVerticalGroup(
             AdicionarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5909,13 +5832,12 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addGap(3, 3, 3)
                         .addComponent(jLabel6))
                     .addComponent(Fieldversenha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(BotaoBuscarGerenciarServicos2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                 .addGroup(AdicionarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoBuscarGerenciarServicos3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotaoBuscarGerenciarServicos4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47))
+                    .addComponent(BotaoBuscarGerenciarServicos4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoBuscarGerenciarServicos2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49))
         );
 
         PaneCadastros.add(AdicionarLogins, "card3");
@@ -6281,7 +6203,7 @@ public class PrincipalADM extends javax.swing.JFrame {
             GerenciarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel36, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GerenciarCadastrosLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(59, 59, 59)
                 .addGroup(GerenciarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(GerenciarCadastrosLayout.createSequentialGroup()
                         .addGroup(GerenciarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -6292,7 +6214,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addComponent(BotaoAlterarGerLogins2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(GerenciarLogins, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         GerenciarCadastrosLayout.setVerticalGroup(
             GerenciarCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6786,16 +6708,8 @@ public class PrincipalADM extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FieldIDGerenciarGarantiaMouseClicked
 
-    private void FieldNomeGerenciarGarantiaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldNomeGerenciarGarantiaKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldNomeGerenciarGarantiaKeyPressed
-
-    private void FieldNomeGerenciarGarantiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldNomeGerenciarGarantiaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FieldNomeGerenciarGarantiaMouseClicked
-
     private void BotaoAlterarGerenciarGarantiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAlterarGerenciarGarantiaActionPerformed
-        if (FieldIDGerenciarGarantia.getText().isEmpty() || FieldNomeGerenciarGarantia.getText().isEmpty() || CampoGerenciaDataFormatada.getText().equals("  /  /    ")) {
+        if (FieldIDGerenciarGarantia.getText().isEmpty() || CampoGerenciaDataFormatada.getText().equals("  /  /    ") || FieldValorGarantiaGer.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Há campos vazios, preencha esses campos para proceder com a alteração!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
         } else if (JOptionPane.showConfirmDialog(null, "Deseja mesmo alterar essa garantia?", "Sistema", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
             try {
@@ -6803,7 +6717,6 @@ public class PrincipalADM extends javax.swing.JFrame {
                 GarantiaDAO gardao = new GarantiaDAO();
 
                 gar.setId(Integer.parseInt(FieldIDGerenciarGarantia.getText()));
-                gar.setNome(FieldNomeGerenciarGarantia.getText());
                 gar.setDescricao((String) ComboGerenciaEscolhaConserto.getSelectedItem());
                 gar.setSaida_concerto(LocalDate.parse(CampoGerenciaDataFormatada.getText(), formatter));
                 gar.setDt_garantia(LocalDate.parse(FuncGarantia(gar.getSaida_concerto(), gar.getDescricao()), formatter));
@@ -6873,7 +6786,6 @@ public class PrincipalADM extends javax.swing.JFrame {
     private void TableGerenciarGarantiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableGerenciarGarantiaMouseClicked
         TableGerenciarGarantia.getTableHeader().setReorderingAllowed(false);
         FieldIDGerenciarGarantia.setText(TableGerenciarGarantia.getValueAt(TableGerenciarGarantia.getSelectedRow(), 0).toString());
-        FieldNomeGerenciarGarantia.setText(TableGerenciarGarantia.getValueAt(TableGerenciarGarantia.getSelectedRow(), 1).toString());
         ComboGerenciaEscolhaConserto.getModel().setSelectedItem(TableGerenciarGarantia.getValueAt(TableGerenciarGarantia.getSelectedRow(), 2).toString());
         CampoGerenciaDataFormatada.setText(TableGerenciarGarantia.getValueAt(TableGerenciarGarantia.getSelectedRow(), 3).toString());
         String ValorConvertido = TableGerenciarGarantia.getValueAt(TableGerenciarGarantia.getSelectedRow(), 5).toString();
@@ -7947,13 +7859,13 @@ public class PrincipalADM extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboOrdenaGarantia1ActionPerformed
 
     private void FieldValorGarantiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldValorGarantiaMouseClicked
-        lblConserto3.setVisible(true);
+
     }//GEN-LAST:event_FieldValorGarantiaMouseClicked
 
     private void FieldValorGarantiaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FieldValorGarantiaFocusLost
         if (FieldValorGarantia.getText().isEmpty()) {
 
-            lblConserto3.setVisible(true);
+            lblConserto3.setVisible(false);
 
         }
     }//GEN-LAST:event_FieldValorGarantiaFocusLost
@@ -8366,7 +8278,9 @@ public class PrincipalADM extends javax.swing.JFrame {
     }//GEN-LAST:event_FieldCPFGerenciarClientesKeyTyped
 
     private void FieldValorGarantiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldValorGarantiaKeyTyped
-        lblConserto3.setVisible(true);
+    
+            lblConserto3.setVisible(true);
+   
     }//GEN-LAST:event_FieldValorGarantiaKeyTyped
 
     private void CampoDataFormatadaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoDataFormatadaKeyTyped
@@ -8541,7 +8455,6 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JTextField FieldNomeCadastrarConsertos;
     private javax.swing.JTextField FieldNomeGerenciarClientes;
     private javax.swing.JTextField FieldNomeGerenciarConsertos;
-    private javax.swing.JTextField FieldNomeGerenciarGarantia;
     private javax.swing.JTextField FieldNomeGerenciarServicos;
     private javax.swing.JTextField FieldNomeGerenciarServicos1;
     private javax.swing.JPasswordField FieldSenha;
@@ -8651,7 +8564,6 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator23;
     private javax.swing.JSeparator jSeparator24;
     private javax.swing.JSeparator jSeparator25;
-    private javax.swing.JSeparator jSeparator26;
     private javax.swing.JSeparator jSeparator27;
     private javax.swing.JSeparator jSeparator28;
     private javax.swing.JSeparator jSeparator29;
@@ -8704,7 +8616,6 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JLabel lblNome14;
     private javax.swing.JLabel lblNome15;
     private javax.swing.JLabel lblNome17;
-    private javax.swing.JLabel lblNome18;
     private javax.swing.JLabel lblNome19;
     private javax.swing.JLabel lblNome2;
     private javax.swing.JLabel lblNome20;
