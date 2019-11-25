@@ -111,7 +111,7 @@ public class LoginsDAO {
         try {
             stmt = con.prepareStatement("SELECT * FROM cadastros.logins");
             rs = stmt.executeQuery();
-            int  cont = 0;
+            int cont = 0;
             while (rs.next()) {
 
                 Logins logins = new Logins();
@@ -121,11 +121,11 @@ public class LoginsDAO {
                 logins.settipoconta(rs.getString("tipoconta"));
                 loginss.add(logins);
                 cont++;
-            }                       
+            }
 //                PrincipalADM prin = new PrincipalADM();
 //                
 //                prin.cont.setText(String.valueOf(cont));
-                
+
         } catch (SQLException ex) {
             Logger.getLogger(LoginsDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -185,6 +185,54 @@ public class LoginsDAO {
         String senha = rs.getString("senha");
 
         return senha;
+
+    }
+
+    public int VerificarUltimo() throws SQLException {
+
+        Connection con = Conexao.getConexaoMySQL();
+
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        stmt = con.prepareStatement("SELECT * FROM cadastros.logins");
+        rs = stmt.executeQuery();
+
+        int cont = 0;
+
+        while (rs.next()) {
+
+            cont++;
+
+        }
+
+        return cont;
+
+    }
+
+    public int VerificarUltimoADM() throws SQLException {
+
+        Connection con = Conexao.getConexaoMySQL();
+
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        stmt = con.prepareStatement("SELECT * FROM cadastros.logins");
+        rs = stmt.executeQuery();
+
+        int cont = 0;
+
+        while (rs.next()) {
+
+            if (rs.getString("tipoconta").equals("Administrador")) {
+
+                cont++;
+
+            }
+
+        }
+
+        return cont;
 
     }
 

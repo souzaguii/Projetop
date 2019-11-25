@@ -4,21 +4,20 @@
  * and open the template in the editor.
  */
 package controller;
-import static java.awt.Frame.MAXIMIZED_BOTH;
+
 import view.TelaLogin;
 import java.sql.SQLException;
-import view.PrincipalADM;
+
 /**
  *
  * @author Real
  */
 public class main {
-        public static void main(String[] args) throws SQLException {
-           
-       
-        PrincipalADM login = new PrincipalADM();
+
+    public static void main(String[] args) throws SQLException {
+
+        TelaLogin login = new TelaLogin();
         login.setVisible(true);
-        
-        
-        }
+
+    }
 }
