@@ -18,10 +18,6 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-/**
- *
- * @author Geral
- */
 public class TelaLogin extends javax.swing.JFrame {
 
     Connection conexao = null;
@@ -77,6 +73,15 @@ public class TelaLogin extends javax.swing.JFrame {
             Logger.getLogger(PrincipalADM.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public boolean firstuser(String login) {
+        return login.equals("admin");
+    }
+
+    public boolean firstsenha(String login) {
+        return login.equals("admin");
+    }
+
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -334,23 +339,53 @@ public class TelaLogin extends javax.swing.JFrame {
     private void ComboEscolhatipocontaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ComboEscolhatipocontaKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             LoginsDAO loginsdao = new LoginsDAO();
-            if (loginsdao.checkLogin(TxtUsuario.getText(), TxtSenha.getText(), (String) ComboEscolhatipoconta.getSelectedItem())) {
-                if (checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
-                    PrincipalADM prin = new PrincipalADM();
-                    prin.setVisible(true);
-                    this.dispose();
+
+            try {
+                if (loginsdao.VerificarUltimo() == 0) {
+
+                    if (firstuser(TxtUsuario.getText()) && firstsenha(TxtSenha.getText()) && checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
+
+                        PrincipalADM prin = new PrincipalADM();
+                        prin.setVisible(true);
+                        this.dispose();
+
+                        JOptionPane.showMessageDialog(null, "No momento, há somente o login padrão do sistema: \"Usuário = admin | Senha = admin | Tipo de conta = Administrador\". Cadastre um login seguro para desativar automaticamente o login padrão!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                                               
+                    } else {
+                        lblDados.setForeground(new Color(153, 0, 0));
+                        Separadoruser.setBackground(new Color(153, 0, 0));
+                        SeparadorSenha.setBackground(new Color(153, 0, 0));
+                        TxtUsuario.setText("");
+                        TxtSenha.setText("");
+                        ComboEscolhatipoconta.setSelectedItem("Padrão");
+                        JOptionPane.showMessageDialog(null, "Tente: \"Usuário = admin | Senha = admin | Tipo de conta = Administrador\"!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+
+                    }
+
                 } else {
-                    Principal prin = new Principal();
-                    prin.setVisible(true);
-                    this.dispose();
+
+                    if (loginsdao.checkLogin(TxtUsuario.getText(), TxtSenha.getText(), (String) ComboEscolhatipoconta.getSelectedItem())) {
+                        if (checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
+                            PrincipalADM prin = new PrincipalADM();
+                            prin.setVisible(true);
+                            this.dispose();
+                        } else {
+                            Principal prin = new Principal();
+                            prin.setVisible(true);
+                            this.dispose();
+                        }
+                    } else {
+                        lblDados.setForeground(new Color(153, 0, 0));
+                        Separadoruser.setBackground(new Color(153, 0, 0));
+                        SeparadorSenha.setBackground(new Color(153, 0, 0));
+                        TxtUsuario.setText("");
+                        TxtSenha.setText("");
+                        ComboEscolhatipoconta.setSelectedItem("Padrão");
+                    }
+
                 }
-            } else {
-                lblDados.setForeground(new Color(153, 0, 0));
-                Separadoruser.setBackground(new Color(153, 0, 0));
-                SeparadorSenha.setBackground(new Color(153, 0, 0));
-                TxtUsuario.setText("");
-                TxtSenha.setText("");
-                ComboEscolhatipoconta.setSelectedItem("Padrão");
+            } catch (SQLException ex) {
+
             }
         }
     }//GEN-LAST:event_ComboEscolhatipocontaKeyPressed
@@ -376,23 +411,53 @@ public class TelaLogin extends javax.swing.JFrame {
     private void TxtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtSenhaKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             LoginsDAO loginsdao = new LoginsDAO();
-            if (loginsdao.checkLogin(TxtUsuario.getText(), TxtSenha.getText(), (String) ComboEscolhatipoconta.getSelectedItem())) {
-                if (checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
-                    PrincipalADM prin = new PrincipalADM();
-                    prin.setVisible(true);
-                    this.dispose();
+
+            try {
+                if (loginsdao.VerificarUltimo() == 0) {
+
+                    if (firstuser(TxtUsuario.getText()) && firstsenha(TxtSenha.getText()) && checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
+
+                        PrincipalADM prin = new PrincipalADM();
+                        prin.setVisible(true);
+                        this.dispose();
+
+                        JOptionPane.showMessageDialog(null, "No momento, há somente o login padrão do sistema: \"Usuário = admin | Senha = admin | Tipo de conta = Administrador\". Cadastre um login seguro para desativar automaticamente o login padrão!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+
+                    } else {
+                        lblDados.setForeground(new Color(153, 0, 0));
+                        Separadoruser.setBackground(new Color(153, 0, 0));
+                        SeparadorSenha.setBackground(new Color(153, 0, 0));
+                        TxtUsuario.setText("");
+                        TxtSenha.setText("");
+                        ComboEscolhatipoconta.setSelectedItem("Padrão");
+                        JOptionPane.showMessageDialog(null, "Tente: \"Usuário = admin | Senha = admin | Tipo de conta = Administrador\"!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+
+                    }
+
                 } else {
-                    Principal prin = new Principal();
-                    prin.setVisible(true);
-                    this.dispose();
+
+                    if (loginsdao.checkLogin(TxtUsuario.getText(), TxtSenha.getText(), (String) ComboEscolhatipoconta.getSelectedItem())) {
+                        if (checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
+                            PrincipalADM prin = new PrincipalADM();
+                            prin.setVisible(true);
+                            this.dispose();
+                        } else {
+                            Principal prin = new Principal();
+                            prin.setVisible(true);
+                            this.dispose();
+                        }
+                    } else {
+                        lblDados.setForeground(new Color(153, 0, 0));
+                        Separadoruser.setBackground(new Color(153, 0, 0));
+                        SeparadorSenha.setBackground(new Color(153, 0, 0));
+                        TxtUsuario.setText("");
+                        TxtSenha.setText("");
+                        ComboEscolhatipoconta.setSelectedItem("Padrão");
+                    }
+
                 }
-            } else {
-                lblDados.setForeground(new Color(153, 0, 0));
-                Separadoruser.setBackground(new Color(153, 0, 0));
-                SeparadorSenha.setBackground(new Color(153, 0, 0));
-                TxtUsuario.setText("");
-                TxtSenha.setText("");
-                ComboEscolhatipoconta.setSelectedItem("Padrão");
+            } catch (SQLException ex) {
+
             }
         }
     }//GEN-LAST:event_TxtSenhaKeyPressed
@@ -418,23 +483,53 @@ public class TelaLogin extends javax.swing.JFrame {
     private void TxtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtUsuarioKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             LoginsDAO loginsdao = new LoginsDAO();
-            if (loginsdao.checkLogin(TxtUsuario.getText(), TxtSenha.getText(), (String) ComboEscolhatipoconta.getSelectedItem())) {
-                if (checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
-                    PrincipalADM prin = new PrincipalADM();
-                    prin.setVisible(true);
-                    this.dispose();
+
+            try {
+                if (loginsdao.VerificarUltimo() == 0) {
+
+                    if (firstuser(TxtUsuario.getText()) && firstsenha(TxtSenha.getText()) && checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
+
+                        PrincipalADM prin = new PrincipalADM();
+                        prin.setVisible(true);
+                        this.dispose();
+
+                        JOptionPane.showMessageDialog(null, "No momento, há somente o login padrão do sistema: \"Usuário = admin | Senha = admin | Tipo de conta = Administrador\". Cadastre um login seguro para desativar automaticamente o login padrão!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+
+                    } else {
+                        lblDados.setForeground(new Color(153, 0, 0));
+                        Separadoruser.setBackground(new Color(153, 0, 0));
+                        SeparadorSenha.setBackground(new Color(153, 0, 0));
+                        TxtUsuario.setText("");
+                        TxtSenha.setText("");
+                        ComboEscolhatipoconta.setSelectedItem("Padrão");
+                        JOptionPane.showMessageDialog(null, "Tente: \"Usuário = admin | Senha = admin | Tipo de conta = Administrador\"!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+
+                    }
+
                 } else {
-                    Principal prin = new Principal();
-                    prin.setVisible(true);
-                    this.dispose();
+
+                    if (loginsdao.checkLogin(TxtUsuario.getText(), TxtSenha.getText(), (String) ComboEscolhatipoconta.getSelectedItem())) {
+                        if (checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
+                            PrincipalADM prin = new PrincipalADM();
+                            prin.setVisible(true);
+                            this.dispose();
+                        } else {
+                            Principal prin = new Principal();
+                            prin.setVisible(true);
+                            this.dispose();
+                        }
+                    } else {
+                        lblDados.setForeground(new Color(153, 0, 0));
+                        Separadoruser.setBackground(new Color(153, 0, 0));
+                        SeparadorSenha.setBackground(new Color(153, 0, 0));
+                        TxtUsuario.setText("");
+                        TxtSenha.setText("");
+                        ComboEscolhatipoconta.setSelectedItem("Padrão");
+                    }
+
                 }
-            } else {
-                lblDados.setForeground(new Color(153, 0, 0));
-                Separadoruser.setBackground(new Color(153, 0, 0));
-                SeparadorSenha.setBackground(new Color(153, 0, 0));
-                TxtUsuario.setText("");
-                TxtSenha.setText("");
-                ComboEscolhatipoconta.setSelectedItem("Padrão");
+            } catch (SQLException ex) {
+
             }
         }
     }//GEN-LAST:event_TxtUsuarioKeyPressed
@@ -463,23 +558,53 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void BotaoSalvarCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSalvarCadastroClienteActionPerformed
         LoginsDAO loginsdao = new LoginsDAO();
-        if (loginsdao.checkLogin(TxtUsuario.getText(), TxtSenha.getText(), (String) ComboEscolhatipoconta.getSelectedItem())) {
-            if (checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
-                PrincipalADM prin = new PrincipalADM();
-                prin.setVisible(true);
-                this.dispose();
+
+        try {
+            if (loginsdao.VerificarUltimo() == 0) {
+
+                if (firstuser(TxtUsuario.getText()) && firstsenha(TxtSenha.getText()) && checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
+
+                    PrincipalADM prin = new PrincipalADM();
+                    prin.setVisible(true);
+                    this.dispose();
+
+                    JOptionPane.showMessageDialog(null, "No momento, há somente o login padrão do sistema: \"Usuário = admin | Senha = admin | Tipo de conta = Administrador\". Cadastre um login seguro para desativar automaticamente o login padrão!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+
+                } else {
+                    lblDados.setForeground(new Color(153, 0, 0));
+                    Separadoruser.setBackground(new Color(153, 0, 0));
+                    SeparadorSenha.setBackground(new Color(153, 0, 0));
+                    TxtUsuario.setText("");
+                    TxtSenha.setText("");
+                    ComboEscolhatipoconta.setSelectedItem("Padrão");
+                    JOptionPane.showMessageDialog(null, "Tente: \"Usuário = admin | Senha = admin | Tipo de conta = Administrador\"!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+
+                }
+
             } else {
-                Principal prin = new Principal();
-                prin.setVisible(true);
-                this.dispose();
+
+                if (loginsdao.checkLogin(TxtUsuario.getText(), TxtSenha.getText(), (String) ComboEscolhatipoconta.getSelectedItem())) {
+                    if (checkLogin((String) ComboEscolhatipoconta.getSelectedItem())) {
+                        PrincipalADM prin = new PrincipalADM();
+                        prin.setVisible(true);
+                        this.dispose();
+                    } else {
+                        Principal prin = new Principal();
+                        prin.setVisible(true);
+                        this.dispose();
+                    }
+                } else {
+                    lblDados.setForeground(new Color(153, 0, 0));
+                    Separadoruser.setBackground(new Color(153, 0, 0));
+                    SeparadorSenha.setBackground(new Color(153, 0, 0));
+                    TxtUsuario.setText("");
+                    TxtSenha.setText("");
+                    ComboEscolhatipoconta.setSelectedItem("Padrão");
+                }
+
             }
-        } else {
-            lblDados.setForeground(new Color(153, 0, 0));
-            Separadoruser.setBackground(new Color(153, 0, 0));
-            SeparadorSenha.setBackground(new Color(153, 0, 0));
-            TxtUsuario.setText("");
-            TxtSenha.setText("");
-            ComboEscolhatipoconta.setSelectedItem("Padrão");
+        } catch (SQLException ex) {
+
         }
     }//GEN-LAST:event_BotaoSalvarCadastroClienteActionPerformed
 

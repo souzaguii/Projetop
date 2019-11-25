@@ -6705,11 +6705,11 @@ public class PrincipalADM extends javax.swing.JFrame {
         ValorConvertido = ValorConvertido.replaceAll("\\$", "");
 
         ValorConvertido = ValorConvertido.replaceAll("R", "");
-        
+
         int tam = ValorConvertido.length();
-        
-        String ValorFinal = ValorConvertido.substring(1, tam) ;
-       
+
+        String ValorFinal = ValorConvertido.substring(1, tam);
+
         FieldValorGarantiaGer.setText(ValorFinal);
 
         DestravaCamposGarenciarGarantia();
@@ -6804,13 +6804,13 @@ public class PrincipalADM extends javax.swing.JFrame {
                     SalvarCamposCadastroGarantia();
                     atualizarTabelaConsultaGarantia();
                     atualizarTabelaGerenciaCGarantia();
-                    
+
                     if (JOptionPane.showConfirmDialog(null, "Deseja gerar o comprovante de garantia?", "Sistema", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
 
-                    RelatorioDAO relatorio = new RelatorioDAO();
-                    relatorio.GeraGarantia(valor);
-                    
-                }
+                        RelatorioDAO relatorio = new RelatorioDAO();
+                        relatorio.GeraGarantia(valor);
+
+                    }
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Algo de errado ocorreu! Erro: " + ex.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
 
@@ -7223,7 +7223,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         GerenciarCadastros.setVisible(true);
         TableGerenciarLogins.updateUI();
         TableGerenciarLoginss();
-        GerenciarLogins.setEnabled(false);     
+        GerenciarLogins.setEnabled(false);
     }//GEN-LAST:event_BotaoConsultarCliConsul8MouseClicked
 
     private void BotaoConsultarCliConsul8MouseEntered(MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul8MouseEntered
@@ -7318,7 +7318,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         Logins logins = new Logins();
         LoginsDAO loginsdao = new LoginsDAO();
 
-        if (FieldUserGerenciarLogins.getText().isEmpty()) {
+        if (FieldId.getText().isEmpty()) {
 
             JOptionPane.showMessageDialog(null, "Selecione um login na tabela para alterar!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
 
@@ -7340,7 +7340,6 @@ public class PrincipalADM extends javax.swing.JFrame {
                 loginsdao.AtualizarLogins(logins);
                 PesquisarTabela(FieldUserGerenciarLogins.getText());
                 TravaCamposGerenciarLogins();
-                JOptionPane.showMessageDialog(null, "Login alterado com sucesso!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
 
             }
         } catch (SQLException ex) {
@@ -7573,24 +7572,26 @@ public class PrincipalADM extends javax.swing.JFrame {
                 Logins logins = new Logins();
                 LoginsDAO loginsdao = new LoginsDAO();
 
-                logins.setusuario(FielduserCadastrarlogins.getText());
-                logins.setsenha(FieldsenhaCadastrarlogins.getText());
-                logins.settipoconta((String) ComboEscolhalogins.getSelectedItem());
-                loginsdao.Cadastrarlogin(logins);
+                if (loginsdao.VerificarUltimo() == 0 && ComboEscolhalogins.getSelectedItem().equals("Padrão")) {
 
-                try {
-                    JOptionPane.showMessageDialog(null, "Login cadastrado com sucesso!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "O primeiro cadastro deve ser do tipo Administrador!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+
+                } else {
+
+                    logins.setusuario(FielduserCadastrarlogins.getText());
+                    logins.setsenha(FieldsenhaCadastrarlogins.getText());
+                    logins.settipoconta((String) ComboEscolhalogins.getSelectedItem());
+                    loginsdao.Cadastrarlogin(logins);
                     TravaCamposCadastrarLogins();
-
-                } catch (HeadlessException ex) {
-                    JOptionPane.showMessageDialog(null, "Algo de errado ocorreu! Erro: " + ex.getMessage(), "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Login cadastrado com sucesso!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
 
                 }
+
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Nome de usuário em uso!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Erro ao cadastrar. Pode ser que o usuário esteja em uso!", "Sistema", JOptionPane.INFORMATION_MESSAGE);
 
             }
-        }        // TODO add your handling code here:
+        }
     }//GEN-LAST:event_BotaoBuscarGerenciarServicos2ActionPerformed
 
     private void BotaoAlterarGerLogins2ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_BotaoAlterarGerLogins2ActionPerformed
