@@ -14,6 +14,7 @@ import dao.clienteDAO;
 import dao.RelatorioDAO;
 import java.awt.Color;
 import java.awt.Desktop;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusEvent;
 import java.awt.event.KeyEvent;
@@ -60,9 +61,9 @@ public class PrincipalADM extends javax.swing.JFrame {
     List<Manutencao> ListaBuscaManutencao;
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
+    
     public PrincipalADM() {
-        initComponents();
+        initComponents(); 
         setExtendedState(MAXIMIZED_BOTH);
         PaneMae.setVisible(false);
         SideBoard.setVisible(false);
@@ -1697,7 +1698,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Gerenciamento de Garantias");
+        setTitle("Gerenciador de Garantias");
         setIconImages(null);
         setPreferredSize(new java.awt.Dimension(1366, 706));
 
