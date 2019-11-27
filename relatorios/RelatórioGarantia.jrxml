@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="garantia" language="groovy" pageWidth="507" pageHeight="821" columnWidth="467" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ab1432b8-55ce-4466-8f3e-6b80ab79e685">
+	<property name="ireport.zoom" value="4.515791440430455"/>
+	<property name="ireport.x" value="1358"/>
+	<property name="ireport.y" value="659"/>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<parameter name="valor" class="java.lang.String"/>
+	<parameter name="valortotal" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     garantia.`id` AS garantia_id,
+     garantia.`Nome` AS garantia_Nome,
+     garantia.`descricao` AS garantia_descricao,
+     garantia.`saida_concerto` AS garantia_saida_concerto,
+     garantia.`garantia` AS garantia_garantia,
+     garantia.`valor` AS garantia_valor
+FROM
+     `garantia` garantia]]>
+	</queryString>
+	<field name="garantia_id" class="java.lang.Integer"/>
+	<field name="garantia_Nome" class="java.lang.String"/>
+	<field name="garantia_descricao" class="java.lang.String"/>
+	<field name="garantia_saida_concerto" class="java.sql.Date"/>
+	<field name="garantia_garantia" class="java.sql.Date"/>
+	<field name="garantia_valor" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="121" splitType="Stretch">
+			<staticText>
+				<reportElement x="130" y="81" width="206" height="20" uuid="e9a1da18-d9a5-47f7-804b-09bed238bdb8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DE GARANTIAS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="130" y="0" width="206" height="76" uuid="420474e8-3284-487e-a620-8172ee7b0f00"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="0" width="466" height="21" forecolor="#F0F0F0" backcolor="#F0F0F0" uuid="cda7c4d8-ca60-4f60-b721-bcaf7003cad7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="293" y="0" width="86" height="21" uuid="446eef52-4cd6-44e3-b9ee-65137bfcf1d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prazo de garantia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="0" width="86" height="21" uuid="cc25eb0c-4005-4a92-ade4-8464c62269e9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="0" width="86" height="21" uuid="da447e9c-8e18-482c-8521-cdef4e19986b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome do cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="27" height="21" uuid="1496f110-29c9-4319-824d-d3d949f57236"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="205" y="0" width="86" height="21" uuid="6374efe1-af87-4586-b44d-1dc187177704"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data de execução]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="0" width="86" height="21" uuid="a204fdea-f06b-49e4-afd5-c696f304ca70"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome do conserto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="0" width="466" height="21" forecolor="#F0F0F0" backcolor="#F0F0F0" uuid="9e1fda68-bb5d-46ce-ab90-b2825b78b0ce">
+					<printWhenExpression><![CDATA[new Boolean(($V{COLUMN_COUNT}.intValue() % 2) == 0)]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="1" y="0" width="466" height="21" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="8316dfb7-5652-4f5d-9124-89720127a684">
+					<printWhenExpression><![CDATA[new Boolean(($V{COLUMN_COUNT}.intValue() % 2) != 0)]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="27" height="21" uuid="a89a593e-825e-4d8d-a065-bc86a5780634"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{garantia_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="0" width="86" height="21" uuid="cd5101ac-e55d-4ce6-be53-d4edbc327115"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{garantia_Nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="0" width="86" height="21" uuid="fcd14366-7f94-443f-ab70-96c8283041da"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{garantia_descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="205" y="0" width="86" height="21" uuid="3f3bfef5-d214-410a-9338-7adc87bb567a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{garantia_saida_concerto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="0" width="86" height="21" uuid="c3cdf8d2-fdaa-4cd1-a7de-60e92c480c84"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{garantia_garantia}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="381" y="0" width="86" height="21" uuid="82b6b0fc-c975-4a9f-add1-07275af5de20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{valor} + " " + (($F{garantia_valor}).replaceAll ("\\.", ","))]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="21" width="115" height="21" uuid="de028eac-790d-4e4b-ab6c-cdaba01dfb03"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="381" y="21" width="86" height="21" uuid="42c9cee0-78b8-4e40-9b31-6c94c9d6e00c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{valortotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="381" y="0" width="86" height="21" uuid="0a471dc8-74af-4ee4-bf51-4c7047046815"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor total]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

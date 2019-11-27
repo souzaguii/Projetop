@@ -5,8 +5,6 @@
  */
 package view;
 
-//import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
-import controller.JTextFieldLimit;
 import controller.SetupAutoComplete;
 import dao.Conexao;
 import dao.GarantiaDAO;
@@ -14,19 +12,13 @@ import dao.LoginsDAO;
 import dao.ManutencaoDAO;
 import dao.clienteDAO;
 import dao.RelatorioDAO;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Desktop;
-import java.awt.Font;
-import java.awt.HeadlessException;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -34,41 +26,24 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import java.text.NumberFormat;
-import java.text.ParseException;
 import java.time.LocalDate;
-import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static javax.swing.GroupLayout.Alignment.CENTER;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.border.Border;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
-import javax.swing.text.MaskFormatter;
 import model.Cliente;
 import model.Garantia;
 import model.Logins;
 import model.Manutencao;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JRResultSetDataSource;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.view.JasperViewer;
 
 public class PrincipalADM extends javax.swing.JFrame {
 
@@ -1518,6 +1493,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoGerenciarCli1 = new javax.swing.JLabel();
         BotaoConsultarCli1 = new javax.swing.JLabel();
         BotaoClientes3 = new javax.swing.JLabel();
+        BotaoGerenciarCli6 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
         lblConserto2 = new javax.swing.JLabel();
         lblConserto3 = new javax.swing.JLabel();
@@ -1538,6 +1514,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoGerenciarCliConsul1 = new javax.swing.JLabel();
         BotaoConsultarCliConsul1 = new javax.swing.JLabel();
         BotaoCadastrarCliConsul1 = new javax.swing.JLabel();
+        BotaoGerenciarCli7 = new javax.swing.JLabel();
         Txtid = new javax.swing.JTextField();
         Botao2Via1 = new javax.swing.JButton();
         lblCPF11 = new javax.swing.JLabel();
@@ -1583,6 +1560,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoGerenciarCliGer1 = new javax.swing.JLabel();
         BotaoConsultarCliGer1 = new javax.swing.JLabel();
         BotaoCadastrarCliGer1 = new javax.swing.JLabel();
+        BotaoGerenciarCli8 = new javax.swing.JLabel();
         ContatarClientes = new javax.swing.JPanel();
         lblCPF7 = new javax.swing.JLabel();
         TxtMsgWpp = new javax.swing.JTextField();
@@ -1594,6 +1572,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoGerenciarCliGer2 = new javax.swing.JLabel();
         BotaoConsultarCliGer2 = new javax.swing.JLabel();
         BotaoCadastrarCliGer2 = new javax.swing.JLabel();
+        BotaoGerenciarCli9 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblCPF10 = new javax.swing.JLabel();
         lblCPF9 = new javax.swing.JLabel();
@@ -1617,7 +1596,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoGerenciarCli2 = new javax.swing.JLabel();
         BotaoConsultarCli2 = new javax.swing.JLabel();
         BotaoClientes4 = new javax.swing.JLabel();
-        FieldDuracaoCadastrarConsertos = new javax.swing.JFormattedTextField();
+        FieldDuracaoCadastrarConsertos = new javax.swing.JTextField();
         ConsultarServicos = new javax.swing.JPanel();
         FieldConsultaDescricaoGarantias = new javax.swing.JTextField();
         lblNome7 = new javax.swing.JLabel();
@@ -1648,7 +1627,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         jSeparator24 = new javax.swing.JSeparator();
         FieldIDGerenciarConsertos = new javax.swing.JTextField();
         BotaoCancelarGerenciarServicos = new javax.swing.JButton();
-        FieldDuracaoGerenciarConsertos = new javax.swing.JFormattedTextField();
+        FieldDuracaoGerenciarConsertos = new javax.swing.JTextField();
         jPanel32 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jPanel33 = new javax.swing.JPanel();
@@ -1697,7 +1676,6 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldId = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         FieldSenha = new javax.swing.JPasswordField();
-        cont = new javax.swing.JTextField();
         jScrollPane9 = new javax.swing.JScrollPane();
         TableGerenciarLogins = new javax.swing.JTable();
         BotaoAlterarGerLogins2 = new javax.swing.JButton();
@@ -2607,7 +2585,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(BotaoBuscarConsultaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -3214,7 +3192,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addGap(10, 10, 10)))
                 .addGap(4, 4, 4)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(DadosAlteraClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -3373,6 +3351,25 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
+        BotaoGerenciarCli6.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoGerenciarCli6.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoGerenciarCli6.setForeground(new java.awt.Color(25, 25, 112));
+        BotaoGerenciarCli6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoGerenciarCli6.setText("Gerar relatório");
+        BotaoGerenciarCli6.setOpaque(true);
+        BotaoGerenciarCli6.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoGerenciarCli6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoGerenciarCli6MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoGerenciarCli6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoGerenciarCli6MouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -3384,6 +3381,8 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addComponent(BotaoConsultarCli1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(BotaoGerenciarCli1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(BotaoGerenciarCli6, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -3391,7 +3390,8 @@ public class PrincipalADM extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(BotaoGerenciarCli1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(BotaoConsultarCli1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(BotaoClientes3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(BotaoClientes3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoGerenciarCli6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -3516,7 +3516,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ComboEscolhaConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(CadastrarGarantiasLayout.createSequentialGroup()
-                        .addComponent(CampoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                        .addComponent(CampoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                         .addGap(1, 1, 1)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26)
@@ -3535,7 +3535,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addComponent(FieldValorGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(1, 1, 1)
                         .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
                 .addGroup(CadastrarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoCancelarGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoNovoGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3555,6 +3555,11 @@ public class PrincipalADM extends javax.swing.JFrame {
 
         lblCPF1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblCPF1.setText("Filtrar por:");
+        lblCPF1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCPF1MouseClicked(evt);
+            }
+        });
 
         TableConsultaGarantia.setAutoCreateRowSorter(true);
         TableConsultaGarantia.setBackground(new java.awt.Color(240, 240, 240));
@@ -3695,6 +3700,25 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
+        BotaoGerenciarCli7.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoGerenciarCli7.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoGerenciarCli7.setForeground(new java.awt.Color(25, 25, 112));
+        BotaoGerenciarCli7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoGerenciarCli7.setText("Gerar relatório");
+        BotaoGerenciarCli7.setOpaque(true);
+        BotaoGerenciarCli7.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoGerenciarCli7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoGerenciarCli7MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoGerenciarCli7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoGerenciarCli7MouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
         jPanel29Layout.setHorizontalGroup(
@@ -3706,6 +3730,8 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addComponent(BotaoConsultarCliConsul1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(BotaoGerenciarCliConsul1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(BotaoGerenciarCli7, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel29Layout.setVerticalGroup(
@@ -3713,7 +3739,8 @@ public class PrincipalADM extends javax.swing.JFrame {
             .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(BotaoGerenciarCliConsul1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(BotaoConsultarCliConsul1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(BotaoCadastrarCliConsul1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(BotaoCadastrarCliConsul1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoGerenciarCli7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
@@ -3994,44 +4021,47 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ConsultarGarantiasLayout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addComponent(Txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ConsultarGarantiasLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ConsultarGarantiasLayout.createSequentialGroup()
-                                    .addGap(80, 80, 80)
-                                    .addComponent(Botao2Via1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(ConsultarGarantiasLayout.createSequentialGroup()
-                                    .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(BotaoBuscarConsultarGarantias5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(BotaoBuscarConsultarGarantias1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(ConsultarGarantiasLayout.createSequentialGroup()
-                                            .addComponent(lblCPF11)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(FieldValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BotaoBuscarConsultarGarantias4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(ConsultarGarantiasLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(lblCPF13)
-                        .addGap(26, 26, 26)
-                        .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblCPF14)
-                            .addComponent(lblCPF15)
-                            .addComponent(lblCPF16))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(ConsultarGarantiasLayout.createSequentialGroup()
-                                .addComponent(FieldDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(1, 1, 1)
-                                .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(5, 5, 5)
+                                .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ConsultarGarantiasLayout.createSequentialGroup()
+                                        .addGap(80, 80, 80)
+                                        .addComponent(Botao2Via1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(ConsultarGarantiasLayout.createSequentialGroup()
+                                        .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(BotaoBuscarConsultarGarantias5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(BotaoBuscarConsultarGarantias1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(ConsultarGarantiasLayout.createSequentialGroup()
+                                                .addComponent(lblCPF11)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(FieldValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(BotaoBuscarConsultarGarantias4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(ConsultarGarantiasLayout.createSequentialGroup()
-                                .addComponent(FieldAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(1, 1, 1)
-                                .addComponent(jSeparator39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(ComboMes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, 0))
+                                .addComponent(lblCPF13)
+                                .addGap(26, 26, 26)
+                                .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblCPF14)
+                                    .addComponent(lblCPF15)
+                                    .addComponent(lblCPF16))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(ConsultarGarantiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(ConsultarGarantiasLayout.createSequentialGroup()
+                                        .addComponent(FieldDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(1, 1, 1)
+                                        .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(ConsultarGarantiasLayout.createSequentialGroup()
+                                        .addComponent(FieldAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(1, 1, 1)
+                                        .addComponent(jSeparator39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(ComboMes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap())))
         );
 
         PaneGarantias.add(ConsultarGarantias, "card4");
@@ -4377,6 +4407,25 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
+        BotaoGerenciarCli8.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoGerenciarCli8.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoGerenciarCli8.setForeground(new java.awt.Color(25, 25, 112));
+        BotaoGerenciarCli8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoGerenciarCli8.setText("Gerar relatório");
+        BotaoGerenciarCli8.setOpaque(true);
+        BotaoGerenciarCli8.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoGerenciarCli8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoGerenciarCli8MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoGerenciarCli8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoGerenciarCli8MouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
@@ -4388,6 +4437,8 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addComponent(BotaoConsultarCliGer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(BotaoGerenciarCliGer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(BotaoGerenciarCli8, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel27Layout.setVerticalGroup(
@@ -4395,7 +4446,8 @@ public class PrincipalADM extends javax.swing.JFrame {
             .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(BotaoGerenciarCliGer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(BotaoConsultarCliGer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(BotaoCadastrarCliGer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(BotaoCadastrarCliGer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoGerenciarCli8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
@@ -4460,7 +4512,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                             .addComponent(ComboOrdenaGarantia1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(19, 19, 19)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
+                .addGap(16, 16, 16)
                 .addComponent(DadosAlteraGarantia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
@@ -4575,6 +4627,25 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
+        BotaoGerenciarCli9.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoGerenciarCli9.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoGerenciarCli9.setForeground(new java.awt.Color(25, 25, 112));
+        BotaoGerenciarCli9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoGerenciarCli9.setText("Gerar relatório");
+        BotaoGerenciarCli9.setOpaque(true);
+        BotaoGerenciarCli9.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoGerenciarCli9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoGerenciarCli9MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoGerenciarCli9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoGerenciarCli9MouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
         jPanel45.setLayout(jPanel45Layout);
         jPanel45Layout.setHorizontalGroup(
@@ -4586,6 +4657,8 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addComponent(BotaoConsultarCliGer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(BotaoGerenciarCliGer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(BotaoGerenciarCli9, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel45Layout.setVerticalGroup(
@@ -4593,7 +4666,8 @@ public class PrincipalADM extends javax.swing.JFrame {
             .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(BotaoGerenciarCliGer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(BotaoConsultarCliGer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(BotaoCadastrarCliGer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(BotaoCadastrarCliGer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoGerenciarCli9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
@@ -4708,7 +4782,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addComponent(BotaoBuscarConsultarGarantias2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BotaoBuscarConsultarGarantias3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(57, 57, 57))
+                .addGap(59, 59, 59))
         );
         ContatarClientesLayout.setVerticalGroup(
             ContatarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4898,14 +4972,8 @@ public class PrincipalADM extends javax.swing.JFrame {
         );
 
         FieldDuracaoCadastrarConsertos.setBackground(new java.awt.Color(240, 240, 240));
-        FieldDuracaoCadastrarConsertos.setBorder(null);
-        try {
-            FieldDuracaoCadastrarConsertos.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
         FieldDuracaoCadastrarConsertos.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        FieldDuracaoCadastrarConsertos.setPreferredSize(new java.awt.Dimension(9, 25));
+        FieldDuracaoCadastrarConsertos.setBorder(null);
 
         javax.swing.GroupLayout CadastrarServicosLayout = new javax.swing.GroupLayout(CadastrarServicos);
         CadastrarServicos.setLayout(CadastrarServicosLayout);
@@ -4929,7 +4997,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addGroup(CadastrarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblNome13)
                             .addGroup(CadastrarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(FieldDuracaoCadastrarConsertos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(FieldDuracaoCadastrarConsertos, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jSeparator22, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)))))
                 .addGap(59, 59, 59))
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
@@ -4949,10 +5017,10 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addGroup(CadastrarServicosLayout.createSequentialGroup()
                         .addComponent(lblNome13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(FieldDuracaoCadastrarConsertos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FieldDuracaoCadastrarConsertos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
                         .addComponent(jSeparator22)))
-                .addGap(242, 242, 242)
+                .addGap(241, 241, 241)
                 .addGroup(CadastrarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoSalvarCadastroConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoCancelarCadastroConserto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5141,7 +5209,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addGap(394, 394, 394)
                         .addComponent(BotaoBuscarGarantias, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1030, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(59, 59, 59))
         );
         ConsultarServicosLayout.setVerticalGroup(
             ConsultarServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5321,14 +5389,20 @@ public class PrincipalADM extends javax.swing.JFrame {
         });
 
         FieldDuracaoGerenciarConsertos.setBackground(new java.awt.Color(240, 240, 240));
-        FieldDuracaoGerenciarConsertos.setBorder(null);
-        try {
-            FieldDuracaoGerenciarConsertos.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
         FieldDuracaoGerenciarConsertos.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        FieldDuracaoGerenciarConsertos.setPreferredSize(new java.awt.Dimension(9, 25));
+        FieldDuracaoGerenciarConsertos.setBorder(null);
+        FieldDuracaoGerenciarConsertos.setMaximumSize(new java.awt.Dimension(25, 25));
+        FieldDuracaoGerenciarConsertos.setMinimumSize(new java.awt.Dimension(25, 25));
+        FieldDuracaoGerenciarConsertos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FieldDuracaoGerenciarConsertosMouseClicked(evt);
+            }
+        });
+        FieldDuracaoGerenciarConsertos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FieldDuracaoGerenciarConsertosKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout DadosAlteraServicosLayout = new javax.swing.GroupLayout(DadosAlteraServicos);
         DadosAlteraServicos.setLayout(DadosAlteraServicosLayout);
@@ -5369,7 +5443,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(lblNome15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(FieldDuracaoGerenciarConsertos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FieldDuracaoGerenciarConsertos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
                         .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(DadosAlteraServicosLayout.createSequentialGroup()
@@ -5522,7 +5596,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addComponent(BotaoBuscarGerenciarServicos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(13, 13, 13)
                 .addComponent(DadosAlteraServicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13))
         );
@@ -5924,6 +5998,14 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldUser.setBackground(new java.awt.Color(240, 240, 240));
         FieldUser.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         FieldUser.setBorder(null);
+        FieldUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                FieldUserMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                FieldUserMouseExited(evt);
+            }
+        });
 
         BotaoAlterarGerLogins.setBackground(new java.awt.Color(230, 230, 230));
         BotaoAlterarGerLogins.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -5977,15 +6059,19 @@ public class PrincipalADM extends javax.swing.JFrame {
         FieldSenha.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         FieldSenha.setBorder(null);
         FieldSenha.setPreferredSize(new java.awt.Dimension(1, 25));
+        FieldSenha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                FieldSenhaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                FieldSenhaMouseExited(evt);
+            }
+        });
         FieldSenha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 FieldSenhaKeyTyped(evt);
             }
         });
-
-        cont.setBackground(new java.awt.Color(240, 240, 240));
-        cont.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        cont.setBorder(null);
 
         javax.swing.GroupLayout GerenciarLoginsLayout = new javax.swing.GroupLayout(GerenciarLogins);
         GerenciarLogins.setLayout(GerenciarLoginsLayout);
@@ -6002,9 +6088,7 @@ public class PrincipalADM extends javax.swing.JFrame {
                         .addGroup(GerenciarLoginsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(GerenciarLoginsLayout.createSequentialGroup()
                                 .addGap(78, 78, 78)
-                                .addComponent(FieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(75, 75, 75)
-                                .addComponent(cont, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(FieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(GerenciarLoginsLayout.createSequentialGroup()
                                 .addGap(129, 129, 129)
                                 .addComponent(ComboTipoConta, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -6050,8 +6134,6 @@ public class PrincipalADM extends javax.swing.JFrame {
                     .addGroup(GerenciarLoginsLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(ComboTipoConta, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(cont, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(GerenciarLoginsLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
@@ -7638,7 +7720,6 @@ public class PrincipalADM extends javax.swing.JFrame {
             atualizarTabelaBuscaGarantia();
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_BotaoBuscarConsultarGarantiasActionPerformed
 
@@ -8251,6 +8332,86 @@ public class PrincipalADM extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FieldConsultaNomeGarantiaKeyTyped
 
+    private void lblCPF1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCPF1MouseClicked
+
+    }//GEN-LAST:event_lblCPF1MouseClicked
+
+    private void BotaoGerenciarCli6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli6MouseClicked
+        RelatorioDAO reladao = new RelatorioDAO();
+        reladao.RelatorioGarantia();
+    }//GEN-LAST:event_BotaoGerenciarCli6MouseClicked
+
+    private void BotaoGerenciarCli6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli6MouseEntered
+        BotaoGerenciarCli6.setBackground(new Color(220, 220, 220));
+    }//GEN-LAST:event_BotaoGerenciarCli6MouseEntered
+
+    private void BotaoGerenciarCli6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli6MouseExited
+        BotaoGerenciarCli6.setBackground(new Color(230, 230, 230));
+    }//GEN-LAST:event_BotaoGerenciarCli6MouseExited
+
+    private void BotaoGerenciarCli7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli7MouseClicked
+        RelatorioDAO reladao = new RelatorioDAO();
+        reladao.RelatorioGarantia();
+    }//GEN-LAST:event_BotaoGerenciarCli7MouseClicked
+
+    private void BotaoGerenciarCli7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli7MouseEntered
+        BotaoGerenciarCli7.setBackground(new Color(220, 220, 220));
+    }//GEN-LAST:event_BotaoGerenciarCli7MouseEntered
+
+    private void BotaoGerenciarCli7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli7MouseExited
+        BotaoGerenciarCli7.setBackground(new Color(230, 230, 230));
+    }//GEN-LAST:event_BotaoGerenciarCli7MouseExited
+
+    private void BotaoGerenciarCli8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli8MouseClicked
+        RelatorioDAO reladao = new RelatorioDAO();
+        reladao.RelatorioGarantia();
+    }//GEN-LAST:event_BotaoGerenciarCli8MouseClicked
+
+    private void BotaoGerenciarCli8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli8MouseEntered
+        BotaoGerenciarCli8.setBackground(new Color(220, 220, 220));
+    }//GEN-LAST:event_BotaoGerenciarCli8MouseEntered
+
+    private void BotaoGerenciarCli8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli8MouseExited
+        BotaoGerenciarCli8.setBackground(new Color(230, 230, 230));
+    }//GEN-LAST:event_BotaoGerenciarCli8MouseExited
+
+    private void BotaoGerenciarCli9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli9MouseClicked
+        RelatorioDAO reladao = new RelatorioDAO();
+        reladao.RelatorioGarantia();
+    }//GEN-LAST:event_BotaoGerenciarCli9MouseClicked
+
+    private void BotaoGerenciarCli9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli9MouseEntered
+        BotaoGerenciarCli9.setBackground(new Color(220, 220, 220));
+    }//GEN-LAST:event_BotaoGerenciarCli9MouseEntered
+
+    private void BotaoGerenciarCli9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoGerenciarCli9MouseExited
+        BotaoGerenciarCli9.setBackground(new Color(230, 230, 230));
+    }//GEN-LAST:event_BotaoGerenciarCli9MouseExited
+
+    private void FieldDuracaoGerenciarConsertosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldDuracaoGerenciarConsertosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldDuracaoGerenciarConsertosMouseClicked
+
+    private void FieldDuracaoGerenciarConsertosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldDuracaoGerenciarConsertosKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldDuracaoGerenciarConsertosKeyPressed
+
+    private void FieldUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldUserMouseEntered
+
+    }//GEN-LAST:event_FieldUserMouseEntered
+
+    private void FieldSenhaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldSenhaMouseEntered
+   
+    }//GEN-LAST:event_FieldSenhaMouseEntered
+
+    private void FieldUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldUserMouseExited
+   
+    }//GEN-LAST:event_FieldUserMouseExited
+
+    private void FieldSenhaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FieldSenhaMouseExited
+       
+    }//GEN-LAST:event_FieldSenhaMouseExited
+
     public void setLblColor(JLabel lbl) {
         lbl.setBackground(new Color(220, 220, 220));
     }
@@ -8326,6 +8487,10 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JLabel BotaoGerenciarCli3;
     private javax.swing.JLabel BotaoGerenciarCli4;
     private javax.swing.JLabel BotaoGerenciarCli5;
+    private javax.swing.JLabel BotaoGerenciarCli6;
+    private javax.swing.JLabel BotaoGerenciarCli7;
+    private javax.swing.JLabel BotaoGerenciarCli8;
+    private javax.swing.JLabel BotaoGerenciarCli9;
     private javax.swing.JLabel BotaoGerenciarCliConsul;
     private javax.swing.JLabel BotaoGerenciarCliConsul1;
     private javax.swing.JLabel BotaoGerenciarCliConsul2;
@@ -8373,8 +8538,8 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JTextField FieldConsultaNomeCliente;
     private javax.swing.JTextField FieldConsultaNomeGarantia;
     public javax.swing.JTextField FieldDia;
-    private javax.swing.JFormattedTextField FieldDuracaoCadastrarConsertos;
-    private javax.swing.JFormattedTextField FieldDuracaoGerenciarConsertos;
+    private javax.swing.JTextField FieldDuracaoCadastrarConsertos;
+    private javax.swing.JTextField FieldDuracaoGerenciarConsertos;
     private javax.swing.JTextField FieldEmailGerenciarClientes;
     private javax.swing.JTextField FieldEnderecoGerenciarClientes;
     private javax.swing.JFormattedTextField FieldGerenciarCPFCliente;
@@ -8421,7 +8586,6 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JTextField TxtNomeCtt;
     private javax.swing.JFormattedTextField TxtNumCtt;
     private javax.swing.JTextField Txtid;
-    public javax.swing.JTextField cont;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

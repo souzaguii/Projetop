@@ -15,9 +15,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import javax.swing.JOptionPane;
 import model.Garantia;
-import view.PrincipalADM;
 
 /**
  *
@@ -242,17 +240,17 @@ public class GarantiaDAO {
         return moeda.format(ValorConvertido);
 
     }
-     
+
     public int TotalConsertos() throws SQLException {
-  
+
         String SQL = "select* from cadastros.garantia";
 
-            PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
-            ResultSet rs = stmt.executeQuery();
+        PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
+        ResultSet rs = stmt.executeQuery();
 
-             rs.last();
+        rs.last();
 
         return rs.getInt("id");
-    }
+    } 
 
 }

@@ -11,7 +11,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -76,7 +78,7 @@ public class RelatorioDAO {
     }
 
     public void RelatorioCliente() {
-        
+
         try {
             String SQL = "SELECT\n"
                     + "     cliente.`id` AS cliente_id,\n"
@@ -92,11 +94,46 @@ public class RelatorioDAO {
             Map parametros = new HashMap();
             parametros.clear();
             parametros.put("logo", this.getClass().getResourceAsStream("/LogoRelatório.png"));
-  
+
             PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
             ResultSet rs = stmt.executeQuery();
             JRResultSetDataSource relatorioCli = new JRResultSetDataSource(rs);
             JasperPrint jpPrint = JasperFillManager.fillReport("relatorios/RelatórioCliente.jasper", parametros, relatorioCli);
+            JasperViewer jv = new JasperViewer(jpPrint, false);
+            jv.setVisible(true);
+            jv.toFront();
+
+        } catch (JRException e) {
+            System.out.println(e.getMessage());
+        } catch (SQLException ex) {
+            Logger.getLogger(RelatorioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void RelatorioGarantia() {
+
+        try {
+            GarantiaDAO gardao = new GarantiaDAO();
+            String SQL = "SELECT\n"
+                    + "     garantia.`id` AS garantia_id,\n"
+                    + "     garantia.`Nome` AS garantia_Nome,\n"
+                    + "     garantia.`descricao` AS garantia_descricao,\n"
+                    + "     garantia.`saida_concerto` AS garantia_saida_concerto,\n"
+                    + "     garantia.`garantia` AS garantia_garantia,\n"
+                    + "     garantia.`valor` AS garantia_valor\n"             
+                    + "FROM\n"
+                    + "     `garantia` garantia";
+
+            Map parametros = new HashMap();
+            parametros.clear();
+            parametros.put("logo", this.getClass().getResourceAsStream("/LogoRelatório.png"));
+            parametros.put("valor", "R$");
+            parametros.put("valortotal", gardao.SomaGarantia("", "", ""));
+            
+            PreparedStatement stmt = Conexao.getConexaoMySQL().prepareStatement(SQL);
+            ResultSet rs = stmt.executeQuery();
+            JRResultSetDataSource relatorioGar = new JRResultSetDataSource(rs);
+            JasperPrint jpPrint = JasperFillManager.fillReport("relatorios/RelatórioGarantia.jasper", parametros, relatorioGar);
             JasperViewer jv = new JasperViewer(jpPrint, false);
             jv.setVisible(true);
             jv.toFront();
