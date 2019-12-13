@@ -1383,6 +1383,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoConsertos = new javax.swing.JLabel();
         BotaoCadastros = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        BotaoCadastros1 = new javax.swing.JLabel();
         PaneTelaInicial = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -1680,6 +1681,25 @@ public class PrincipalADM extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         TableGerenciarLogins = new javax.swing.JTable();
         BotaoAlterarGerLogins2 = new javax.swing.JButton();
+        PaneEstoques = new javax.swing.JPanel();
+        jPanel46 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jPanel47 = new javax.swing.JPanel();
+        BotaoConsultarCliConsul9 = new javax.swing.JLabel();
+        BotaoCadastrarCliConsul9 = new javax.swing.JLabel();
+        BotaoConsultarCliConsul10 = new javax.swing.JLabel();
+        lblNome31 = new javax.swing.JLabel();
+        FielduserCadastrarlogins1 = new javax.swing.JTextField();
+        jSeparator40 = new javax.swing.JSeparator();
+        lblNome32 = new javax.swing.JLabel();
+        FielduserCadastrarlogins2 = new javax.swing.JTextField();
+        jSeparator41 = new javax.swing.JSeparator();
+        lblNome33 = new javax.swing.JLabel();
+        FielduserCadastrarlogins3 = new javax.swing.JTextField();
+        jSeparator42 = new javax.swing.JSeparator();
+        BotaoBuscarGerenciarServicos5 = new javax.swing.JButton();
+        BotaoBuscarGerenciarServicos6 = new javax.swing.JButton();
+        BotaoBuscarGerenciarServicos7 = new javax.swing.JButton();
 
         BotaoAlterarGerLogins1.setBackground(new java.awt.Color(230, 230, 230));
         BotaoAlterarGerLogins1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -1715,7 +1735,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoGarantias.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
         BotaoGarantias.setForeground(new java.awt.Color(25, 25, 112));
         BotaoGarantias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BotaoGarantias.setText("Garantias");
+        BotaoGarantias.setText("Serviços");
         BotaoGarantias.setMaximumSize(new java.awt.Dimension(139, 25));
         BotaoGarantias.setMinimumSize(new java.awt.Dimension(139, 25));
         BotaoGarantias.setOpaque(true);
@@ -1756,7 +1776,7 @@ public class PrincipalADM extends javax.swing.JFrame {
         BotaoConsertos.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
         BotaoConsertos.setForeground(new java.awt.Color(23, 23, 112));
         BotaoConsertos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BotaoConsertos.setText("Categorias");
+        BotaoConsertos.setText("Consertos");
         BotaoConsertos.setMaximumSize(new java.awt.Dimension(139, 25));
         BotaoConsertos.setMinimumSize(new java.awt.Dimension(139, 25));
         BotaoConsertos.setOpaque(true);
@@ -1808,6 +1828,27 @@ public class PrincipalADM extends javax.swing.JFrame {
             }
         });
 
+        BotaoCadastros1.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoCadastros1.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoCadastros1.setForeground(new java.awt.Color(23, 23, 112));
+        BotaoCadastros1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoCadastros1.setText("Estoques");
+        BotaoCadastros1.setMaximumSize(new java.awt.Dimension(139, 25));
+        BotaoCadastros1.setMinimumSize(new java.awt.Dimension(139, 25));
+        BotaoCadastros1.setOpaque(true);
+        BotaoCadastros1.setPreferredSize(new java.awt.Dimension(139, 75));
+        BotaoCadastros1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoCadastros1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoCadastros1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoCadastros1MouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout SideBoardLayout = new javax.swing.GroupLayout(SideBoard);
         SideBoard.setLayout(SideBoardLayout);
         SideBoardLayout.setHorizontalGroup(
@@ -1817,13 +1858,14 @@ public class PrincipalADM extends javax.swing.JFrame {
             .addComponent(BotaoConsertos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(BotaoCadastros, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(SideBoardLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 20, Short.MAX_VALUE))
+            .addGroup(SideBoardLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator1)
                 .addContainerGap())
-            .addGroup(SideBoardLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+            .addComponent(BotaoCadastros1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         SideBoardLayout.setVerticalGroup(
             SideBoardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1839,8 +1881,10 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(BotaoConsertos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
+                .addComponent(BotaoCadastros1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(BotaoCadastros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(146, 146, 146))
+                .addContainerGap())
         );
 
         PaneTelaInicial.setPreferredSize(new java.awt.Dimension(1366, 706));
@@ -2229,15 +2273,16 @@ public class PrincipalADM extends javax.swing.JFrame {
                 .addGap(59, 59, 59)
                 .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CadastrarClientesLayout.createSequentialGroup()
-                        .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(FieldCadastroEmailCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
-                            .addComponent(lblNome9, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BotaoNovoCadastroCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNome3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FieldCadastroCidadeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSeparator21, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FieldCadastroNomeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSeparator9))
+                        .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(FieldCadastroEmailCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
+                                .addComponent(lblNome9, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblNome3, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(FieldCadastroCidadeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jSeparator21, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(FieldCadastroNomeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jSeparator9))
+                            .addComponent(BotaoNovoCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(167, 167, 167)
                         .addGroup(CadastrarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(FieldCadastroEnderecoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -6237,6 +6282,300 @@ public class PrincipalADM extends javax.swing.JFrame {
 
         PaneMae.add(PaneCadastros, "card6");
 
+        jPanel46.setMaximumSize(new java.awt.Dimension(32767, 327));
+        jPanel46.setPreferredSize(new java.awt.Dimension(1144, 254));
+
+        jLabel25.setFont(new java.awt.Font("Century Gothic", 1, 60)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(25, 25, 112));
+        jLabel25.setText("ESTOQUES");
+
+        jPanel47.setBackground(new java.awt.Color(230, 230, 230));
+
+        BotaoConsultarCliConsul9.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoConsultarCliConsul9.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoConsultarCliConsul9.setForeground(new java.awt.Color(25, 25, 112));
+        BotaoConsultarCliConsul9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoConsultarCliConsul9.setText("Gerenciar");
+        BotaoConsultarCliConsul9.setOpaque(true);
+        BotaoConsultarCliConsul9.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoConsultarCliConsul9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoConsultarCliConsul9MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoConsultarCliConsul9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoConsultarCliConsul9MouseExited(evt);
+            }
+        });
+
+        BotaoCadastrarCliConsul9.setBackground(new java.awt.Color(220, 220, 220));
+        BotaoCadastrarCliConsul9.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoCadastrarCliConsul9.setForeground(new java.awt.Color(25, 25, 112));
+        BotaoCadastrarCliConsul9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoCadastrarCliConsul9.setText("Cadastrar");
+        BotaoCadastrarCliConsul9.setOpaque(true);
+        BotaoCadastrarCliConsul9.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoCadastrarCliConsul9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoCadastrarCliConsul9MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoCadastrarCliConsul9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoCadastrarCliConsul9MouseExited(evt);
+            }
+        });
+
+        BotaoConsultarCliConsul10.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoConsultarCliConsul10.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
+        BotaoConsultarCliConsul10.setForeground(new java.awt.Color(25, 25, 112));
+        BotaoConsultarCliConsul10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BotaoConsultarCliConsul10.setText("Consultar");
+        BotaoConsultarCliConsul10.setOpaque(true);
+        BotaoConsultarCliConsul10.setPreferredSize(new java.awt.Dimension(150, 50));
+        BotaoConsultarCliConsul10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoConsultarCliConsul10MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotaoConsultarCliConsul10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotaoConsultarCliConsul10MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
+        jPanel47.setLayout(jPanel47Layout);
+        jPanel47Layout.setHorizontalGroup(
+            jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel47Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(BotaoCadastrarCliConsul9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(BotaoConsultarCliConsul10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(BotaoConsultarCliConsul9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel47Layout.setVerticalGroup(
+            jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(BotaoCadastrarCliConsul9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(BotaoConsultarCliConsul9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoConsultarCliConsul10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
+        jPanel46.setLayout(jPanel46Layout);
+        jPanel46Layout.setHorizontalGroup(
+            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel46Layout.createSequentialGroup()
+                .addContainerGap(421, Short.MAX_VALUE)
+                .addComponent(jLabel25)
+                .addGap(442, 442, 442))
+            .addComponent(jPanel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel46Layout.setVerticalGroup(
+            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel46Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
+        );
+
+        lblNome31.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        lblNome31.setText("Nome");
+
+        FielduserCadastrarlogins1.setBackground(new java.awt.Color(240, 240, 240));
+        FielduserCadastrarlogins1.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        FielduserCadastrarlogins1.setBorder(null);
+        FielduserCadastrarlogins1.setMaximumSize(new java.awt.Dimension(25, 25));
+        FielduserCadastrarlogins1.setMinimumSize(new java.awt.Dimension(25, 25));
+        FielduserCadastrarlogins1.setOpaque(false);
+        FielduserCadastrarlogins1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FielduserCadastrarlogins1MouseClicked(evt);
+            }
+        });
+        FielduserCadastrarlogins1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FielduserCadastrarlogins1KeyPressed(evt);
+            }
+        });
+
+        jSeparator40.setBackground(new java.awt.Color(240, 240, 240));
+        jSeparator40.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblNome32.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        lblNome32.setText("Valor");
+
+        FielduserCadastrarlogins2.setBackground(new java.awt.Color(240, 240, 240));
+        FielduserCadastrarlogins2.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        FielduserCadastrarlogins2.setBorder(null);
+        FielduserCadastrarlogins2.setMaximumSize(new java.awt.Dimension(25, 25));
+        FielduserCadastrarlogins2.setMinimumSize(new java.awt.Dimension(25, 25));
+        FielduserCadastrarlogins2.setOpaque(false);
+        FielduserCadastrarlogins2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FielduserCadastrarlogins2MouseClicked(evt);
+            }
+        });
+        FielduserCadastrarlogins2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FielduserCadastrarlogins2KeyPressed(evt);
+            }
+        });
+
+        jSeparator41.setBackground(new java.awt.Color(240, 240, 240));
+        jSeparator41.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblNome33.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        lblNome33.setText("Quantidade");
+
+        FielduserCadastrarlogins3.setBackground(new java.awt.Color(240, 240, 240));
+        FielduserCadastrarlogins3.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        FielduserCadastrarlogins3.setBorder(null);
+        FielduserCadastrarlogins3.setMaximumSize(new java.awt.Dimension(25, 25));
+        FielduserCadastrarlogins3.setMinimumSize(new java.awt.Dimension(25, 25));
+        FielduserCadastrarlogins3.setOpaque(false);
+        FielduserCadastrarlogins3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FielduserCadastrarlogins3MouseClicked(evt);
+            }
+        });
+        FielduserCadastrarlogins3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FielduserCadastrarlogins3KeyPressed(evt);
+            }
+        });
+
+        jSeparator42.setBackground(new java.awt.Color(240, 240, 240));
+        jSeparator42.setForeground(new java.awt.Color(0, 0, 0));
+
+        BotaoBuscarGerenciarServicos5.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoBuscarGerenciarServicos5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        BotaoBuscarGerenciarServicos5.setText("Cadastrar");
+        BotaoBuscarGerenciarServicos5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoBuscarGerenciarServicos5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoBuscarGerenciarServicos5MouseClicked(evt);
+            }
+        });
+        BotaoBuscarGerenciarServicos5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoBuscarGerenciarServicos5ActionPerformed(evt);
+            }
+        });
+
+        BotaoBuscarGerenciarServicos6.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoBuscarGerenciarServicos6.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        BotaoBuscarGerenciarServicos6.setText("Novo");
+        BotaoBuscarGerenciarServicos6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoBuscarGerenciarServicos6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoBuscarGerenciarServicos6MouseClicked(evt);
+            }
+        });
+        BotaoBuscarGerenciarServicos6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoBuscarGerenciarServicos6ActionPerformed(evt);
+            }
+        });
+
+        BotaoBuscarGerenciarServicos7.setBackground(new java.awt.Color(230, 230, 230));
+        BotaoBuscarGerenciarServicos7.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        BotaoBuscarGerenciarServicos7.setText("Cancelar");
+        BotaoBuscarGerenciarServicos7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotaoBuscarGerenciarServicos7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoBuscarGerenciarServicos7MouseClicked(evt);
+            }
+        });
+        BotaoBuscarGerenciarServicos7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoBuscarGerenciarServicos7ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PaneEstoquesLayout = new javax.swing.GroupLayout(PaneEstoques);
+        PaneEstoques.setLayout(PaneEstoquesLayout);
+        PaneEstoquesLayout.setHorizontalGroup(
+            PaneEstoquesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel46, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
+            .addGroup(PaneEstoquesLayout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addGroup(PaneEstoquesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PaneEstoquesLayout.createSequentialGroup()
+                        .addComponent(BotaoBuscarGerenciarServicos6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotaoBuscarGerenciarServicos5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90)
+                        .addComponent(BotaoBuscarGerenciarServicos7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72))
+                    .addGroup(PaneEstoquesLayout.createSequentialGroup()
+                        .addGroup(PaneEstoquesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator42, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(PaneEstoquesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblNome33, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(FielduserCadastrarlogins3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PaneEstoquesLayout.createSequentialGroup()
+                        .addGroup(PaneEstoquesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jSeparator40, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FielduserCadastrarlogins1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNome31, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PaneEstoquesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PaneEstoquesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jSeparator41)
+                                .addComponent(FielduserCadastrarlogins2, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+                            .addComponent(lblNome32, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(82, 82, 82))))
+        );
+        PaneEstoquesLayout.setVerticalGroup(
+            PaneEstoquesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PaneEstoquesLayout.createSequentialGroup()
+                .addGroup(PaneEstoquesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PaneEstoquesLayout.createSequentialGroup()
+                        .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(67, 67, 67)
+                        .addComponent(lblNome31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(FielduserCadastrarlogins1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(jSeparator40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PaneEstoquesLayout.createSequentialGroup()
+                        .addComponent(lblNome32)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(FielduserCadastrarlogins2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(jSeparator41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(81, 81, 81)
+                .addComponent(lblNome33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(FielduserCadastrarlogins3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(jSeparator42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addGroup(PaneEstoquesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaneEstoquesLayout.createSequentialGroup()
+                        .addGroup(PaneEstoquesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotaoBuscarGerenciarServicos5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotaoBuscarGerenciarServicos7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(49, 49, 49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaneEstoquesLayout.createSequentialGroup()
+                        .addComponent(BotaoBuscarGerenciarServicos6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61))))
+        );
+
+        PaneMae.add(PaneEstoques, "card6");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -8413,6 +8752,102 @@ public class PrincipalADM extends javax.swing.JFrame {
        
     }//GEN-LAST:event_FieldSenhaMouseExited
 
+    private void BotaoCadastros1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastros1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoCadastros1MouseClicked
+
+    private void BotaoCadastros1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastros1MouseEntered
+       setLblColor(BotaoCadastros1);
+    }//GEN-LAST:event_BotaoCadastros1MouseEntered
+
+    private void BotaoCadastros1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastros1MouseExited
+        ResetColor(BotaoCadastros1);
+    }//GEN-LAST:event_BotaoCadastros1MouseExited
+
+    private void BotaoConsultarCliConsul9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul9MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliConsul9MouseClicked
+
+    private void BotaoConsultarCliConsul9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul9MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliConsul9MouseEntered
+
+    private void BotaoConsultarCliConsul9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul9MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliConsul9MouseExited
+
+    private void BotaoCadastrarCliConsul9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliConsul9MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoCadastrarCliConsul9MouseClicked
+
+    private void BotaoCadastrarCliConsul9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliConsul9MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoCadastrarCliConsul9MouseEntered
+
+    private void BotaoCadastrarCliConsul9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarCliConsul9MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoCadastrarCliConsul9MouseExited
+
+    private void BotaoConsultarCliConsul10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul10MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliConsul10MouseClicked
+
+    private void BotaoConsultarCliConsul10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul10MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliConsul10MouseEntered
+
+    private void BotaoConsultarCliConsul10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoConsultarCliConsul10MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoConsultarCliConsul10MouseExited
+
+    private void FielduserCadastrarlogins1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FielduserCadastrarlogins1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FielduserCadastrarlogins1MouseClicked
+
+    private void FielduserCadastrarlogins1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FielduserCadastrarlogins1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FielduserCadastrarlogins1KeyPressed
+
+    private void FielduserCadastrarlogins2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FielduserCadastrarlogins2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FielduserCadastrarlogins2MouseClicked
+
+    private void FielduserCadastrarlogins2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FielduserCadastrarlogins2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FielduserCadastrarlogins2KeyPressed
+
+    private void FielduserCadastrarlogins3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FielduserCadastrarlogins3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FielduserCadastrarlogins3MouseClicked
+
+    private void FielduserCadastrarlogins3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FielduserCadastrarlogins3KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FielduserCadastrarlogins3KeyPressed
+
+    private void BotaoBuscarGerenciarServicos5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoBuscarGerenciarServicos5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoBuscarGerenciarServicos5MouseClicked
+
+    private void BotaoBuscarGerenciarServicos5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarGerenciarServicos5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoBuscarGerenciarServicos5ActionPerformed
+
+    private void BotaoBuscarGerenciarServicos6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoBuscarGerenciarServicos6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoBuscarGerenciarServicos6MouseClicked
+
+    private void BotaoBuscarGerenciarServicos6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarGerenciarServicos6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoBuscarGerenciarServicos6ActionPerformed
+
+    private void BotaoBuscarGerenciarServicos7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoBuscarGerenciarServicos7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoBuscarGerenciarServicos7MouseClicked
+
+    private void BotaoBuscarGerenciarServicos7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarGerenciarServicos7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoBuscarGerenciarServicos7ActionPerformed
+
     public void setLblColor(JLabel lbl) {
         lbl.setBackground(new Color(220, 220, 220));
     }
@@ -8443,16 +8878,21 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JButton BotaoBuscarGerenciarServicos2;
     private javax.swing.JButton BotaoBuscarGerenciarServicos3;
     private javax.swing.JButton BotaoBuscarGerenciarServicos4;
+    private javax.swing.JButton BotaoBuscarGerenciarServicos5;
+    private javax.swing.JButton BotaoBuscarGerenciarServicos6;
+    private javax.swing.JButton BotaoBuscarGerenciarServicos7;
     private javax.swing.JLabel BotaoCadastrarCliConsul;
     private javax.swing.JLabel BotaoCadastrarCliConsul1;
     private javax.swing.JLabel BotaoCadastrarCliConsul2;
     private javax.swing.JLabel BotaoCadastrarCliConsul3;
     private javax.swing.JLabel BotaoCadastrarCliConsul5;
     private javax.swing.JLabel BotaoCadastrarCliConsul8;
+    private javax.swing.JLabel BotaoCadastrarCliConsul9;
     private javax.swing.JLabel BotaoCadastrarCliGer;
     private javax.swing.JLabel BotaoCadastrarCliGer1;
     private javax.swing.JLabel BotaoCadastrarCliGer2;
     private javax.swing.JLabel BotaoCadastros;
+    private javax.swing.JLabel BotaoCadastros1;
     private javax.swing.JButton BotaoCancelarCadastroCliente;
     private javax.swing.JButton BotaoCancelarCadastroConserto;
     private javax.swing.JButton BotaoCancelarGarantia;
@@ -8470,10 +8910,12 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JLabel BotaoConsultarCli2;
     private javax.swing.JLabel BotaoConsultarCliConsul;
     private javax.swing.JLabel BotaoConsultarCliConsul1;
+    private javax.swing.JLabel BotaoConsultarCliConsul10;
     private javax.swing.JLabel BotaoConsultarCliConsul2;
     private javax.swing.JLabel BotaoConsultarCliConsul3;
     private javax.swing.JLabel BotaoConsultarCliConsul5;
     private javax.swing.JLabel BotaoConsultarCliConsul8;
+    private javax.swing.JLabel BotaoConsultarCliConsul9;
     private javax.swing.JLabel BotaoConsultarCliGer;
     private javax.swing.JLabel BotaoConsultarCliGer1;
     private javax.swing.JLabel BotaoConsultarCliGer2;
@@ -8484,6 +8926,8 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JLabel BotaoGarantias;
     private javax.swing.JLabel BotaoGerenciarCli;
     private javax.swing.JLabel BotaoGerenciarCli1;
+    private javax.swing.JLabel BotaoGerenciarCli10;
+    private javax.swing.JLabel BotaoGerenciarCli11;
     private javax.swing.JLabel BotaoGerenciarCli2;
     private javax.swing.JLabel BotaoGerenciarCli3;
     private javax.swing.JLabel BotaoGerenciarCli4;
@@ -8563,6 +9007,9 @@ public class PrincipalADM extends javax.swing.JFrame {
     public javax.swing.JFormattedTextField FieldValorTotal;
     private javax.swing.JPasswordField FieldsenhaCadastrarlogins;
     private javax.swing.JTextField FielduserCadastrarlogins;
+    private javax.swing.JTextField FielduserCadastrarlogins1;
+    private javax.swing.JTextField FielduserCadastrarlogins2;
+    private javax.swing.JTextField FielduserCadastrarlogins3;
     private javax.swing.JPanel GerenciarCadastros;
     private javax.swing.JPanel GerenciarClientes;
     private javax.swing.JPanel GerenciarGarantias;
@@ -8571,6 +9018,7 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JLabel Layout;
     private javax.swing.JPanel PaneCadastros;
     private javax.swing.JPanel PaneClientes;
+    private javax.swing.JPanel PaneEstoques;
     private javax.swing.JPanel PaneGarantias;
     private javax.swing.JPanel PaneMae;
     private javax.swing.JPanel PaneServicos;
@@ -8600,15 +9048,20 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
@@ -8630,9 +9083,13 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel43;
     private javax.swing.JPanel jPanel44;
     private javax.swing.JPanel jPanel45;
+    private javax.swing.JPanel jPanel46;
+    private javax.swing.JPanel jPanel47;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -8673,6 +9130,9 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator38;
     private javax.swing.JSeparator jSeparator39;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator40;
+    private javax.swing.JSeparator jSeparator41;
+    private javax.swing.JSeparator jSeparator42;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
@@ -8723,6 +9183,9 @@ public class PrincipalADM extends javax.swing.JFrame {
     private javax.swing.JLabel lblNome29;
     private javax.swing.JLabel lblNome3;
     private javax.swing.JLabel lblNome30;
+    private javax.swing.JLabel lblNome31;
+    private javax.swing.JLabel lblNome32;
+    private javax.swing.JLabel lblNome33;
     private javax.swing.JLabel lblNome4;
     private javax.swing.JLabel lblNome5;
     private javax.swing.JLabel lblNome6;
